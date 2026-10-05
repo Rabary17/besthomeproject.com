@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Best Home Project">
+  <!-- Marque Best Home Project — pastille + maison + point orange (l'idée
+       qui s'allume). S'adapte seule au mode sombre du système via la media
+       query ci-dessous — un seul fichier à référencer partout (favicon,
+       en-tête, pied de page), pas de variante séparée à swapper en CSS/JS.
+       Couleurs synchronisées avec les tokens brand et signal de app/globals.css. -->
+  <style>
+    .bhp-tile { fill: #17603F; }
+    .bhp-mark { fill: #FFFFFF; stroke: #FFFFFF; }
+    @media (prefers-color-scheme: dark) {
+      .bhp-tile { fill: #6FD3A0; }
+      .bhp-mark { fill: #0F1311; stroke: #0F1311; }
+    }
+  </style>
+  <rect class="bhp-tile" width="64" height="64" rx="16"/>
+  <polygon class="bhp-mark" points="32,14 51,30 51,49 13,49 13,30" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="32" cy="38" r="5.5" fill="#F28C28"/>
+</svg>

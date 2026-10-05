@@ -1,0 +1,21 @@
+# dépendances
+/node_modules
+
+# build
+/.next/
+/out/
+
+# next
+next-env.d.ts
+*.tsbuildinfo
+
+# divers
+.DS_Store
+*.log
+.vercel
+
+# stratégie éditoriale (études de mots-clés...) — reste en local, le repo est public
+/_strategie/
+
+# dossier de livraison de l'app Claude (aperçus, fichiers temporaires)
+/Claude outputs/
