@@ -8,6 +8,7 @@ import {
   type Section,
 } from "@/lib/categories";
 import { AUTHORS, DEFAULT_AUTHOR_SLUG, authorUrl } from "@/lib/authors";
+import { KITS } from "@/lib/kits";
 import { faqSchema } from "@/lib/schema";
 import Icon from "@/components/Icon";
 import BrandMark from "@/components/BrandMark";
@@ -18,14 +19,16 @@ import { AuthorAvatar } from "@/components/AuthorBox";
 // Accueil de Best Home Project — sur la charte de app/globals.css (tokens,
 // Bricolage Grotesque + Inter, vert forêt + point orange du logo). Aucune
 // photo : les visuels sont construits en CSS/SVG (dégradés de la marque,
-// icônes Lucide), donc rien à créditer ni à héberger. Déroulé :
-//   1. hero : promesse + panneau de navigation par rubrique + preuves
-//   1 bis. « Les projets de la maison » : bento de 8 chantiers reliés aux
-//      sous-rubriques
+// icônes Lucide), donc rien à créditer ni à héberger. Orientation (voir
+// VISION.md) : accompagnement de A à Z d'un projet de maison. Déroulé :
+//   1. hero : promesse + panneau de navigation par étape + preuves
+//   1 bis. « Les grands moments de ton projet » : bento de 8 étapes clés
+//      reliées aux sous-rubriques
 //   2. derniers articles (6 max)
-//   3. « Par où commencer ? » : les 4 rubriques présentées par situation,
+//   3. « Par où commencer ? » : les 6 rubriques présentées par situation,
 //      avec des exemples de questions — liés automatiquement à l'article
 //      dès qu'il est publié (slug présent dans content/posts)
+//   3 bis. les kits du parcours (lib/kits.ts)
 //   4. le nom de marque : pourquoi « Best Home Project »
 //   5. la méthode (comment on travaille) + sécurité + indépendance
 //   6. la rédaction (un spécialiste par sujet)
@@ -49,52 +52,76 @@ interface Situation {
 
 const SITUATIONS: Situation[] = [
   {
-    section: "guides-tutos",
-    titre: "Tu as des travaux à faire",
+    section: "preparer-son-projet",
+    titre: "Tu as un projet, mais pas encore de plan",
     texte:
-      "Une étagère à fixer, un mur à repeindre, un robinet qui goutte ? Nos guides vont droit au but : matériel à prévoir, étapes numérotées, erreurs à éviter, et une consigne claire quand mieux vaut appeler un pro.",
+      "Avant de construire, il faut cadrer : combien tu peux investir, quel terrain, quels plans, quels devis. On t'aide à poser des bases solides, avant de signer quoi que ce soit.",
     exemples: [
-      { question: "Comment percer un mur sans l'abîmer ?" },
-      { question: "Comment repeindre une pièce sans traces ?" },
-      { question: "Mon robinet goutte : puis-je le réparer moi-même ?" },
+      { question: "Quel budget prévoir pour construire ma maison ?" },
+      { question: "Comment trouver un dessinateur pour mes plans ?" },
+      { question: "Comment comparer deux devis de construction ?" },
     ],
-    cta: "Voir les guides & tutos",
+    cta: "Préparer mon projet",
   },
   {
-    section: "comparatifs-achats",
-    titre: "Tu veux acheter sans te tromper",
+    section: "lancer-le-projet",
+    titre: "Tu es prêt à te lancer",
     texte:
-      "La bonne question n'est pas « quel est le meilleur ? », mais « quel est le bon pour mon logement, mon budget et mon niveau ? ». On compare selon ton usage, et on te dit quand un produit ne vaut pas son prix.",
+      "Entreprises, permis de construire, contrats, assurances : les étapes pour démarrer ton projet, avec les bonnes questions à poser et les pièges à éviter.",
+    exemples: [
+      { question: "Comment choisir un constructeur ou un maître d'œuvre ?" },
+      { question: "Quelles étapes pour obtenir mon permis de construire ?" },
+      { question: "Quelles garanties vérifier dans mon contrat ?" },
+    ],
+    cta: "Lancer mon projet",
+  },
+  {
+    section: "chantier-etape-par-etape",
+    titre: "Ton chantier démarre",
+    texte:
+      "De la fondation aux finitions, chaque étape a ses points de contrôle. On t'explique ce qui se passe, ce qu'il faut vérifier, et comment suivre ton chantier sans être du métier.",
+    exemples: [
+      { question: "Quelles sont les étapes d'un chantier, de la fondation aux finitions ?" },
+      { question: "Que vérifier avant de fermer les cloisons ?" },
+      { question: "Comment suivre un chantier sans être du métier ?" },
+    ],
+    cta: "Suivre mon chantier",
+  },
+  {
+    section: "livraison-reception",
+    titre: "Ta maison est presque terminée",
+    texte:
+      "Visiter avec méthode, noter les défauts, formuler des réserves, comprendre tes garanties : réceptionne ton chantier l'esprit tranquille, puis emménage.",
+    exemples: [
+      { question: "Comment se passe la réception du chantier ?" },
+      { question: "Comment formuler des réserves ?" },
+      { question: "Quelles garanties après la livraison ?" },
+    ],
+    cta: "Réceptionner ma maison",
+  },
+  {
+    section: "renovation-deco-amenagement",
+    titre: "Tu rénoves, tu décores, tu aménages",
+    texte:
+      "Rénovation, déco, rangement, extérieur : des idées concrètes pour une maison neuve ou ancienne, avec leurs contraintes de budget et de surface.",
+    exemples: [
+      { question: "Par où commencer pour rénover une maison ?" },
+      { question: "Comment aménager un petit salon sans le surcharger ?" },
+      { question: "Comment ranger une entrée sans place ?" },
+    ],
+    cta: "Rénover et décorer",
+  },
+  {
+    section: "equipements-comparatifs",
+    titre: "Tu dois équiper ta maison",
+    texte:
+      "La bonne question n'est pas « quel est le meilleur ? », mais « quel est le bon pour ma maison, mon budget et mon usage ? ». On compare selon ton usage, et on te dit quand un produit ne vaut pas son prix.",
     exemples: [
       { question: "Quelle perceuse-visseuse pour débuter ?" },
       { question: "Quel aspirateur robot pour une maison avec des animaux ?" },
       { question: "Quelle caméra de surveillance pour garder un œil sur l'entrée ?" },
     ],
     cta: "Voir les comparatifs",
-  },
-  {
-    section: "idees-inspiration",
-    titre: "Tu cherches des idées pour tes pièces",
-    texte:
-      "Petite surface, peu de lumière, budget serré : on part de pièces réelles et de leurs contraintes, puis on propose des idées que tu peux vraiment réaliser. Déco, rangement, aménagement, chambre d'enfant.",
-    exemples: [
-      { question: "Comment aménager un petit salon sans le surcharger ?" },
-      { question: "Quelles couleurs associer dans une pièce sombre ?" },
-      { question: "Comment ranger une entrée sans place ?" },
-    ],
-    cta: "Voir les idées",
-  },
-  {
-    section: "actu-aides",
-    titre: "Tu veux savoir ce qui change pour toi",
-    texte:
-      "Aides, prix, normes, nouveautés : on trie l'actu de la maison avec un seul filtre : qu'est-ce que ça change concrètement pour toi ? Vérifié à la source, sans emballement.",
-    exemples: [
-      { question: "Cette aide à la rénovation correspond-elle à mon projet ?" },
-      { question: "Comment lire un devis de travaux sans se faire avoir ?" },
-      { question: "Cette nouveauté mérite-t-elle vraiment le détour ?" },
-    ],
-    cta: "Voir l'actu & aides",
   },
 ];
 
@@ -109,46 +136,46 @@ interface Projet {
 
 const PROJETS: Projet[] = [
   {
-    titre: "Peindre une pièce",
-    texte: "Préparer le mur, choisir la peinture, appliquer sans traces : le résultat propre dès la première fois.",
-    rubrique: "peinture-sols-murs",
+    titre: "Définir ton budget",
+    texte: "Apport, financement, aides, marge de sécurité : le plan financier de ton projet, avant de signer quoi que ce soit.",
+    rubrique: "aides-budget",
     taille: "grande",
   },
   {
-    titre: "Plomberie & électricité",
-    texte: "Robinet qui goutte, prise à changer, évier bouché : ce que tu peux faire seul, et quand appeler un pro.",
-    rubrique: "plomberie-electricite",
+    titre: "Trouver ton dessinateur",
+    texte: "Définir ton besoin, choisir qui dessine tes plans, comprendre ce qu'on te montre.",
+    rubrique: "plans-dessinateur",
     taille: "haute",
   },
   {
-    titre: "Outillage",
-    texte: "Perceuse, visseuse, ponceuse : le bon outil, sans payer du matériel de chantier.",
-    rubrique: "outillage-equipement",
+    titre: "Comparer tes devis",
+    texte: "Poste par poste, sans te faire avoir : ce qu'il faut regarder.",
+    rubrique: "devis-construction",
   },
   {
-    titre: "Déco & ambiance",
-    texte: "Couleurs, luminaires, textiles : du caractère sans ruiner ton budget.",
+    titre: "Choisir tes entreprises",
+    texte: "Constructeur, artisans, références : les bonnes questions à poser.",
+    rubrique: "choisir-entreprises",
+  },
+  {
+    titre: "Permis & démarches",
+    texte: "Le dossier administratif, dans l'ordre et sans oubli.",
+    rubrique: "permis-demarches",
+  },
+  {
+    titre: "Suivre ton chantier",
+    texte: "De la fondation aux finitions, sans être du métier.",
+    rubrique: "suivi-chantier",
+  },
+  {
+    titre: "Réceptionner ta maison",
+    texte: "Réserves, garanties, remise des clés : l'étape à ne pas rater.",
+    rubrique: "reception-reserves",
+  },
+  {
+    titre: "Déco & aménagement",
+    texte: "Une maison qui te ressemble, pièce par pièce.",
     rubrique: "deco-ambiance",
-  },
-  {
-    titre: "Aides & budget",
-    texte: "Aides à la rénovation, devis, financement : t'y retrouver.",
-    rubrique: "aides-budget",
-  },
-  {
-    titre: "Maison connectée",
-    texte: "Ampoules, caméras, serrures : utile, compatible, respectueux de ta vie privée.",
-    rubrique: "maison-connectee-securite",
-  },
-  {
-    titre: "Énergie & économies",
-    texte: "Isolation, chauffage, consommation : réduire ta facture avec les bons gestes.",
-    rubrique: "energie-economies",
-  },
-  {
-    titre: "Jardin & extérieur",
-    texte: "Potager, terrasse, haie : un extérieur entretenu sans y passer tes week-ends.",
-    rubrique: "jardin-exterieur",
   },
 ];
 
@@ -184,31 +211,41 @@ const FAQ = [
   {
     question: "C'est quoi, Best Home Project ?",
     answer:
-      "Un média maison et bricolage indépendant, en français, qui explique la maison sans jargon : guides de travaux et de réparations, comparatifs pour bien acheter, idées de déco et d'aménagement, et l'actu des aides et du budget travaux.",
+      "Un site qui accompagne, de A à Z, les personnes qui veulent construire leur maison : pour elles et leur conjoint, pour leur famille ou pour leurs parents. Budget, plans, devis, entreprises, chantier, livraison, puis rénovation, déco et aménagement : des guides clairs et des kits pour chaque étape.",
   },
   {
-    question: "Faut-il être bricoleur pour suivre les guides ?",
+    question: "Faut-il déjà s'y connaître en construction ?",
     answer:
-      "Non. Chaque guide part du principe que c'est ta première fois : matériel listé, étapes numérotées, vocabulaire expliqué au passage. Si une opération est risquée, on te prévient avant, et pour l'électricité, le gaz ou la structure du logement, on te dit quand appeler un pro.",
+      "Non. Chaque guide part du principe que c'est ta première fois : vocabulaire expliqué au passage, étapes dans l'ordre, erreurs à éviter. Quand un sujet engage ta sécurité, ton argent ou la structure de la maison, on te dit clairement quand faire appel à un professionnel.",
+  },
+  {
+    question: "C'est quoi, les kits ?",
+    answer:
+      "Des ressources pratiques (modèles, checklists, trames) pour avancer concrètement à chaque étape : budget, comparaison de devis, choix des entreprises, suivi de chantier, réception. Elles sont en préparation et arrivent étape par étape : la page Kits indique celles qui sont prêtes.",
+  },
+  {
+    question: "Vos contenus remplacent-ils un professionnel ?",
+    answer:
+      "Non. Ils t'aident à comprendre, à préparer ton projet et à poser les bonnes questions. Pour le financement, les aspects juridiques, les plans et la structure de la maison, un professionnel (banque, notaire, architecte, maître d'œuvre, entreprises) reste indispensable.",
   },
   {
     question: "D'où viennent vos informations ?",
     answer:
-      "De sources vérifiables : notices des fabricants, normes, textes officiels et sites des organismes d'aides. Elles sont listées en bas de chaque article, avec leur date de consultation.",
+      "De sources vérifiables : textes officiels, normes, notices des fabricants et sites des organismes d'aides. Elles sont listées en bas de chaque article, avec leur date de consultation.",
   },
   {
     question: "Comment choisissez-vous les produits de vos comparatifs ?",
     answer:
-      "En partant de ton usage, de ton logement et de ton budget, sur des critères vérifiables : caractéristiques officielles, compatibilité, prix constatés. Les éventuels liens d'affiliation sont signalés et ne changent jamais un classement.",
+      "En partant de ton usage, de ta maison et de ton budget, sur des critères vérifiables : caractéristiques officielles, compatibilité, prix constatés. Les éventuels liens d'affiliation sont signalés et ne changent jamais un classement.",
   },
   {
-    question: "Les articles sont-ils gratuits ?",
+    question: "Les contenus sont-ils gratuits ?",
     answer: "Oui. Tout le site est en accès libre, sans inscription ni abonnement.",
   },
   {
     question: "Je ne trouve pas la réponse à ma question. Que faire ?",
     answer:
-      "Écris-nous via la page Contact. Si ta question intéresse d'autres lecteurs, elle a de bonnes chances d'inspirer un prochain article.",
+      "Écris-nous via la page Contact. Si ta question intéresse d'autres porteurs de projet, elle a de bonnes chances d'inspirer un prochain article ou un prochain kit.",
   },
 ];
 
@@ -273,35 +310,35 @@ export default function HomePage() {
         <div className="hero__text">
           <div className="hero-eyebrow">
             <span className="dot" aria-hidden="true" />
-            <span>Média maison &amp; bricolage indépendant</span>
+            <span>Ton projet de maison, de A à Z</span>
           </div>
           <h1>
-            <span className="brand">Best Home Project</span> — ta maison,
-            décortiquée, sans jargon ni baratin
+            <span className="brand">Best Home Project</span> — construis ta
+            maison, accompagné de A à Z
           </h1>
           <p className="lead">
-            Un mur à peindre, une perceuse à choisir, un robinet qui goutte,
-            une aide à la rénovation à comprendre ? Tu es au bon endroit.
-            Ici, la maison s&apos;explique avec des mots simples, des étapes
-            claires et des avis francs. Un seul objectif : qu&apos;à la fin
-            de l&apos;article, ton projet ait avancé.
+            Tu veux construire ta maison, avec ton conjoint, pour ta famille
+            ou pour tes parents ? Ici, tu n&apos;es pas seul. De ton budget
+            et tes plans jusqu&apos;à la remise des clés, on t&apos;accompagne
+            étape par étape, avec des guides clairs et des kits pour chaque
+            moment du projet.
           </p>
           <div className="hero-actions">
-            <a className="btn btn--primary" href="#par-ou-commencer">
-              Trouver un guide
+            <a className="btn btn--primary" href="/parcours/">
+              Voir le parcours
             </a>
-            <a className="btn btn--secondary" href="#derniers-articles">
-              Lire les derniers articles
+            <a className="btn btn--secondary" href="/kits/">
+              Découvrir les kits
             </a>
           </div>
           <ul className="hero-proof">
             <li>
               <Icon name="check" size={18} />
-              Sources et normes citées sous chaque article
+              Un parcours clair, de l&apos;idée à la remise des clés
             </li>
             <li>
               <Icon name="check" size={18} />
-              Zéro jargon, zéro baratin
+              Sources et normes citées sous chaque article
             </li>
             <li>
               <Icon name="check" size={18} />
@@ -320,7 +357,7 @@ export default function HomePage() {
             />
             <circle cx="32" cy="40" r="5" fill="#F28C28" />
           </svg>
-          <nav className="hero__chips" aria-label="Les quatre rubriques">
+          <nav className="hero__chips" aria-label="Les étapes du parcours">
             {SECTIONS.map((section) => (
               <a key={section.slug} href={sectionUrl(section)}>
                 <Icon name={section.icon} size={18} />
@@ -334,13 +371,12 @@ export default function HomePage() {
       {/* 1 bis. Projets */}
       <section className="home-section trends-section" aria-labelledby="projets-titre">
         <div className="container">
-          <p className="kicker">Projets</p>
-          <h2 id="projets-titre">Les projets de la maison, décortiqués</h2>
+          <p className="kicker">Le parcours</p>
+          <h2 id="projets-titre">Les grands moments de ton projet</h2>
           <p className="section-intro">
-            Peinture, plomberie, outillage, déco, budget, énergie… Les
-            chantiers de tous les jours, expliqués sans jargon : ce que tu
-            peux faire seul, ce que ça coûte, et quand il vaut mieux appeler
-            un pro.
+            Budget, plans, devis, entreprises, permis, chantier, réception,
+            puis déco : les moments clés d&apos;un projet de maison, un par
+            un. À chacun, des guides pour comprendre et des kits pour agir.
           </p>
           <ul className="trend-grid">
             {PROJETS.map((p) => {
@@ -392,16 +428,49 @@ export default function HomePage() {
       {/* 3. Par où commencer ? */}
       <section id="par-ou-commencer" className="home-section">
         <div className="container">
-          <h2>Par où commencer ? Dis-nous ce qui t&apos;amène</h2>
+          <h2>Par où commencer ? Dis-nous où tu en es</h2>
           <p className="section-intro">
-            Quatre rubriques, quatre situations. Choisis la tienne : chaque
-            carte te mène aux guides qui répondent à ce genre de question.
+            Six situations, de l&apos;idée au dernier meuble. Choisis la
+            tienne : chaque carte te mène aux guides de l&apos;étape.
           </p>
           <div className="situation-grid">
             {SITUATIONS.map((situation) => (
               <SituationCard key={situation.section} situation={situation} publies={publies} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 3 bis. Les kits */}
+      <section className="home-section" aria-labelledby="kits-titre">
+        <div className="container">
+          <p className="kicker">Les kits</p>
+          <h2 id="kits-titre">Un kit pour chaque étape de ton projet</h2>
+          <p className="section-intro">
+            Modèles, checklists et trames pour passer de la théorie à
+            l&apos;action : budget, devis, entreprises, chantier, réception.
+            Ils arrivent étape par étape.
+          </p>
+          <div className="subcategory-grid">
+            {KITS.slice(0, 6).map((kit) => {
+              const section = getSection(kit.section) as Section;
+              return (
+                <div className="card subcategory-card" key={kit.slug}>
+                  <span className="icon-tile">
+                    <Icon name={section.icon} size={22} />
+                  </span>
+                  <span className="subcategory-card__title">{kit.titre}</span>
+                  <span className="subcategory-card__body">{kit.description}</span>
+                  <span className={`kit-badge${kit.disponible ? " kit-badge--ok" : ""}`}>
+                    {kit.disponible ? "Disponible" : "Bientôt"}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+          <p className="section-intro" style={{ marginTop: "var(--space-5)" }}>
+            <a href="/kits/">Voir tous les kits →</a>
+          </p>
         </div>
       </section>
 
@@ -423,19 +492,19 @@ export default function HomePage() {
             <h2>Pourquoi «&nbsp;Best&nbsp;Home&nbsp;Project&nbsp;» ?</h2>
             <p>
               <strong>Best</strong>, pour le bon choix. Pas « le meilleur
-              produit du monde », mais le meilleur pour ton logement, ton
-              budget et ton niveau de bricolage.
+              du monde », mais le meilleur pour ton projet, ton budget et ta
+              famille.
             </p>
             <p>
-              <strong>Home</strong>, pour la maison sous toutes ses coutures :
-              murs, sols, pièces d&apos;eau, cuisine, jardin, objets connectés…
-              tout ce qui rend un logement agréable à vivre.
+              <strong>Home</strong>, pour la maison de tes rêves, du premier plan
+              à la dernière étagère : le lieu où tu vivras avec ceux que tu
+              aimes.
             </p>
             <p>
               <strong>Project</strong>, parce qu&apos;une maison se construit
-              projet après projet : une étagère ce week-end, une pièce
-              repeinte le suivant. Chaque article t&apos;aide à faire avancer
-              le tien, à ton rythme.
+              étape après étape : le budget, les plans, le chantier, la
+              livraison. Chaque guide et chaque kit t&apos;aident à faire
+              avancer le tien, à ton rythme.
             </p>
             <div className="brand-story__logo">
               <span className="brand-story__logo-dot" aria-hidden="true" />
@@ -458,12 +527,12 @@ export default function HomePage() {
             <p className="kicker">Notre méthode</p>
             <h2>Comment on travaille (et pourquoi tu peux nous faire confiance)</h2>
             <p className="method__intro">
-              Un article Best Home Project suit toujours le même chemin, de ta
+              Un contenu Best Home Project suit toujours le même chemin, de ta
               question jusqu&apos;à sa mise à jour.
             </p>
             <p className="method__note method__note--safe">
               <strong>Sécurité d&apos;abord.</strong> Électricité, gaz,
-              structure du logement : on t&apos;explique ce qui est à ta
+              structure du logement, finances : on t&apos;explique ce qui est à ta
               portée, et on te dit clairement quand il faut appeler un
               professionnel.
             </p>
@@ -551,7 +620,7 @@ export default function HomePage() {
         <div className="container">
           <div className="cta-band">
             <div className="cta-band__content">
-              <h2>Un projet maison qui te prend la tête ?</h2>
+              <h2>Un projet de maison qui te donne le vertige ?</h2>
               <p>
                 Dis-nous lequel. S&apos;il intéresse d&apos;autres lecteurs,
                 on en fera peut-être notre prochain article.

@@ -3,7 +3,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 
 // Fil d'Ariane visible + son équivalent JSON-LD (BreadcrumbList) — les
-// deux restent ainsi toujours synchronisés. `href` relatif ("/guides-tutos/").
+// deux restent ainsi toujours synchronisés. `href` relatif ("/preparer-son-projet/").
 export default function Breadcrumbs({ items }: { items: { name: string; href: string }[] }) {
   return (
     <>

@@ -2,20 +2,31 @@
   "_doc": "Routage des articles vers un auteur selon sa spécialité, appliqué au moment de la publication (scripts/generation/choisir-auteur.js, npm run new-post). 1) mots-clés du titre/des tags : l'auteur qui cumule le plus de correspondances l'emporte ; 2) sinon, titulaire de la sous-catégorie ; 3) sinon, rédacteur en chef. Le frontmatter `author:` d'un article reste prioritaire et se modifie à la main si besoin. Mots-clés sans accents, mot entier (pluriel en s/x toléré).",
   "defaut": "andrianina-rabarivelo",
   "categories": {
-    "bricolage-reparations": "andrianina-rabarivelo",
-    "peinture-sols-murs": "andee-rakotovao",
+    "aides-budget": "nekena-judicael",
+    "terrain-etudes": "andrianina-rabarivelo",
+    "plans-dessinateur": "andee-rakotovao",
+    "devis-construction": "nekena-judicael",
+    "choisir-entreprises": "andrianina-rabarivelo",
+    "permis-demarches": "andrianina-rabarivelo",
+    "contrats-assurances": "nekena-judicael",
+    "fondations-gros-oeuvre": "andrianina-rabarivelo",
+    "hors-d-eau-hors-d-air": "andrianina-rabarivelo",
     "plomberie-electricite": "andrianina-rabarivelo",
+    "peinture-sols-murs": "andee-rakotovao",
+    "suivi-chantier": "andrianina-rabarivelo",
+    "reception-reserves": "andrianina-rabarivelo",
+    "garanties-mise-en-service": "nekena-judicael",
+    "renovation-travaux": "andrianina-rabarivelo",
+    "bricolage-reparations": "andrianina-rabarivelo",
+    "energie-economies": "nekena-judicael",
+    "deco-ambiance": "felana-rabarivelo",
+    "amenagement-rangement": "andee-rakotovao",
+    "maison-en-famille": "mialy-andriaharisoa",
     "jardin-exterieur": "andrianina-rabarivelo",
     "outillage-equipement": "nekena-judicael",
     "electromenager-cuisine": "mialy-andriaharisoa",
     "maison-connectee-securite": "andrianina-rabarivelo",
-    "jardin-plein-air": "andrianina-rabarivelo",
-    "deco-ambiance": "felana-rabarivelo",
-    "amenagement-rangement": "andee-rakotovao",
-    "maison-en-famille": "mialy-andriaharisoa",
-    "aides-budget": "nekena-judicael",
-    "energie-economies": "nekena-judicael",
-    "nouveautes-tendances": "nekena-judicael"
+    "jardin-plein-air": "andrianina-rabarivelo"
   },
   "motsCles": {
     "andrianina-rabarivelo": [
@@ -50,7 +61,18 @@
       "llm",
       "prompt",
       "seo",
-      "automatisation"
+      "automatisation",
+      "permis de construire",
+      "terrain constructible",
+      "constructeur",
+      "maitre d'oeuvre",
+      "fondation",
+      "fondations",
+      "gros oeuvre",
+      "charpente",
+      "toiture",
+      "reception de chantier",
+      "suivi de chantier"
     ],
     "felana-rabarivelo": [
       "deco",
@@ -113,7 +135,10 @@
       "retouche",
       "photoshop",
       "figma",
-      "graphisme"
+      "graphisme",
+      "dessinateur",
+      "plan de maison",
+      "lire un plan"
     ],
     "mialy-andriaharisoa": [
       "enfant",
@@ -181,7 +206,12 @@
       "keynote",
       "nouveaute",
       "norme",
-      "tendance bricolage"
+      "tendance bricolage",
+      "financement",
+      "pret immobilier",
+      "garantie decennale",
+      "dommages-ouvrage",
+      "contrat de construction"
     ],
     "dina-rakotoarivelo": [
       "wordpress",

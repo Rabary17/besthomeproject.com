@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Usage : npm run new-post -- --categorie bricolage-reparations "Titre de l'article"
+// Usage : npm run new-post -- --categorie devis-construction "Titre de l'article"
 // Crée content/posts/<slug>.md avec le frontmatter déjà rempli (date du
 // jour, slug dérivé du titre) — évite les fautes de frappe dans les clés
 // YAML attendues par lib/posts.ts. L'auteur est choisi selon sa spécialité
@@ -49,13 +49,18 @@ date: "${today}"
 # (${choix.raison}). Modifiable à la main.
 author: "${choix.auteur}"
 # Sous-catégorie : un des slugs de lib/categories.ts —
-#   Guides & Tutos : bricolage-reparations, peinture-sols-murs,
-#     plomberie-electricite, jardin-exterieur
-#   Comparatifs & Achats : outillage-equipement, electromenager-cuisine,
-#     maison-connectee-securite, jardin-plein-air
-#   Idées & Inspiration : deco-ambiance, amenagement-rangement,
-#     maison-en-famille
-#   Actu & Aides : aides-budget, energie-economies, nouveautes-tendances
+#   Préparer son projet : aides-budget, terrain-etudes, plans-dessinateur,
+#     devis-construction
+#   Lancer le projet : choisir-entreprises, permis-demarches,
+#     contrats-assurances
+#   Le chantier : fondations-gros-oeuvre, hors-d-eau-hors-d-air,
+#     plomberie-electricite, peinture-sols-murs, suivi-chantier
+#   Livraison : reception-reserves, garanties-mise-en-service
+#   Rénovation, déco & aménagement : renovation-travaux,
+#     bricolage-reparations, energie-economies, deco-ambiance,
+#     amenagement-rangement, maison-en-famille, jardin-exterieur
+#   Équipements & comparatifs : outillage-equipement,
+#     electromenager-cuisine, maison-connectee-securite, jardin-plein-air
 # Détermine la rubrique, le fil d'Ariane et l'image à la une de secours.
 category: "${categorie || "TODO"}"
 # Date de mise à jour (optionnelle) : "AAAA-MM-JJ"

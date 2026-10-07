@@ -1,7 +1,10 @@
 # Best Home Project
 
-Média maison & bricolage en français pour [besthomeproject.com](https://besthomeproject.com) :
-guides de travaux, comparatifs d'achat, idées déco et aménagement, aides à la rénovation.
+> **Vision et orientation éditoriale du site : voir [`VISION.md`](VISION.md).**
+
+Accompagnement en français, de A à Z, pour construire sa maison — [besthomeproject.com](https://besthomeproject.com) :
+budget, plans, devis, entreprises, chantier, livraison, puis rénovation, déco et aménagement
+(orientation du 2026-10-07, voir `VISION.md`). Pages `/parcours/` et `/kits/` (kits : `lib/kits.ts`).
 Site frère de Techno Play : même socle technique, même éditeur (Anmira Studio), mêmes six
 auteurs, thématique et identité différentes (créé le 2026-10-05).
 
@@ -28,7 +31,7 @@ ISR.
 - JSON-LD (schema.org) : `WebSite`/`Organization` (avec `parentOrganization` Anmira Studio)
   sur tout le site, `BlogPosting` + `BreadcrumbList` sur chaque article, `Person`/`ProfilePage`
   pour les auteurs, `FAQPage` (accueil et FAQ) — voir `lib/schema.ts`.
-- `sitemap.xml` et `robots.txt` générés automatiquement (`app/sitemap.ts`, `app/robots.ts`).
+- `sitemap_index.xml` (+ `post-sitemap.xml`, `page-sitemap.xml`, `author-sitemap.xml`, façon Yoast, voir `lib/sitemaps.ts`) et `robots.txt` générés automatiquement ; rubriques/sous-catégories en `noindex, follow`, hors sitemap.
 - HTML sémantique (un seul `h1` par page, hiérarchie de titres propre).
 
 ## Ajouter un article
@@ -97,15 +100,17 @@ seraient celles de l'autre site.
 
 ## Arborescence éditoriale
 
-4 rubriques (pages hub `/<rubrique>/`) découpées en 14 sous-catégories
-(`/<rubrique>/<sous-categorie>/`) — source de vérité : `lib/categories.ts`. Les articles restent
-à la racine (`/<slug>/`) : changer un article de rubrique ne casse jamais son URL. Une
-sous-catégorie sans article est en `noindex` et absente du sitemap.
+6 rubriques (pages hub `/<rubrique>/`), organisées selon le parcours du projet, découpées en
+25 sous-catégories (`/<rubrique>/<sous-categorie>/`) — source de vérité : `lib/categories.ts`.
+Les articles restent à la racine (`/<slug>/`) : changer un article de rubrique ne casse jamais
+son URL. Rubriques et sous-catégories sont toujours en `noindex, follow` et hors sitemap.
 
-- **Guides & Tutos** : bricolage-reparations, peinture-sols-murs, plomberie-electricite, jardin-exterieur
-- **Comparatifs & Achats** : outillage-equipement, electromenager-cuisine, maison-connectee-securite, jardin-plein-air
-- **Idées & Inspiration** : deco-ambiance, amenagement-rangement, maison-en-famille
-- **Actu & Aides** : aides-budget, energie-economies, nouveautes-tendances
+1. **Préparer son projet** : aides-budget, terrain-etudes, plans-dessinateur, devis-construction
+2. **Lancer le projet** : choisir-entreprises, permis-demarches, contrats-assurances
+3. **Le chantier, étape par étape** : fondations-gros-oeuvre, hors-d-eau-hors-d-air, plomberie-electricite, peinture-sols-murs, suivi-chantier
+4. **Livraison & Réception** : reception-reserves, garanties-mise-en-service
+5. **Rénovation, Déco & Aménagement** : renovation-travaux, bricolage-reparations, energie-economies, deco-ambiance, amenagement-rangement, maison-en-famille, jardin-exterieur
+6. **Équipements & Comparatifs** : outillage-equipement, electromenager-cuisine, maison-connectee-securite, jardin-plein-air
 
 Ajouter une sous-catégorie : l'ajouter dans `lib/categories.ts`, dans
 `lib/auteurs-specialites.json` (titulaire) **et** dans `scripts/generate-covers.js`, puis
@@ -221,7 +226,7 @@ app/
 ├── layout.tsx            # Layout global — header/footer, meta par défaut, JSON-LD site
 ├── page.tsx              # Accueil
 ├── not-found.tsx         # 404
-├── sitemap.ts / robots.ts
+├── sitemap_index.xml, *-sitemap.xml (routes) / robots.ts
 ├── [slug]/page.tsx       # Article (content/posts/*.md) OU hub de rubrique
 ├── [slug]/[sub]/page.tsx # Page de sous-catégorie
 └── auteur/[author]/      # Page auteur

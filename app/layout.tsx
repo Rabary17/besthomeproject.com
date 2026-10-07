@@ -33,8 +33,9 @@ const inter = Inter({
   display: "swap",
 });
 
-// Menu principal = les 4 rubriques (structure du 2026-10-02, voir
-// lib/categories.ts).
+// Menu principal = les étapes du parcours + les kits (réorientation du
+// 2026-10-07, voir VISION.md et lib/categories.ts). « Équipements &
+// comparatifs » reste accessible depuis le pied de page et l'accueil.
 // Pages E-E-A-T (décision du 2026-09-30) : elles doivent rester
 // atteignables en un clic depuis n'importe où sur le site — elles sont
 // dans le pied de page, présent sur toutes les pages.
@@ -99,11 +100,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span>{SITE_NAME}</span>
             </a>
             <nav className="site-nav" aria-label="Navigation principale">
-              {SECTIONS.map((section) => (
+              {SECTIONS.filter((section) => section.slug !== "equipements-comparatifs").map((section) => (
                 <a key={section.slug} href={sectionUrl(section)}>
                   {section.short}
                 </a>
               ))}
+              <a href="/kits/">Kits</a>
             </nav>
           </div>
         </header>
@@ -119,13 +121,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <span>{SITE_NAME}</span>
                 </a>
                 <p className="footer-tagline">
-                  Guides, comparatifs et idées : la maison expliquée
-                  simplement.
+                  Ton projet de maison accompagné de A à Z : guides et kits,
+                  du budget à la remise des clés.
                 </p>
               </div>
-              <nav aria-label="Rubriques">
-                <span className="footer-heading">Rubriques</span>
+              <nav aria-label="Parcours et rubriques">
+                <span className="footer-heading">Ton projet</span>
                 <div className="footer-links">
+                  <a href="/parcours/">Le parcours</a>
+                  <a href="/kits/">Les kits</a>
                   {SECTIONS.map((section) => (
                     <a key={section.slug} href={sectionUrl(section)}>
                       {section.title}

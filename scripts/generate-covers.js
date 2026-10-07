@@ -36,28 +36,43 @@ const WHITE = "#FFFFFF";
 // avec lib/categories.ts (slug, titre, icône).
 const CATEGORIES = [
   // Rubriques
-  { slug: "guides-tutos", title: "Guides & Tutos", icon: "wrench" },
-  { slug: "comparatifs-achats", title: "Comparatifs & Achats", icon: "scale" },
-  { slug: "idees-inspiration", title: "Idées & Inspiration", icon: "lightbulb" },
-  { slug: "actu-aides", title: "Actu & Aides", icon: "newspaper" },
-  // Guides & Tutos
-  { slug: "bricolage-reparations", title: "Bricolage & Réparations", icon: "hammer" },
-  { slug: "peinture-sols-murs", title: "Peinture, Sols & Murs", icon: "paint-roller" },
+  { slug: "preparer-son-projet", title: "Préparer son projet", icon: "lightbulb" },
+  { slug: "lancer-le-projet", title: "Lancer le projet", icon: "scale" },
+  { slug: "chantier-etape-par-etape", title: "Le chantier, étape par étape", icon: "hammer" },
+  { slug: "livraison-reception", title: "Livraison & Réception", icon: "shield-check" },
+  { slug: "renovation-deco-amenagement", title: "Rénovation, Déco & Aménagement", icon: "lamp" },
+  { slug: "equipements-comparatifs", title: "Équipements & Comparatifs", icon: "house" },
+  // Préparer son projet
+  { slug: "aides-budget", title: "Budget, Financement & Aides", icon: "piggy-bank" },
+  { slug: "terrain-etudes", title: "Terrain & Études", icon: "trees" },
+  { slug: "plans-dessinateur", title: "Plans & Dessinateur", icon: "lightbulb" },
+  { slug: "devis-construction", title: "Devis de construction", icon: "scale" },
+  // Lancer le projet
+  { slug: "choisir-entreprises", title: "Choisir ses entreprises", icon: "shield-check" },
+  { slug: "permis-demarches", title: "Permis & Démarches", icon: "newspaper" },
+  { slug: "contrats-assurances", title: "Contrats & Assurances", icon: "shield-alert" },
+  // Le chantier, étape par étape
+  { slug: "fondations-gros-oeuvre", title: "Fondations & Gros œuvre", icon: "hammer" },
+  { slug: "hors-d-eau-hors-d-air", title: "Hors d'eau & Hors d'air", icon: "house" },
   { slug: "plomberie-electricite", title: "Plomberie & Électricité", icon: "plug-zap" },
+  { slug: "peinture-sols-murs", title: "Sols, Murs & Finitions", icon: "paint-roller" },
+  { slug: "suivi-chantier", title: "Suivi & Contrôles", icon: "shield-check" },
+  // Livraison & Réception
+  { slug: "reception-reserves", title: "Réception & Réserves", icon: "shield-check" },
+  { slug: "garanties-mise-en-service", title: "Garanties & Mise en service", icon: "shield-alert" },
+  // Rénovation, Déco & Aménagement
+  { slug: "renovation-travaux", title: "Rénovation & Travaux", icon: "hammer" },
+  { slug: "bricolage-reparations", title: "Bricolage & Réparations", icon: "hammer" },
+  { slug: "energie-economies", title: "Énergie & Isolation", icon: "thermometer" },
+  { slug: "deco-ambiance", title: "Déco & Ambiance", icon: "lamp" },
+  { slug: "amenagement-rangement", title: "Aménagement & Rangement", icon: "armchair" },
+  { slug: "maison-en-famille", title: "Maison en famille", icon: "baby" },
   { slug: "jardin-exterieur", title: "Jardin & Extérieur", icon: "flower-2" },
-  // Comparatifs & Achats
+  // Équipements & Comparatifs
   { slug: "outillage-equipement", title: "Outillage & Équipement", icon: "drill" },
   { slug: "electromenager-cuisine", title: "Électroménager & Cuisine", icon: "cooking-pot" },
   { slug: "maison-connectee-securite", title: "Maison connectée & Sécurité", icon: "house" },
   { slug: "jardin-plein-air", title: "Jardin & Plein air", icon: "trees" },
-  // Idées & Inspiration
-  { slug: "deco-ambiance", title: "Déco & Ambiance", icon: "lamp" },
-  { slug: "amenagement-rangement", title: "Aménagement & Rangement", icon: "armchair" },
-  { slug: "maison-en-famille", title: "Maison en famille", icon: "baby" },
-  // Actu & Aides
-  { slug: "aides-budget", title: "Aides & Budget travaux", icon: "piggy-bank" },
-  { slug: "energie-economies", title: "Énergie & Économies", icon: "thermometer" },
-  { slug: "nouveautes-tendances", title: "Nouveautés & Tendances", icon: "sparkles" },
 ];
 
 function readIconInner(name) {

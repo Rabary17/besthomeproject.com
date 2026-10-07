@@ -20,8 +20,8 @@ export default function MerciPage() {
         l&apos;adresse que tu as indiquée.
       </p>
       <p>
-        En attendant, retourne à <a href="/">l&apos;accueil</a> ou explore les{" "}
-        <a href="/guides-tutos/">guides et tutos</a>.
+        En attendant, retourne à <a href="/">l&apos;accueil</a> ou explore le{" "}
+        <a href="/parcours/">parcours de ton projet</a>.
       </p>
     </div>
   );

@@ -10,7 +10,8 @@ const slugsAuteurs = [...fs.readFileSync(path.join(racine, "lib/authors.ts"), "u
 const slugsCategories = [...fs.readFileSync(path.join(racine, "lib/categories.ts"), "utf8").matchAll(/slug: "([^"]+)"/g)].map((m) => m[1]);
 
 test("chaque sous-catégorie a un titulaire, et chaque auteur cité existe", () => {
-  const sousCategories = slugsCategories.filter((s) => !["guides-tutos", "comparatifs-achats", "idees-inspiration", "actu-aides"].includes(s));
+  const rubriques = ["preparer-son-projet", "lancer-le-projet", "chantier-etape-par-etape", "livraison-reception", "renovation-deco-amenagement", "equipements-comparatifs"];
+  const sousCategories = slugsCategories.filter((s) => !rubriques.includes(s));
   for (const s of sousCategories) assert.ok(REGLES.categories[s], `sous-catégorie sans titulaire : ${s}`);
   for (const [cat, a] of Object.entries(REGLES.categories)) {
     assert.ok(sousCategories.includes(cat), `catégorie inconnue : ${cat}`);

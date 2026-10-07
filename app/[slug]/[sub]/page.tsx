@@ -14,9 +14,9 @@ import {
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 // Page de sous-catégorie : /<rubrique>/<sous-categorie>/ (ex.
-// /guides-tutos/peinture-sols-murs/). Tant qu'elle ne contient aucun article, elle
-// est servie en noindex (évite d'exposer à Google des pages vides — risque
-// « thin content ») et n'apparaît pas dans le sitemap (app/sitemap.ts).
+// /guides-tutos/peinture-sols-murs/). Toujours en noindex, follow : seuls les
+// articles, auteurs et pages sont indexés — les catégories n'apparaissent pas
+// dans les sitemaps (voir lib/sitemaps.ts).
 
 // Génère les deux segments d'un coup ({ slug, sub }) : le
 // generateStaticParams du segment parent est défini dans une page (pas un
@@ -40,12 +40,12 @@ export async function generateMetadata({
   const entry = resolve(slug, subSlug);
   if (!entry) return {};
   const { section, sub } = entry;
-  const hasPosts = getPostsByCategory(sub.slug).length > 0;
   return {
     title: `${sub.title} — ${section.title}`,
     description: sub.body,
     alternates: { canonical: subcategoryUrl(section, sub) },
-    robots: hasPosts ? undefined : { index: false, follow: true },
+    // Catégories : jamais indexées (hors sitemap), mais les liens restent suivis.
+    robots: { index: false, follow: true },
     openGraph: {
       title: sub.title,
       description: sub.body,

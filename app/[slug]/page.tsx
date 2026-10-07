@@ -50,6 +50,8 @@ export async function generateMetadata({
       title: section.title,
       description: section.description,
       alternates: { canonical: sectionUrl(section) },
+      // Rubriques = catégories : jamais indexées, liens suivis.
+      robots: { index: false, follow: true },
       openGraph: {
         title: section.title,
         description: section.description,

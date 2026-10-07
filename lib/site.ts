@@ -3,7 +3,7 @@
 export const SITE_URL = "https://besthomeproject.com";
 export const SITE_NAME = "Best Home Project";
 export const SITE_DESCRIPTION =
-  "Best Home Project — guides de bricolage et de travaux, comparatifs d'outils et d'équipements, idées déco et aides à la rénovation, expliqués simplement.";
+  "Construis ta maison de A à Z : budget, plans, devis, entreprises, chantier, livraison, puis rénovation, déco et aménagement. Guides et kits pas à pas.";
 // Locale par défaut du site (balises lang, Open Graph).
 export const SITE_LOCALE = "fr_FR";
 export const SITE_LANG = "fr";
@@ -98,7 +98,9 @@ export const ZOHO_WEBFORM = {
 // (lib/schema.ts). Ordre de priorité pour Google : fiche Google Business
 // Profile / Maps d'Anmira Studio, page LinkedIn, chaîne YouTube (seulement
 // si on y publie des vidéos), puis Facebook, Pinterest et Instagram.
-export const SOCIAL_LINKS: { label: string; url: string }[] = [];
+export const SOCIAL_LINKS: { label: string; url: string }[] = [
+  { label: "LinkedIn", url: "https://www.linkedin.com/company/best-home-project" },
+];
 
 // Mentions légales : identité de l'éditeur (Anmira Studio) et de
 // l'hébergeur. Aucune valeur inventée : la forme juridique n'a pas été

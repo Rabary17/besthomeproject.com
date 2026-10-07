@@ -13,7 +13,8 @@
 //
 // Les six auteurs sont ceux de Techno Play (même équipe, mêmes photos et
 // profils) : leurs champs de couverture éditoriale ont été adaptés à la
-// maison et au bricolage pour besthomeproject.com. Rôles et bios décrivent
+// parcours d'un projet de maison (de la préparation à la livraison, puis
+// rénovation, déco et aménagement) pour besthomeproject.com. Rôles et bios décrivent
 // ce que chacun COUVRE sur le site — à faire valider par chacun avant mise
 // en ligne ; ne pas y ajouter d'expérience ou de diplôme non confirmés.
 import type { IconName } from "@/components/Icon";
@@ -51,15 +52,17 @@ export const AUTHORS: Author[] = [
     role: "Rédacteur en chef",
     image: "/authors/andrianina-rabarivelo.jpg",
     shortBio:
-      "Rédacteur en chef de Best Home Project, Andrianina RABARIVELO est développeur web et spécialiste du référencement. Il conçoit des automatisations et travaille avec les outils d'IA au quotidien, et couvre ici la maison connectée, la sécurité et les guides de travaux. Guitariste à ses heures, il applique une règle simple à chaque article : à la fin, ton projet doit avoir avancé.",
+      "Rédacteur en chef de Best Home Project, Andrianina RABARIVELO est développeur web et spécialiste du référencement. Il conçoit des automatisations et travaille avec les outils d'IA au quotidien, et couvre ici le cadrage du projet, le choix des entreprises, le suivi de chantier, la maison connectée et la sécurité. Guitariste à ses heures, il applique une règle simple à chaque article : à la fin, ton projet doit avoir avancé.",
     bio: [
       "Andrianina RABARIVELO est le rédacteur en chef de Best Home Project. Développeur et responsable technique, il passe ses journées à la croisée du web, du référencement et de l'intelligence artificielle : sites WordPress et Next.js, scripts d'automatisation en Python et Node.js, extensions Chrome, infra cloud. Bref, la tech, il ne se contente pas d'en parler : il la fait tourner.",
-      "Sur Best Home Project, il fixe la ligne éditoriale, choisit les sujets et veille à ce que chaque guide, comparatif ou idée réponde à une vraie question, avec des infos vérifiées. Il suit en particulier la maison connectée et la sécurité du logement (caméras, serrures, thermostats, domotique), un terrain où son regard de développeur aide à séparer le gadget utile de la fausse bonne idée, ainsi que les guides de bricolage, de plomberie, d'électricité et de jardin.",
+      "Sur Best Home Project, il fixe la ligne éditoriale, choisit les sujets et veille à ce que chaque guide, kit ou comparatif réponde à une vraie question d'un porteur de projet, avec des infos vérifiées. Il suit en particulier le lancement du projet (terrain, permis, choix des entreprises), les grandes étapes du chantier, de la fondation à la livraison, ainsi que la maison connectée et la sécurité du logement, un terrain où son regard de développeur aide à séparer le gadget utile de la fausse bonne idée.",
       "Son critère, simple et sans pitié : un bon guide se juge à une seule chose — est-ce que ton projet a avancé à la fin ? Et quand le sujet touche à l'électricité, au gaz ou à la structure du logement, la bonne réponse est parfois : appelle un pro.",
       "Quand il lâche le clavier, c'est souvent pour prendre sa guitare : Andrianina est aussi guitariste.",
       "Tu peux aussi suivre ses analyses tech et IA, en français et en anglais, sur LinkedIn, X et YouTube.",
     ],
     expertise: [
+      "Lancement d'un projet de construction (terrain, permis, entreprises)",
+      "Étapes du chantier, de la fondation à la livraison",
       "Maison connectée et domotique",
       "Sécurité du logement (caméras, serrures, alarmes)",
       "Développement web (WordPress, Next.js)",
@@ -81,9 +84,9 @@ export const AUTHORS: Author[] = [
     role: "Spécialiste déco, ambiance & salle de bain",
     image: "/authors/felana-rabarivelo.jpg",
     shortBio:
-      "Chez Best Home Project, Felana RABARIVELO couvre la déco, l'ambiance et la salle de bain : couleurs, textiles, luminaires et tendances venues des réseaux. Son fil rouge : te dire si une idée tient ses promesses dans un vrai logement, au-delà de la jolie photo.",
+      "Chez Best Home Project, Felana RABARIVELO couvre la déco, l'ambiance et la salle de bain : l'étape où une maison neuve ou rénovée devient un chez-soi. Couleurs, textiles, luminaires, tendances venues des réseaux : son fil rouge est de te dire si une idée tient ses promesses dans un vrai logement, au-delà de la jolie photo.",
     bio: [
-      "Felana RABARIVELO est spécialiste déco, ambiance et salle de bain chez Best Home Project. Associer les couleurs, choisir un luminaire, habiller une pièce sans se ruiner, repenser une salle de bain : son terrain de jeu, c'est tout ce qui donne du caractère à un intérieur. L'esthétique et le soin au quotidien font aussi partie de ses centres d'intérêt, d'où un œil particulier pour la salle de bain.",
+      "Felana RABARIVELO est spécialiste déco, ambiance et salle de bain chez Best Home Project. Une fois le chantier livré ou la rénovation terminée, c'est elle qui t'aide à faire de la maison un lieu qui te ressemble. Associer les couleurs, choisir un luminaire, habiller une pièce sans se ruiner, repenser une salle de bain : son terrain de jeu, c'est tout ce qui donne du caractère à un intérieur. L'esthétique et le soin au quotidien font aussi partie de ses centres d'intérêt, d'où un œil particulier pour la salle de bain.",
       "Elle s'intéresse aussi à la façon dont Instagram et TikTok font et défont les tendances déco, et à celles qui valent vraiment le coup une fois chez toi. Son angle : le vécu avant la photo de magazine, avec une question qui revient toujours — est-ce que ça marche dans un vrai salon, avec de vrais meubles et un vrai budget ?",
       "Tu peux suivre Felana sur Instagram, TikTok, Facebook et LinkedIn.",
     ],
@@ -104,17 +107,18 @@ export const AUTHORS: Author[] = [
     slug: "andee-rakotovao",
     name: "Andee RAKOTOVAO",
     initials: "AR",
-    role: "Spécialiste design, aménagement & éclairage",
+    role: "Spécialiste plans, aménagement & finitions",
     image: "/authors/andee-rakotovao.jpg",
     shortBio:
-      "Andee RAKOTOVAO couvre pour Best Home Project l'aménagement, le rangement, l'éclairage et les finitions : peinture, sols et murs. Avec un œil de designer, Andee juge chaque idée sur ce qui compte vraiment : que la pièce soit belle, mais surtout qu'elle fonctionne au quotidien.",
+      "Andee RAKOTOVAO couvre pour Best Home Project la lecture des plans, l'aménagement, le rangement, l'éclairage et les finitions : peinture, sols et murs. Avec un œil de designer, Andee juge chaque idée sur ce qui compte vraiment : que la pièce soit belle, mais surtout qu'elle fonctionne au quotidien.",
     bio: [
-      "Andee RAKOTOVAO est spécialiste design, aménagement et éclairage chez Best Home Project. Design, graphisme, photographie : ces centres d'intérêt ont un point commun avec la maison, c'est une affaire de proportions, de lumière et de détails.",
-      "Sur le site, Andee s'occupe de l'aménagement et du rangement (petites surfaces, entrées, coins bureau), ainsi que de la peinture, des sols et des murs, avec les critères qui comptent quand on veut un résultat net : bien préparer le support, choisir la bonne finition, penser la lumière. Les « avant/après » truqués et les astuces de magazine sans mode d'emploi n'ont qu'à bien se tenir.",
+      "Andee RAKOTOVAO est spécialiste plans, aménagement et finitions chez Best Home Project. Design, graphisme, photographie : ces centres d'intérêt ont un point commun avec la maison, c'est une affaire de proportions, de lumière et de détails.",
+      "Sur le site, Andee t'aide à comprendre tes plans et à penser l'agencement de tes pièces avant le chantier, puis s'occupe de l'aménagement et du rangement (petites surfaces, entrées, coins bureau), ainsi que des finitions : peinture, sols et murs, avec les critères qui comptent quand on veut un résultat net : bien préparer le support, choisir la bonne finition, penser la lumière. Les « avant/après » truqués et les astuces de magazine sans mode d'emploi n'ont qu'à bien se tenir.",
       "Tu peux suivre Andee sur Instagram, TikTok, LinkedIn et Facebook.",
     ],
     expertise: [
       "Design et graphisme",
+      "Lecture de plans et agencement des pièces",
       "Aménagement et rangement",
       "Peinture, sols et murs (finitions)",
       "Éclairage",
@@ -131,17 +135,17 @@ export const AUTHORS: Author[] = [
     slug: "mialy-andriaharisoa",
     name: "Mialy ANDRIAHARISOA",
     initials: "MA",
-    role: "Spécialiste famille, cuisine & électroménager",
+    role: "Spécialiste maison en famille, cuisine & équipements",
     image: "/authors/mialy-andriaharisoa.jpg",
     shortBio:
-      "Mialy ANDRIAHARISOA couvre pour Best Home Project la maison en famille : chambre d'enfant, sécurité des petits, cuisine et électroménager, et même un peu de couture pour la maison. Son critère : un équipement doit faire gagner du temps à la maison, pas en faire perdre.",
+      "Mialy ANDRIAHARISOA couvre pour Best Home Project la maison pensée pour toute la famille, enfants comme parents : chambre d'enfant, sécurité des petits, cuisine et électroménager, et même un peu de couture pour la maison. Son critère : une maison et ses équipements doivent faire gagner du temps au quotidien, pas en faire perdre.",
     bio: [
-      "Mialy ANDRIAHARISOA est spécialiste famille, cuisine et électroménager chez Best Home Project. Maman et enfant, couture, cuisine : ses sujets de prédilection se vivent à la maison, là où la famille passe le plus clair de son temps.",
+      "Mialy ANDRIAHARISOA est spécialiste maison en famille, cuisine et équipements chez Best Home Project. Elle t'aide à penser ta maison pour ceux qui vont y vivre : enfants, conjoint, parents. Maman et enfant, couture, cuisine : ses sujets de prédilection se vivent à la maison, là où la famille passe le plus clair de son temps.",
       "Chambre d'enfant qui évolue avec l'âge, maison sécurisée pour les petits, robots de cuisine, aspirateurs, réfrigérateurs, rideaux et coussins cousus main : Mialy passe chaque sujet au filtre d'une question simple. Est-ce que ça facilite vraiment la vie d'une famille, ou est-ce un truc de plus à ranger ?",
       "Tu peux suivre Mialy sur Facebook, TikTok et LinkedIn.",
     ],
     expertise: [
-      "Maison en famille (chambre d'enfant, sécurité des petits)",
+      "Maison en famille (chambre d'enfant, sécurité des petits, logement pour ses parents)",
       "Cuisine et électroménager",
       "Couture pour la maison",
       "Organisation du quotidien",
@@ -156,21 +160,22 @@ export const AUTHORS: Author[] = [
     slug: "nekena-judicael",
     name: "Nekena JUDICAËL",
     initials: "NJ",
-    role: "Spécialiste budget, outillage & actu maison",
+    role: "Spécialiste budget, financement & devis",
     image: "/authors/nekena-judicael.jpg",
     shortBio:
-      "Nekena JUDICAËL suit pour Best Home Project le budget des travaux, les aides à la rénovation, les économies d'énergie, l'outillage et l'actualité de la maison. Son rôle : t'expliquer ce que chaque règle, chaque aide ou chaque nouveauté change vraiment pour ton portefeuille, sans recopier les communiqués.",
+      "Nekena JUDICAËL suit pour Best Home Project le budget et le financement du projet, la lecture et la comparaison des devis, les contrats et garanties, les aides, les économies d'énergie et l'outillage. Son rôle : t'expliquer ce que chaque règle, chaque aide ou chaque ligne de devis change vraiment pour ton portefeuille, sans recopier les communiqués.",
     bio: [
-      "Nekena JUDICAËL est spécialiste budget, outillage et actualité de la maison chez Best Home Project. Sa rubrique de prédilection : Actu & Aides, des dispositifs de soutien à la rénovation aux nouvelles normes, en passant par les nouveautés qui arrivent en magasin. Il s'intéresse au business et aux stratégies des entreprises, un réflexe utile pour lire un devis ou comparer deux offres.",
-      "Nekena couvre aussi les économies d'énergie (isolation, chauffage, consommation) et l'outillage : perceuses, visseuses, ponceuses et compagnie. Le fil rouge : relier chaque nouveauté ou chaque achat à ce qu'il change concrètement pour ton budget.",
+      "Nekena JUDICAËL est spécialiste budget, financement et devis chez Best Home Project. Son terrain de prédilection : le début du projet, quand il faut poser un budget réaliste, comprendre les aides et comparer des devis, puis les contrats et garanties qui protègent ensuite. Il s'intéresse au business et aux stratégies des entreprises, un réflexe utile pour lire un devis ou comparer deux offres.",
+      "Nekena couvre aussi les économies d'énergie (isolation, chauffage, consommation) et l'outillage : perceuses, visseuses, ponceuses et compagnie. Le fil rouge : relier chaque décision ou chaque achat à ce qu'il change concrètement pour ton budget.",
       "Tu peux suivre Nekena sur LinkedIn et Facebook.",
     ],
     expertise: [
-      "Aides à la rénovation et budget travaux",
-      "Lecture de devis",
+      "Budget et financement d'un projet de maison",
+      "Lecture et comparaison de devis",
+      "Contrats, assurances et garanties",
+      "Aides à la rénovation et à la construction",
       "Énergie et économies",
       "Outillage et équipement",
-      "Actualité et nouveautés de la maison",
     ],
     socials: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/nekena-judica%C3%ABl-8916802ba/", icon: "linkedin" },
@@ -184,9 +189,9 @@ export const AUTHORS: Author[] = [
     role: "Spécialiste outils numériques & sites web",
     image: "/authors/dina-rakotoarivelo.jpg",
     shortBio:
-      "Dina RAKOTOARIVELO couvre pour Best Home Project les outils numériques du projet maison : applis de plan 3D, simulateurs, comparateurs de devis, plateformes d'artisans, et la création de sites avec WordPress. Chaque guide vise un outil que tu sais utiliser seul, sans passer par trois agences.",
+      "Dina RAKOTOARIVELO couvre pour Best Home Project les outils numériques du projet de maison : applis de plan 3D, simulateurs de budget, comparateurs de devis, plateformes pour trouver dessinateurs et artisans, outils de suivi, et la création de sites avec WordPress. Chaque guide vise un outil que tu sais utiliser seul, sans passer par trois agences.",
     bio: [
-      "Dina RAKOTOARIVELO est spécialiste WordPress et intégration HTML/CSS, et couvre chez Best Home Project les outils numériques qui facilitent un projet de maison : applis de plan et de visualisation 3D, simulateurs de budget ou de peinture, plateformes de mise en relation avec des artisans.",
+      "Dina RAKOTOARIVELO est spécialiste WordPress et intégration HTML/CSS, et couvre chez Best Home Project les outils numériques qui facilitent un projet de maison, de la préparation au suivi de chantier : applis de plan et de visualisation 3D, simulateurs de budget ou de peinture, plateformes de mise en relation avec des dessinateurs et des artisans.",
       "Elle traduit le jargon du web en gestes concrets : comprendre ce que fait une appli, un simulateur ou un comparateur de devis, et savoir si tu peux lui faire confiance. Pour les artisans et les passionnés qui veulent leur propre site, elle explique aussi comment le créer avec WordPress, proprement et sans jargon.",
       "Tu peux suivre Dina sur LinkedIn et Facebook.",
     ],

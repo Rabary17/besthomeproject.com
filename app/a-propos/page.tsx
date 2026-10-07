@@ -20,11 +20,13 @@ export default function AboutPage() {
     <div className="page">
       <h1>À propos de {SITE_NAME}</h1>
       <p>
-        {SITE_NAME}, c&apos;est le média maison et bricolage indépendant qui
-        répond aux questions que tu te poses vraiment : comment réaliser ce
-        chantier, quoi acheter sans te faire avoir, comment aménager ta
-        pièce, et quelles aides existent pour tes travaux. Le tout sans
-        jargon — et sans baratin.
+        {SITE_NAME}, c&apos;est un site indépendant qui accompagne, de A à
+        Z, les personnes qui veulent construire leur maison : en couple,
+        pour leur famille ou pour leurs parents. Du budget et des plans
+        jusqu&apos;à la remise des clés, puis pour la rénovation, la déco et
+        l&apos;aménagement, on répond aux questions que tu te poses
+        vraiment, avec des guides clairs et des kits pour chaque étape. Le
+        tout sans jargon, et sans baratin.
       </p>
 
       <h2>Notre ligne éditoriale</h2>
