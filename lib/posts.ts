@@ -13,7 +13,7 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import { resolveCategory, type SubcategorySlug, type SectionSlug } from "./categories";
-import { resolveAuthor } from "./authors";
+import { choisirAuteur, resolveAuthor } from "./authors";
 import { SITE_NAME } from "./site";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
@@ -26,9 +26,10 @@ export type PostFrontmatter = {
   description: string;
   date: string; // format ISO "AAAA-MM-JJ"
   slug: string;
-  // Slug d'un auteur de lib/authors.ts — sans valeur, l'article est
-  // attribué au rédacteur en chef (voir resolveAuthor).
+  // Slug d'un auteur de lib/authors.ts. Sans valeur, l'auteur est choisi
+  // automatiquement selon la spécialité (voir choisirAuteur).
   author?: string;
+  tags?: string[];
   // Sources consultées (affichées sous l'article, signal E-E-A-T) et date
   // de consultation "AAAA-MM-JJ". Exigées par le garde-fou si l'article cite
   // une date postérieure à la coupure du modèle (voir scripts/generation/).
@@ -68,6 +69,7 @@ function readPost(slug: string): Post {
   const fm = data as Omit<PostFrontmatter, "slug">;
   return {
     ...fm,
+    author: fm.author ?? choisirAuteur(fm),
     slug,
     contentHtml: marked.parse(content, { async: false }) as string,
   };

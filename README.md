@@ -31,7 +31,7 @@ ISR.
 - JSON-LD (schema.org) : `WebSite`/`Organization` (avec `parentOrganization` Anmira Studio)
   sur tout le site, `BlogPosting` + `BreadcrumbList` sur chaque article, `Person`/`ProfilePage`
   pour les auteurs, `FAQPage` (accueil et FAQ) — voir `lib/schema.ts`.
-- `sitemap_index.xml` (+ `post-sitemap.xml`, `page-sitemap.xml`, `author-sitemap.xml`, façon Yoast, voir `lib/sitemaps.ts`) et `robots.txt` générés automatiquement ; rubriques/sous-catégories en `noindex, follow`, hors sitemap.
+- `sitemap.xml` (+ `post-sitemap.xml`, `page-sitemap.xml`, `author-sitemap.xml`, façon Yoast, voir `lib/sitemaps.ts`) et `robots.txt` générés automatiquement ; rubriques/sous-catégories en `noindex, follow`, hors sitemap.
 - HTML sémantique (un seul `h1` par page, hiérarchie de titres propre).
 
 ## Ajouter un article
@@ -226,7 +226,7 @@ app/
 ├── layout.tsx            # Layout global — header/footer, meta par défaut, JSON-LD site
 ├── page.tsx              # Accueil
 ├── not-found.tsx         # 404
-├── sitemap_index.xml, *-sitemap.xml (routes) / robots.ts
+├── sitemap.xml, *-sitemap.xml (routes) / robots.ts
 ├── [slug]/page.tsx       # Article (content/posts/*.md) OU hub de rubrique
 ├── [slug]/[sub]/page.tsx # Page de sous-catégorie
 └── auteur/[author]/      # Page auteur

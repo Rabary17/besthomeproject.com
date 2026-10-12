@@ -48,8 +48,8 @@ function correspondances(texte, motsCles = REGLES.motsCles) {
  * @param {{titre?: string, categorie?: string, tags?: string[]}} article
  * @returns {{auteur: string, raison: string, correspondances: Record<string,string[]>}}
  */
-function choisirAuteur({ titre = "", categorie = "", tags = [] } = {}, regles = REGLES) {
-  const trouve = correspondances([titre, ...tags].join(" "), regles.motsCles);
+function choisirAuteur({ titre = "", description = "", categorie = "", tags = [] } = {}, regles = REGLES) {
+  const trouve = correspondances([titre, description, ...tags].join(" "), regles.motsCles);
   const titulaire = regles.categories[categorie];
   const max = Math.max(0, ...Object.values(trouve).map((l) => l.length));
   const enTete = Object.keys(trouve).filter((a) => trouve[a].length === max);
@@ -74,7 +74,7 @@ function lireFrontmatter(source) {
     return m ? m[1].trim().replace(/^["']|["']$/g, "") : "";
   };
   const tags = champ("tags").replace(/^\[|\]$/g, "").split(",").map((t) => t.trim().replace(/^["']|["']$/g, "")).filter(Boolean);
-  return { titre: champ("title"), categorie: champ("category"), tags };
+  return { titre: champ("title"), description: champ("description"), categorie: champ("category"), tags };
 }
 
 /** Écrit (ou remplace) la ligne `author:` du frontmatter, sans reformater le reste. */

@@ -211,6 +211,51 @@ export const AUTHORS: Author[] = [
 
 export const DEFAULT_AUTHOR_SLUG = "andrianina-rabarivelo";
 
+const normaliser = (texte: string) =>
+  texte
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[^a-z0-9'\- ]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const echapper = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/**
+ * Auteur choisi automatiquement selon la spécialité (même algorithme que
+ * scripts/generation/choisir-auteur.js) :
+ *   1. l'auteur qui cumule le plus de mots-clés du titre, de la description
+ *      et des tags l'emporte ;
+ *   2. en cas d'égalité, le titulaire de la sous-catégorie départage ;
+ *   3. sinon, le rédacteur en chef (`defaut`).
+ * Un champ `author:` écrit dans le frontmatter reste prioritaire.
+ */
+export function choisirAuteur(article: {
+  title?: string;
+  description?: string;
+  category?: string;
+  tags?: string[];
+}): string {
+  const texte = ` ${normaliser([article.title, article.description, ...(article.tags ?? [])].filter(Boolean).join(" "))} `;
+  const motsCles = REGLES.motsCles as Record<string, string[]>;
+  const scores: Record<string, number> = {};
+  for (const [auteur, liste] of Object.entries(motsCles)) {
+    const trouves = liste.filter((kw) =>
+      new RegExp(`(^|[^a-z0-9])${echapper(normaliser(kw))}(s|x)?(?=$|[^a-z0-9])`).test(texte)
+    );
+    if (trouves.length) scores[auteur] = trouves.length;
+  }
+  const max = Math.max(0, ...Object.values(scores));
+  const enTete = Object.keys(scores).filter((a) => scores[a] === max);
+  const categories = REGLES.categories as Record<string, string>;
+  const titulaire = categories[article.category ?? ""];
+  if (enTete.length === 1) return enTete[0];
+  if (enTete.length > 1 && titulaire && enTete.includes(titulaire)) return titulaire;
+  return titulaire ?? REGLES.defaut;
+}
+
 export function getAuthor(slug: string | undefined): Author | undefined {
   return AUTHORS.find((a) => a.slug === slug);
 }

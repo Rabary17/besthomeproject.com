@@ -314,6 +314,7 @@ a:hover { color: var(--brand-hover); text-decoration-thickness: 2px; }
 .post-meta { color: var(--fg-3); font-size: var(--fs-small); margin-top: var(--space-2); }
 .post-content h2 { margin-top: var(--space-7); font-size: 1.5rem; }
 .post-content p { line-height: 1.7; }
+.post-content img { display: block; width: 100%; max-width: 640px; height: auto; margin: var(--space-5) auto; border-radius: var(--radius-md); }
 
 /* --- Formulaire de contact --- */
 .contact-form { display: flex; flex-direction: column; gap: var(--space-1); margin-top: var(--space-5); max-width: 480px; }

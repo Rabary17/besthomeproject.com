@@ -1,7 +1,7 @@
-// Sitemaps séparés façon Yoast SEO : un index (sitemap_index.xml) qui pointe
+// Sitemaps séparés façon Yoast SEO : un index (sitemap.xml) qui pointe
 // vers un sitemap par type de contenu.
 //
-//   /sitemap_index.xml   → index
+//   /sitemap.xml       → index
 //   /post-sitemap.xml    → articles
 //   /page-sitemap.xml    → pages (accueil, parcours, kits, à propos, FAQ, contact)
 //   /author-sitemap.xml  → auteurs ayant au moins un article publié

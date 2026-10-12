@@ -1,5 +1,5 @@
 {
-  "_doc": "Routage des articles vers un auteur selon sa spécialité, appliqué au moment de la publication (scripts/generation/choisir-auteur.js, npm run new-post). 1) mots-clés du titre/des tags : l'auteur qui cumule le plus de correspondances l'emporte ; 2) sinon, titulaire de la sous-catégorie ; 3) sinon, rédacteur en chef. Le frontmatter `author:` d'un article reste prioritaire et se modifie à la main si besoin. Mots-clés sans accents, mot entier (pluriel en s/x toléré).",
+  "_doc": "Routage des articles vers un auteur selon sa spécialité, appliqué automatiquement par le site au build (lib/authors.ts, choisirAuteur) et au moment de la publication (scripts/generation/choisir-auteur.js, npm run new-post). 1) mots-clés du titre, de la description et des tags : l'auteur qui cumule le plus de correspondances l'emporte ; 2) égalité : titulaire de la sous-catégorie ; 3) sinon, rédacteur en chef. Le frontmatter `author:` d'un article reste prioritaire. Mots-clés sans accents, mot entier (pluriel en s/x toléré).",
   "defaut": "andrianina-rabarivelo",
   "categories": {
     "aides-budget": "nekena-judicael",

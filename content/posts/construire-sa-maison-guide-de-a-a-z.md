@@ -3,7 +3,6 @@ title: "Construire sa maison : le guide de A à Z, étape par étape"
 seoTitle: "Construire sa maison : le guide complet de A à Z"
 description: "Budget, terrain, plans, permis, entreprises, chantier, réception : les étapes pour construire sa maison de A à Z, sans rien oublier."
 date: "2026-10-12"
-author: "andrianina-rabarivelo"
 category: "preparer-son-projet"
 image: "/images/articles/construire-sa-maison-couverture.webp"
 imageAlt: "Plans d'architecte et casque de chantier posés sur un sol ensoleillé"
@@ -24,9 +23,9 @@ Une maison se construit dans un ordre précis : budget, terrain, plans, permis, 
 
 ![Bureau avec calculatrice, documents de budget et stylos colorés](/images/articles/construire-sa-maison-budget.webp)
 
-Le budget décide de tout le reste. Il faut additionner ce que tu peux apporter, ce que la banque accepte de prêter et ce que coûtera réellement la construction. Le prix au mètre carré annoncé par un constructeur ne suffit pas, car il ignore souvent le terrain, les raccordements, les frais de notaire et l'assurance.
+Le **budget** décide de tout le reste. Il faut additionner ce que tu peux apporter, ce que la banque accepte de prêter et ce que coûtera réellement la construction. Le prix au mètre carré annoncé par un **constructeur** ne suffit pas, car il ignore souvent le **terrain**, les **raccordements**, les frais de notaire et l'assurance.
 
-Prévois une marge d'au moins dix pour cent pour les imprévus, surtout si le sol ou le terrain réserve des surprises. Ton plan de financement doit montrer les échéances, les taux et la durée du prêt. Un courtier ou ton conseiller bancaire peut simuler plusieurs scénarios en quelques minutes.
+Prévois une marge d'au moins dix pour cent pour les imprévus, surtout si le sol ou le terrain réserve des surprises. Ton **plan de financement** doit montrer les échéances, les taux et la durée du **prêt**. Un courtier ou ton conseiller bancaire peut simuler plusieurs scénarios en quelques minutes.
 
 Vérifie aussi les aides du moment, dont certains prêts aidés, car leurs conditions changent souvent d'une année à l'autre. Chaque aide a ses critères de ressources, de zone et de performance énergétique. Un seul dossier mal monté peut faire perdre une aide qui pesait plusieurs milliers d'euros.
 
@@ -34,9 +33,9 @@ Vérifie aussi les aides du moment, dont certains prêts aidés, car leurs condi
 
 ![Vue aérienne d'un terrain vierge avec arbres et champs](/images/articles/construire-sa-maison-terrain.webp)
 
-Le terrain engage ton projet pour des décennies. Avant de signer le compromis, vérifie le zonage au plan local d'urbanisme, qui fixe la hauteur, l'emprise au sol et l'implantation possibles. Un terrain constructible sur le papier ne l'est pas toujours dans les faits.
+Le **terrain** engage ton projet pour des décennies. Avant de signer le compromis, vérifie le **zonage** au **plan local d'urbanisme**, qui fixe la hauteur, l'emprise au sol et l'implantation possibles. Un **terrain constructible** sur le papier ne l'est pas toujours dans les faits.
 
-Dans les zones exposées au retrait-gonflement des argiles, une étude de sol est obligatoire avant la construction. Elle détermine le type de fondations, donc leur coût. Demande aussi le raccordement aux réseaux : eau, électricité, assainissement. Un raccordement lointain peut alourdir la facture de plusieurs milliers d'euros.
+Dans les zones exposées au **retrait-gonflement des argiles**, une **étude de sol** est obligatoire avant la construction. Elle détermine le type de **fondations**, donc leur coût. Demande aussi le **raccordement** aux réseaux : eau, électricité, assainissement. Un raccordement lointain peut alourdir la facture de plusieurs milliers d'euros.
 
 Pense enfin à la voie d'accès, à l'orientation et à la vue. Visite le terrain à plusieurs moments de la journée, et si possible sous la pluie, pour repérer les zones qui stagnent. Un jardin encore détrempé trois jours après la pluie en dit long sur un sol.
 
@@ -44,9 +43,9 @@ Pense enfin à la voie d'accès, à l'orientation et à la vue. Visite le terrai
 
 ![Croquis d'architecte et outils de dessin sur une table](/images/articles/construire-sa-maison-plans.webp)
 
-Le plan transforme ton besoin en décisions concrètes : nombre de chambres, place du bureau, ouverture sur le jardin. Un dessinateur ou un architecte t'accompagne sur ces choix. Compare leurs honoraires et leur façon de travailler avant de choisir, car certains proposent un suivi de chantier, et d'autres non.
+Le plan transforme ton besoin en décisions concrètes : nombre de chambres, place du bureau, ouverture sur le jardin. Un **dessinateur** ou un **architecte** t'accompagne sur ces choix. Compare leurs honoraires et leur façon de travailler avant de choisir, car certains proposent un suivi de **chantier**, et d'autres non.
 
-Une fois le projet dessiné, demande au minimum trois devis sur un même cahier des charges. Sans base commune, les montants ne se comparent pas. Vérifie chaque ligne : fondations, isolation, menuiseries, électricité, options et finitions. La RE2020, en vigueur pour les logements neufs, encadre la performance énergétique : demande comment chaque constructeur la respecte.
+Une fois le projet dessiné, demande au minimum trois **devis** sur un même **cahier des charges**. Sans base commune, les montants ne se comparent pas. Vérifie chaque ligne : **fondations**, isolation, menuiseries, électricité, options et finitions. La **RE2020**, en vigueur pour les logements neufs, encadre la performance énergétique : demande comment chaque **constructeur** la respecte.
 
 Méfie-toi des prix trop bas, qui cachent souvent des postes oubliés. Demande une liste précise des exclusions et des options. Un bon devis précise les marques, les quantités et les délais, et tu peux le relire seul, sans jargon.
 
@@ -54,17 +53,17 @@ Méfie-toi des prix trop bas, qui cachent souvent des postes oubliés. Demande u
 
 ![Rendez-vous entre professionnels et client autour d'un projet immobilier](/images/articles/construire-sa-maison-permis-entreprises.webp)
 
-Le permis de construire s'instruit en général en deux mois pour une maison individuelle, parfois trois dans certains secteurs protégés. Le délai démarre au dépôt du dossier en mairie. Une fois le permis accordé, affiche-le sur le terrain : cet affichage fait courir le délai pendant lequel des tiers peuvent le contester.
+Le **permis de construire** s'instruit en général en deux mois pour une **maison individuelle**, parfois trois dans certains secteurs protégés. Le délai démarre au dépôt du dossier en mairie. Une fois le permis accordé, affiche-le sur le **terrain** : cet affichage fait courir le délai pendant lequel des tiers peuvent le contester.
 
-Pour choisir les entreprises, tu as deux grandes options. Le contrat de construction de maison individuelle, ou CCMI, regroupe la conception et la construction auprès d'un seul interlocuteur. L'autre option consiste à signer séparément avec un maître d'œuvre et des artisans. Le CCMI prévoit un délai de rétractation de dix jours après signature.
+Pour choisir les **entreprises**, tu as deux grandes options. Le **contrat de construction de maison individuelle**, ou **CCMI**, regroupe la conception et la construction auprès d'un seul interlocuteur. L'autre option consiste à signer séparément avec un **maître d'œuvre** et des artisans. Le CCMI prévoit un délai de rétractation de dix jours après signature.
 
-Dans tous les cas, vérifie les assurances de chaque entreprise, sa garantie décennale et les références de chantiers réels. En tant que maître d'ouvrage, tu dois aussi souscrire une assurance dommages-ouvrage avant l'ouverture du chantier. Elle conditionne souvent le déblocage du prêt, donc le démarrage des travaux.
+Dans tous les cas, vérifie les assurances de chaque entreprise, sa **garantie décennale** et les références de chantiers réels. En tant que **maître d'ouvrage**, tu dois aussi souscrire une assurance **dommages-ouvrage** avant l'ouverture du **chantier**. Elle conditionne souvent le déblocage du **prêt**, donc le démarrage des travaux.
 
 ## Suivre le chantier, de la fondation aux finitions
 
 ![Maisons neuves en construction avec échafaudages](/images/articles/construire-sa-maison-chantier.webp)
 
-Un chantier avance par étapes : fondations, gros œuvre, hors d'eau et hors d'air, puis second œuvre et finitions. Chaque étape mérite une visite. Demande le calendrier au démarrage, et fais le point chaque semaine, même brièvement, avec le conducteur de travaux.
+Un **chantier** avance par étapes : **fondations**, **gros œuvre**, **hors d'eau et hors d'air**, puis **second œuvre** et finitions. Chaque étape mérite une visite. Demande le calendrier au démarrage, et fais le point chaque semaine, même brièvement, avec le **conducteur de travaux**.
 
 Ne paie jamais une étape non réalisée. Compare chaque appel de fonds aux travaux visibles sur place, et garde une trace écrite de chaque réunion de chantier. Un compte rendu envoyé par mail vaut plus qu'une conversation dont personne ne se souvient.
 
@@ -74,11 +73,11 @@ Les points de contrôle les plus utiles se situent avant de fermer un mur : pass
 
 ![Main tenant un trousseau de clés de nouvelle maison](/images/articles/construire-sa-maison-reception.webp)
 
-La réception est un moment formel. Tu visites la maison avec le constructeur, pièce par pièce, et tu notes chaque défaut dans un procès-verbal. Les réserves signalées à ce moment-là sont celles que l'entreprise doit lever en priorité, avant le paiement du solde.
+La **réception** est un moment formel. Tu visites la maison avec le **constructeur**, pièce par pièce, et tu notes chaque défaut dans un **procès-verbal**. Les **réserves** signalées à ce moment-là sont celles que l'entreprise doit lever en priorité, avant le paiement du solde.
 
-Les garanties s'enchaînent. La garantie de parfait achèvement couvre un an les désordres signalés. La garantie biennale couvre deux ans les équipements dissociables, comme une porte de placard ou un radiateur. La garantie décennale protège dix ans contre les dommages qui compromettent la solidité de l'ouvrage.
+Les **garanties** s'enchaînent. La **garantie de parfait achèvement** couvre un an les désordres signalés. La **garantie biennale** couvre deux ans les équipements dissociables, comme une porte de placard ou un radiateur. La **garantie décennale** protège dix ans contre les dommages qui compromettent la solidité de l'ouvrage.
 
-Garde précieusement les factures, les notices, les plans d'exécution et le procès-verbal de réception. Ces documents serviront en cas de revente, de sinistre ou de travaux ultérieurs. Le tableau ci-dessous résume les étapes et ce qu'il faut obtenir à chacune.
+Garde précieusement les factures, les notices, les **plans** d'exécution et le procès-verbal de réception. Ces documents serviront en cas de revente, de sinistre ou de travaux ultérieurs. Le tableau ci-dessous résume les étapes et ce qu'il faut obtenir à chacune.
 
 | Étape | Ce qu'il faut obtenir | Point de vigilance |
 | --- | --- | --- |
