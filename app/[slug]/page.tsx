@@ -16,7 +16,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import AuthorBox from "@/components/AuthorBox";
 import ArticleCard from "@/components/ArticleCard";
 import SectionHub from "@/components/SectionHub";
-import { blogPostingSchema } from "@/lib/schema";
+import { blogPostingSchema, faqSchema } from "@/lib/schema";
 
 // Ce segment sert deux types de pages au premier niveau d'URL :
 //   - les articles (/<slug-article>/), un par fichier content/posts/*.md ;
@@ -138,6 +138,7 @@ export default async function SlugPage({
       <Breadcrumbs items={crumbs} />
       <article className="post-content">
         <JsonLd data={blogPostingSchema(post)} />
+        {post.faq.length > 0 ? <JsonLd data={faqSchema(post.faq)} /> : null}
         {category ? (
           <a
             className="tag"

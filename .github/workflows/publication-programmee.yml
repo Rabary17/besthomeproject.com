@@ -1,0 +1,21 @@
+name: Publication programmée
+
+on:
+  schedule:
+    # 21:05 UTC, soit 00:05 à Antananarivo : les articles dont la date arrive ce jour-là sont publiés.
+    - cron: "5 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  relancer-deploiement:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déclencher le déploiement Vercel
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK_URL" ]; then
+            echo "Secret VERCEL_DEPLOY_HOOK_URL manquant dans les secrets du dépôt GitHub."
+            exit 1
+          fi
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK_URL"

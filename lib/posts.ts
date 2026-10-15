@@ -51,9 +51,46 @@ export type PostFrontmatter = {
   imageAlt?: string;
 };
 
+export type PostFaq = { question: string; answer: string };
+
 export type Post = PostFrontmatter & {
   contentHtml: string;
+  // Questions/réponses de la section « Questions fréquentes » (H2) : un H3
+  // suivi d'un paragraphe. Sert au JSON-LD FAQPage de la page article.
+  faq: PostFaq[];
 };
+
+/** Retire le markdown inline d'un texte (gras, italique, code, liens). */
+function texteBrut(md: string): string {
+  return md
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/\*\*|__|`/g, "")
+    .replace(/(^|\s)\*([^*]+)\*/g, "$1$2")
+    .trim();
+}
+
+function faqDepuisMarkdown(content: string): PostFaq[] {
+  const faq: PostFaq[] = [];
+  let dansFaq = false;
+  let question: string | null = null;
+  for (const token of marked.lexer(content)) {
+    if (token.type === "heading" && token.depth === 2) {
+      dansFaq = /questions fréquentes/i.test(token.text);
+      question = null;
+      continue;
+    }
+    if (!dansFaq) continue;
+    if (token.type === "heading" && token.depth === 3) {
+      question = texteBrut(token.text);
+      continue;
+    }
+    if (token.type === "paragraph" && question) {
+      faq.push({ question, answer: texteBrut(token.text) });
+      question = null;
+    }
+  }
+  return faq;
+}
 
 function readSlugs(): string[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
@@ -72,20 +109,38 @@ function readPost(slug: string): Post {
     author: fm.author ?? choisirAuteur(fm),
     slug,
     contentHtml: marked.parse(content, { async: false }) as string,
+    faq: faqDepuisMarkdown(content),
   };
 }
 
-/** Tous les articles, triés du plus récent au plus ancien. */
+/** Date du jour au fuseau du site (Madagascar), au format "AAAA-MM-JJ". */
+function aujourdhuiSite(): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Indian/Antananarivo" }).format(new Date());
+}
+
+/**
+ * Un article est publié quand sa date est arrivée. Les articles à date future
+ * restent versionnés dans content/posts/ mais sont masqués partout : listes,
+ * rubriques, pages auteur, sitemap et pages article. Le déploiement quotidien
+ * (.github/workflows/publication-programmee.yml) les rend visibles le jour J.
+ */
+export function estPublie(post: { date: string }): boolean {
+  return String(post.date).slice(0, 10) <= aujourdhuiSite();
+}
+
+/** Tous les articles publiés, triés du plus récent au plus ancien. */
 export function getAllPosts(): Post[] {
   return readSlugs()
     .map(readPost)
+    .filter(estPublie)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-/** Un article précis par son slug (undefined si absent). */
+/** Un article publié, par son slug (undefined si absent ou à venir). */
 export function getPostBySlug(slug: string): Post | undefined {
   if (!readSlugs().includes(slug)) return undefined;
-  return readPost(slug);
+  const post = readPost(slug);
+  return estPublie(post) ? post : undefined;
 }
 
 /** Articles d'une rubrique (toutes sous-catégories confondues) ou d'une sous-catégorie. */
@@ -101,9 +156,9 @@ export function getPostsByAuthor(authorSlug: string): Post[] {
   return getAllPosts().filter((post) => resolveAuthor(post.author).slug === authorSlug);
 }
 
-/** Tous les slugs — pour generateStaticParams (export statique). */
+/** Slugs des articles publiés — pour generateStaticParams (export statique). */
 export function getAllSlugs(): string[] {
-  return readSlugs();
+  return readSlugs().filter((slug) => estPublie(readPost(slug)));
 }
 
 /**

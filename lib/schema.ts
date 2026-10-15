@@ -125,6 +125,7 @@ export function blogPostingSchema(post: Post) {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    inLanguage: "fr-FR",
     headline: post.title,
     description: post.description,
     image: `${SITE_URL}${cover.src}`,

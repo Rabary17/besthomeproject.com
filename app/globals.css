@@ -451,11 +451,29 @@ a.tag:hover { background: var(--brand); color: var(--on-brand); text-decoration:
 .hero-proof svg { color: var(--brand); flex: none; }
 .hero__visual { position: relative; margin: 0; overflow: hidden; isolation: isolate; border-radius: var(--radius-lg);
   background: linear-gradient(150deg, #0F4A31 0%, #17603F 58%, #1B6B4A 100%);
-  display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: var(--space-6);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: var(--space-6);
   padding: var(--space-6) var(--space-5) var(--space-5); min-height: 420px; }
-.hero__visual::before { content: ""; position: absolute; z-index: -1; right: -90px; top: -90px; width: 280px; height: 280px;
-  border-radius: 50%; background: rgba(255, 255, 255, 0.07); }
-.hero__house { display: block; width: min(300px, 72%); height: auto; margin: auto 0; }
+/* Diaporama en fond : 3 photos en fondu, 5 s chacune (boucle de 15 s) */
+.hero__slides { position: absolute; inset: 0; z-index: 0; }
+.hero__slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;
+  opacity: 0; animation: hero-fondu 15s infinite; }
+.hero__slide--1 { animation-delay: 0s; }
+.hero__slide--2 { animation-delay: 5s; }
+.hero__slide--3 { animation-delay: 10s; }
+/* Voile vert pour la lisibilité des étapes */
+.hero__visual::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(15, 74, 49, 0.92) 0%, rgba(15, 74, 49, 0.45) 45%, rgba(15, 74, 49, 0.15) 100%); }
+@keyframes hero-fondu {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  33% { opacity: 1; }
+  38%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide { animation: none; }
+  .hero__slide--1 { opacity: 1; }
+}
+.hero__visual > .hero__chips { position: relative; z-index: 2; }
 .hero__chips { align-self: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
 .hero__chips a { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.14); color: #FFFFFF; text-decoration: none; font-size: 0.9375rem; font-weight: 600;

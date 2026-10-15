@@ -312,10 +312,7 @@ export default function HomePage() {
             <span className="dot" aria-hidden="true" />
             <span>Ton projet de maison, de A à Z</span>
           </div>
-          <h1>
-            <span className="brand">Best Home Project</span> — construis ta
-            maison, accompagné de A à Z
-          </h1>
+          <h1>Ton projet de construction d&apos;habitation commence ici.</h1>
           <p className="lead">
             Tu veux construire ta maison, avec ton conjoint, pour ta famille
             ou pour tes parents ? Ici, tu n&apos;es pas seul. De ton budget
@@ -347,16 +344,11 @@ export default function HomePage() {
           </ul>
         </div>
         <div className="hero__visual">
-          <svg className="hero__house" viewBox="0 0 64 64" aria-hidden="true">
-            <polygon
-              points="32,8 56,29 56,54 8,54 8,29"
-              fill="rgba(255,255,255,0.1)"
-              stroke="#FFFFFF"
-              strokeWidth="2"
-              strokeLinejoin="round"
-            />
-            <circle cx="32" cy="40" r="5" fill="#F28C28" />
-          </svg>
+          <div className="hero__slides" aria-hidden="true">
+            <img className="hero__slide hero__slide--1" src="/images/hero/home-hero-1.webp" width={1200} height={796} alt="" />
+            <img className="hero__slide hero__slide--2" src="/images/hero/home-hero-2.webp" width={1200} height={1200} alt="" />
+            <img className="hero__slide hero__slide--3" src="/images/hero/home-hero-3.webp" width={960} height={1200} alt="" />
+          </div>
           <nav className="hero__chips" aria-label="Les étapes du parcours">
             {SECTIONS.map((section) => (
               <a key={section.slug} href={sectionUrl(section)}>
