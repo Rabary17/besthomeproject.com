@@ -2,7 +2,7 @@
 title: "Aides et prêt à taux zéro pour construire : ce qui est accessible en 2026"
 seoTitle: "Aides et PTZ pour construire en 2026 : ce qui est accessible"
 description: "PTZ, aides locales, Action Logement : quelles aides peuvent alléger ton financement pour construire en 2026, et à quelles conditions."
-date: "2026-10-17"
+date: "2026-10-15"
 category: "aides-budget"
 image: "/images/articles/aides-achat-construction-couverture.webp"
 imageAlt: "Clés, calculatrice et documents de financement posés sur un bureau"

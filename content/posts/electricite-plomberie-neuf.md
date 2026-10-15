@@ -2,7 +2,7 @@
 title: "Électricité et plomberie neuves : ce qu'il faut prévoir avant les cloisons"
 seoTitle: "Électricité et plomberie neuves : avant les cloisons"
 description: "Gaines, circuits, évacuations, Consuel : les décisions à prendre et les contrôles à faire avant de refermer les murs."
-date: "2026-11-02"
+date: "2026-10-15"
 category: "plomberie-electricite"
 image: "/images/articles/electricite-plomberie-neuf-couverture.webp"
 imageAlt: "Gaines électriques et tuyaux de plomberie visibles dans un mur neuf"

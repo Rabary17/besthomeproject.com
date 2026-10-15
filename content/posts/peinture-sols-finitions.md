@@ -2,7 +2,7 @@
 title: "Peinture et sols : choisir les finitions sans regretter"
 seoTitle: "Finitions maison neuve : peinture et sols sans regret"
 description: "Peinture, parquet, stratifié, carrelage : choisis les finitions de ta maison neuve pièce par pièce, selon ton usage et ton budget."
-date: "2026-11-04"
+date: "2026-10-15"
 category: "peinture-sols-murs"
 image: "/images/articles/peinture-sols-finitions-couverture.webp"
 imageAlt: "Pièce lumineuse d'une maison neuve avec murs peints en blanc chaud et parquet clair posé"

@@ -2,7 +2,7 @@
 title: "Contrat de construction de maison individuelle : les clauses à lire avant de signer"
 seoTitle: "Contrat construction maison individuelle : clauses clés"
 description: "Pénalités de retard, acomptes, garanties, rétractation : les clauses d'un CCMI à vérifier avant de signer, expliquées sans jargon."
-date: "2026-10-27"
+date: "2026-10-15"
 category: "contrats-assurances"
 image: "/images/articles/contrat-construction-maison-individuelle-couverture.webp"
 imageAlt: "Contrat de construction posé sur un bureau avec un stylo et un trousseau de clés"

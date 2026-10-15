@@ -2,7 +2,7 @@
 title: "Fondations et gros œuvre : ce qui se joue avant les murs"
 seoTitle: "Fondations et gros œuvre : ce qu'il faut savoir"
 description: "Étude de sol, semelles, radier ou pieux : les choix de fondations qui fixent la solidité de ta maison, à trancher avant le chantier."
-date: "2026-10-29"
+date: "2026-10-15"
 category: "fondations-gros-oeuvre"
 image: "/images/articles/fondations-gros-oeuvre-maison-couverture.webp"
 imageAlt: "Ferraillage posé dans une fondation de maison avant le coulage du béton"

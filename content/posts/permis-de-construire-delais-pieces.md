@@ -2,7 +2,7 @@
 title: "Permis de construire : délais, pièces et pièges à éviter"
 seoTitle: "Permis de construire : délais, pièces et pièges"
 description: "Délai d'instruction, dossier PCMI, affichage et recours des tiers : ce qu'il faut préparer pour obtenir son permis sans retard."
-date: "2026-10-25"
+date: "2026-10-15"
 category: "permis-demarches"
 image: "/images/articles/permis-de-construire-delais-pieces-couverture.webp"
 imageAlt: "Plan de maison posé sur une table avec un mètre ruban et un crayon"

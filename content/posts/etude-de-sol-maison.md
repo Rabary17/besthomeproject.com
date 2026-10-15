@@ -2,7 +2,7 @@
 title: "Étude de sol : pourquoi elle coûte cher et pourquoi tu ne peux pas t'en passer"
 seoTitle: "Étude de sol : prix, obligation et pourquoi elle compte"
 description: "Obligatoire en zone argileuse à risque, l'étude de sol coûte cher, mais elle évite des fondations mal calibrées. Voici pourquoi."
-date: "2026-10-19"
+date: "2026-10-15"
 category: "terrain-etudes"
 image: "/images/articles/etude-de-sol-maison-couverture.webp"
 imageAlt: "Sol argileux prélevé et plan de terrain posés sur une table de chantier"

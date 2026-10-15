@@ -2,7 +2,7 @@
 title: "Maison connectée : les équipements utiles dès la construction"
 seoTitle: "Maison connectée : équipements utiles dès la construction"
 description: "Caméras, serrures, thermostat, éclairage : quels équipements connectés prévoir dans une maison neuve, et lesquels attendre."
-date: "2026-11-14"
+date: "2026-10-15"
 category: "maison-connectee-securite"
 image: "/images/articles/maison-connectee-equipements-couverture.webp"
 imageAlt: "Gaines électriques vides et câbles tirés dans un mur de maison en construction"

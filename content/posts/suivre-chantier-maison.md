@@ -2,7 +2,7 @@
 title: "Suivre son chantier sans être du métier : réunions, planning, paiements"
 seoTitle: "Suivre un chantier de construction sans être du métier"
 description: "Réunions, comptes rendus, planning, appels de fonds : la méthode simple, pas à pas, pour suivre ton chantier de maison sans être du métier."
-date: "2026-11-06"
+date: "2026-10-15"
 category: "suivi-chantier"
 image: "/images/articles/suivre-chantier-maison-couverture.webp"
 imageAlt: "Chantier de maison individuelle en élévation avec échafaudage et coffrages en bois"

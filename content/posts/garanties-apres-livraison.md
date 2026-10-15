@@ -2,7 +2,7 @@
 title: "Après la livraison, quelles garanties protègent ta maison ?"
 seoTitle: "Garanties après livraison : parfait achèvement et décennale"
 description: "Un an, deux ans, dix ans : qui répare quoi après la réception, et comment signaler un défaut pour que ton constructeur agisse vite."
-date: "2026-11-10"
+date: "2026-10-15"
 category: "garanties-mise-en-service"
 image: "/images/articles/garanties-apres-livraison-couverture.webp"
 imageAlt: "Procès-verbal de réception posé sur une table de chantier, à côté d'un stylo et d'un casque"

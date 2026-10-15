@@ -2,7 +2,7 @@
 title: "Isolation et RE2020 : ce qui change pour ta future maison"
 seoTitle: "Isolation et RE2020 : ce qui change pour une maison neuve"
 description: "Bbio, Cep, carbone et confort d'été : ce que la RE2020 impose à l'isolation de ta maison neuve, et les choix à faire dès les plans."
-date: "2026-11-12"
+date: "2026-10-15"
 category: "energie-economies"
 image: "/images/articles/isolation-re2020-maison-couverture.webp"
 imageAlt: "Mur d'une maison en construction avec des panneaux isolants posés entre les montants en bois"

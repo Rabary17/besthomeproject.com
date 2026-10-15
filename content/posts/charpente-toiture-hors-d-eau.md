@@ -2,7 +2,7 @@
 title: "Charpente et toiture : quand la maison tient la pluie"
 seoTitle: "Hors d'eau hors d'air : charpente et toiture expliquées"
 description: "Charpente, couverture, menuiseries : les contrôles à faire entre le hors d'eau et le hors d'air, avant que la pluie n'entre."
-date: "2026-10-31"
+date: "2026-10-15"
 category: "hors-d-eau-hors-d-air"
 image: "/images/articles/charpente-toiture-hors-d-eau-couverture.webp"
 imageAlt: "Charpente bois posée sur les murs d'une maison en construction"

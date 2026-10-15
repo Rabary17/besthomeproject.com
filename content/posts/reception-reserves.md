@@ -2,7 +2,7 @@
 title: "Réception de chantier : la checklist pour lever les réserves"
 seoTitle: "Réception de chantier maison : checklist et réserves"
 description: "Réception de chantier : préparer la visite, noter les réserves, relancer l'entreprise et connaître tes garanties, pièce par pièce."
-date: "2026-11-08"
+date: "2026-10-15"
 category: "reception-reserves"
 image: "/images/articles/reception-reserves-couverture.webp"
 imageAlt: "Maison neuve vue de l'extérieur avec fenêtres posées et allée en gravier devant l'entrée"

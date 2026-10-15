@@ -2,7 +2,7 @@
 title: "Comparer des devis de construction sans se faire piéger"
 seoTitle: "Comparer des devis de construction : la méthode sans piège"
 description: "Cahier des charges commun, contrat CCMI, postes oubliés : la méthode pour comparer des devis de construction sans piège."
-date: "2026-10-21"
+date: "2026-10-15"
 category: "devis-construction"
 image: "/images/articles/comparer-devis-construction-couverture.webp"
 imageAlt: "Pages de devis de construction étalées sur un bureau avec un stylo"

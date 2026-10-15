@@ -2,7 +2,7 @@
 title: "Choisir son constructeur de maison : les sept vérifications à faire"
 seoTitle: "Choisir son constructeur de maison : sept vérifications"
 description: "Entreprise, décennale, références, devis, contrat, suivi : sept vérifications simples pour choisir un constructeur de maison sereinement."
-date: "2026-10-23"
+date: "2026-10-15"
 category: "choisir-entreprises"
 image: "/images/articles/choisir-constructeur-maison-couverture.webp"
 imageAlt: "Client et conseiller examinant un dossier de construction sur une table"
