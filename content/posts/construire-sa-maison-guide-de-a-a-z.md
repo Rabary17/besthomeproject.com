@@ -1,11 +1,11 @@
 ---
-title: "Construire sa maison : le guide de A à Z, étape par étape"
-seoTitle: "Construire sa maison : le guide complet de A à Z"
-description: "Budget, terrain, plans, permis, entreprises, chantier, réception : les étapes pour construire sa maison de A à Z, sans rien oublier."
+title: "Par quoi commencer pour construire sa maison ?"
+seoTitle: "Construire sa maison : par quoi commencer ?"
+description: "Budget, terrain, plans, permis, chantier : les six étapes pour construire sa maison sans rien oublier, de la première idée aux clés."
 date: "2026-10-12"
 category: "preparer-son-projet"
-image: "/images/articles/construire-sa-maison-couverture.webp"
-imageAlt: "Plans d'architecte et casque de chantier posés sur un sol ensoleillé"
+image: "/images/articles/construire-sa-maison-og.jpg"
+imageAlt: "Plans de maison, casque de chantier et clés posés sur une dalle en béton"
 ---
 
 ***Construire sa maison, c'est enchaîner des décisions dans le bon ordre, avec de l'argent, du temps et beaucoup de papiers. Ce guide te les déroule une à une, de la première idée jusqu'à la remise des clés.***
