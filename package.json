@@ -14,20 +14,26 @@
     "test:garde-fou": "node --test \"scripts/generation/*.test.js\"",
     "garde-fou:cutoff": "node scripts/generation/llm.js --cutoff",
     "garde-fou:audit": "node scripts/generation/llm.js --audit",
-    "auteur": "node scripts/generation/choisir-auteur.js"
+    "auteur": "node scripts/generation/choisir-auteur.js",
+    "pipeline": "node scripts/seo/run-pipeline.js",
+    "pipeline:seo": "node scripts/seo/select-keyword-topics.js",
+    "pipeline:actu": "node scripts/seo/select-news-topics.js",
+    "pipeline:maintenance": "node scripts/seo/run-maintenance.js"
   },
   "dependencies": {
+    "dotenv": "^18.0.10",
+    "google-auth-library": "^11.3.4",
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.2",
     "next": "^15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "gray-matter": "^4.0.3",
-    "marked": "^12.0.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.6.3",
     "@types/node": "^22.9.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "typescript": "^5.6.3"
   }
 }

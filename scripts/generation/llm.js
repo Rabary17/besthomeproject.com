@@ -20,6 +20,7 @@
 // Variables d'environnement : ANTHROPIC_API_KEY, GENERATION_MODEL (optionnel).
 "use strict";
 const fs = require("fs");
+const { spawnSync } = require("child_process");
 const {
   resoudreCutoff,
   blocSysteme,
@@ -27,6 +28,7 @@ const {
   formaterSources,
   CUTOFFS_OFFICIELS,
 } = require("./garde-fou-cutoff");
+const { enregistrer: enregistrerUsage, coutEstime } = require("./usage-tracker");
 
 const MODELE_PAR_DEFAUT = process.env.GENERATION_MODEL || "claude-sonnet-5-5";
 const PHASES = Object.freeze(["plan", "premier-jet", "faq", "meta", "titre", "reecriture"]);
@@ -36,21 +38,52 @@ function aujourdhui() {
   return new Intl.DateTimeFormat("fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date());
 }
 
-async function appelBrut({ model, system, messages, max_tokens }) {
+// Deux chemins d'appel au modèle :
+//   - ANTHROPIC_API_KEY présente : API Anthropic directe (facturée à l'usage — utilisé en CI,
+//     où aucune session interactive/abonnement n'est disponible).
+//   - sinon : CLI Claude Code en mode headless (`claude -p`), authentifiée par l'abonnement
+//     déjà connecté sur ce poste (pas de facturation séparée). Le prompt passe par stdin
+//     (jamais en argument de ligne de commande) pour éviter tout souci d'échappement
+//     (apostrophes, guillemets) et toute injection de commande.
+async function appelBrut({ model, system, messages, max_tokens, phase = "non-categorise" }) {
+  if (messages.length !== 1 || messages[0].role !== "user") {
+    throw new Error("appelBrut : un seul message utilisateur attendu (CLI headless et API ne gèrent qu'un tour ici)");
+  }
   const cle = process.env.ANTHROPIC_API_KEY;
-  if (!cle) throw new Error("ANTHROPIC_API_KEY manquante");
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": cle,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({ model, max_tokens, ...(system ? { system } : {}), messages }),
+  if (cle) {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": cle,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({ model, max_tokens, ...(system ? { system } : {}), messages }),
+    });
+    if (!res.ok) throw new Error(`API ${res.status} : ${await res.text()}`);
+    const data = await res.json();
+    enregistrerUsage({ phase, model, usage: data.usage, coutUsd: coutEstime(model, data.usage), source: "api" });
+    return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
+  }
+
+  const args = ["-p", "--restricted", "--output-format", "json", "--model", model];
+  if (system) args.push("--system-prompt", system);
+  const res = spawnSync("claude", args, {
+    input: messages[0].content,
+    encoding: "utf8",
+    maxBuffer: 50 * 1024 * 1024,
   });
-  if (!res.ok) throw new Error(`API ${res.status} : ${await res.text()}`);
-  const data = await res.json();
-  return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
+  if (res.error) throw new Error(`Échec du lancement de la CLI claude : ${res.error.message}`);
+  if (res.status !== 0) throw new Error(`claude -p a échoué (code ${res.status}) : ${res.stderr}`);
+  let data;
+  try {
+    data = JSON.parse(res.stdout);
+  } catch {
+    throw new Error(`Sortie CLI illisible (JSON attendu) : ${res.stdout.slice(0, 500)}`);
+  }
+  if (data.is_error) throw new Error(`claude -p : ${data.result || "erreur inconnue"}`);
+  enregistrerUsage({ phase, model, usage: data.usage, coutUsd: data.total_cost_usd, source: "cli-abonnement" });
+  return data.result || "";
 }
 
 // Date de coupure résolue une fois par modèle et par exécution.
@@ -58,7 +91,7 @@ const cacheCutoff = new Map();
 async function cutoffPour(model) {
   if (!cacheCutoff.has(model)) {
     const info = await resoudreCutoff(model, (question) =>
-      appelBrut({ model, messages: [{ role: "user", content: question }], max_tokens: 20 })
+      appelBrut({ model, messages: [{ role: "user", content: question }], max_tokens: 20, phase: "cutoff" })
     );
     console.error(
       `[garde-fou] ${model} — officiel : ${info.officiel || "inconnu"} · déclaré : ${info.declare || "illisible"} → retenu : ${info.cutoff} (${info.retenu}), zone grise dès ${info.zoneGriseDebut}`
@@ -91,12 +124,12 @@ async function generer({ phase, consigne, brief = "", sources = [], instructions
     .filter(Boolean)
     .join("\n\n");
   const user = [brief && `BRIEF :\n${brief}`, consigne].filter(Boolean).join("\n\n");
-  const brut = await appelBrut({ model, system, messages: [{ role: "user", content: user }], max_tokens });
+  const brut = await appelBrut({ model, system, messages: [{ role: "user", content: user }], max_tokens, phase });
   const audit = auditer(brut, { cutoff: info.cutoff, sources, brief });
   return { phase, model, cutoff: info, texte: audit.texteMarque, texteBrut: brut, audit };
 }
 
-module.exports = { generer, cutoffPour, PHASES, MODELE_PAR_DEFAUT };
+module.exports = { generer, appelBrut, cutoffPour, PHASES, MODELE_PAR_DEFAUT };
 
 // --- CLI -----------------------------------------------------------------
 if (require.main === module) {

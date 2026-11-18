@@ -1,0 +1,44 @@
+# Maintenance SEO hebdomadaire : analyse Search Console (pages qui perdent du
+# trafic, requêtes "à portée" mal couvertes, cannibalisation entre deux pages)
+# et journalise des recommandations dans le Google Sheet partagé (onglets
+# "BHP - ..."). Ne modifie et ne commite RIEN sur le site — voir
+# scripts/seo/analyser-gsc.js pour le raisonnement. Même méthode que
+# techno-play.com.
+#
+# Secrets nécessaires (déjà présents pour l'autre workflow) :
+#   GSC_SERVICE_ACCOUNT_JSON, SHEETS_SERVICE_ACCOUNT_JSON
+
+name: Maintenance SEO (analyse GSC)
+
+on:
+  schedule:
+    # Lundi 07:15 UTC = 10:15 à Antananarivo
+    - cron: "15 7 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Restaurer les comptes de service GSC et Sheets
+        run: |
+          mkdir -p .secrets
+          printf '%s' "$GSC_SERVICE_ACCOUNT_JSON" > .secrets/gsc-service-account.json
+          printf '%s' "$SHEETS_SERVICE_ACCOUNT_JSON" > .secrets/sheets-service-account.json
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          SHEETS_SERVICE_ACCOUNT_JSON: ${{ secrets.SHEETS_SERVICE_ACCOUNT_JSON }}
+
+      - name: Analyser Search Console et journaliser
+        env:
+          JOURNAL_SHEET_ID: ${{ secrets.JOURNAL_SHEET_ID }}
+        run: node scripts/seo/run-maintenance.js

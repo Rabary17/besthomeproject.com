@@ -1,0 +1,100 @@
+# Autopilote SEO/actu : sélectionne les sujets du jour (mots-clés DataForSEO +
+# actus filtrées depuis le sheet de veille), génère les articles (garde-fou
+# anti-hallucination + relecture qualité inclus), vérifie, commit et pousse
+# sur main. Le push déclenche le déploiement Vercel habituel (intégration Git).
+# Même méthode que techno-play.com — voir ce repo pour le détail des choix.
+#
+# Secrets à créer une seule fois dans GitHub (Settings > Secrets and variables > Actions) :
+#   DATAFORSEO_LOGIN, DATAFORSEO_PASSWORD   — dataforseo.com (mêmes identifiants que techno-play)
+#   CLAUDE_CODE_OAUTH_TOKEN                  — généré via `claude setup-token`
+#                                               (authentifie la CLI avec l'abonnement Claude,
+#                                               jamais l'API payante — ne JAMAIS mettre
+#                                               ANTHROPIC_API_KEY dans ce workflow)
+#   GSC_SERVICE_ACCOUNT_JSON                 — contenu complet du fichier .secrets/gsc-service-account.json
+#                                               (même compte de service que techno-play — doit être
+#                                               ajouté comme utilisateur dans Search Console pour
+#                                               besthomeproject.com)
+#   SHEETS_SERVICE_ACCOUNT_JSON               — contenu complet du fichier .secrets/sheets-service-account.json
+#                                               (même compte de service que techno-play)
+#   VEILLE_SHEET_ID, JOURNAL_SHEET_ID (optionnels, ont une valeur par défaut dans le code —
+#                                       même sheet de veille et même journal que techno-play)
+#
+# Déclenchement manuel possible depuis l'onglet Actions (workflow_dispatch) pour tester
+# sans attendre le cron, avec les mêmes paramètres --seo/--actu/--dry-run.
+
+name: Autopilote SEO
+
+on:
+  schedule:
+    # 06:15 UTC = 09:15 à Antananarivo (décalé de 15 min par rapport à techno-play
+    # pour éviter que les deux pipelines écrivent dans le même Sheet en même temps)
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+    inputs:
+      seo:
+        description: "Nombre d'articles SEO (hors actu)"
+        default: "1"
+      actu:
+        description: "Nombre d'articles d'actualité"
+        default: "1"
+      dry_run:
+        description: "true = génère sans commit/push"
+        type: boolean
+        default: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Installer la CLI Claude Code (auth par abonnement, pas l'API)
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Restaurer les comptes de service GSC et Sheets
+        run: |
+          mkdir -p .secrets
+          printf '%s' "$GSC_SERVICE_ACCOUNT_JSON" > .secrets/gsc-service-account.json
+          printf '%s' "$SHEETS_SERVICE_ACCOUNT_JSON" > .secrets/sheets-service-account.json
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          SHEETS_SERVICE_ACCOUNT_JSON: ${{ secrets.SHEETS_SERVICE_ACCOUNT_JSON }}
+
+      - name: Configurer git (commits de l'autopilote)
+        run: |
+          git config user.name "autopilote-seo[bot]"
+          git config user.email "autopilote-seo@besthomeproject.com"
+
+      - name: Lancer le pipeline
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          VEILLE_SHEET_ID: ${{ secrets.VEILLE_SHEET_ID }}
+          JOURNAL_SHEET_ID: ${{ secrets.JOURNAL_SHEET_ID }}
+        run: |
+          SEO="${{ github.event.inputs.seo || '1' }}"
+          ACTU="${{ github.event.inputs.actu || '1' }}"
+          DRY="${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}"
+          node scripts/seo/run-pipeline.js --seo "$SEO" --actu "$ACTU" --push $DRY
+
+      - name: Publier le rapport comme artefact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-pipeline-${{ github.run_id }}
+          path: _strategie/rapports-pipeline/*.json
+          retention-days: 90
