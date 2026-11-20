@@ -4,6 +4,8 @@ description: "Aujourdʹhui, il faut aussi penser à ce que nos bâtiments coûte
 date: "2026-11-20"
 author: "nekena-judicael"
 category: "energie-economies"
+image: "https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTE4NzJ8MHwxfHNlYXJjaHwxfHxpc29sYXRpb24lMjBtYWlzb24lMjAlQzMlQTluZXJnaWV8ZW58MHwwfHx8MTc5NTE1ODQ2M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "A person in a blue shirt installing electrical wiring in pink fiberglass wall insulation"
 sources:
   - titre: "La révolution est dans nos murs"
     url: "https://www.rts.ch/audio-podcast/2026/audio/la-revolution-est-dans-nos-murs-29416664.html"
