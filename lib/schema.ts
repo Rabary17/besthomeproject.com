@@ -36,13 +36,18 @@ function urlAbsolue(src: string) {
   return /^https?:\/\//.test(src) ? src : `${SITE_URL}${src}`;
 }
 
+/** Identifiant stable de la société éditrice — nœud séparé du `@graph`,
+ * référencé par `organizationNode().parentOrganization` via `{"@id": ...}`
+ * (modèle cible : jamais de nœud dupliqué/imbriqué, voir lebigdata.fr). */
+export const COMPANY_ID = `${SITE_URL}/#editeur`;
+
 /**
  * Société éditrice : rattachée au média via `parentOrganization`. Le NIF
  * alimente `taxID` seulement quand il est renseigné ; le STAT (identifiant
  * statistique) n'a pas d'équivalent schema.org et reste sur les mentions
  * légales.
  */
-export function companySchema() {
+export function companyNode() {
   const horaires = COMPANY.horaires.flatMap((h) =>
     h.schema
       ? [
@@ -57,6 +62,7 @@ export function companySchema() {
   );
   return {
     "@type": "Organization",
+    "@id": COMPANY_ID,
     name: COMPANY.nom,
     legalName: COMPANY.nom,
     address: {
@@ -109,7 +115,7 @@ function organizationNode() {
     // Page qui explique qui écrit et comment (ligne éditoriale, méthode) —
     // signal attendu des éditeurs de presse par Google.
     publishingPrinciples: `${SITE_URL}/a-propos/`,
-    parentOrganization: companySchema(),
+    parentOrganization: { "@id": COMPANY_ID },
   };
 }
 
@@ -140,7 +146,7 @@ export function websiteSchema() {
 export function homepageSchema() {
   return {
     "@context": "https://schema.org",
-    "@graph": [organizationNode(), websiteNode()],
+    "@graph": [organizationNode(), websiteNode(), companyNode()],
   };
 }
 
