@@ -14,12 +14,14 @@ function maintenant() {
   return { date: d.toISOString().slice(0, 10), heure: d.toISOString().slice(11, 16) };
 }
 
-async function ajouterLigneJournal({ type, action, detail = "", lien = "", coutUsd = null }) {
+// Deux liens séparés : la page réelle du site (ce qu'on veut voir en premier) et
+// le fichier source sur GitHub (pour vérifier le contenu/historique).
+async function ajouterLigneJournal({ type, action, detail = "", lienSite = "", lienCode = "", coutUsd = null }) {
   const { date, heure } = maintenant();
   const lignes = await getValues(JOURNAL_SHEET_ID, `${ONGLET_JOURNAL}!A:A`);
   const prochaineRow = lignes.length + 1;
-  await updateValues(JOURNAL_SHEET_ID, `${ONGLET_JOURNAL}!A${prochaineRow}:G${prochaineRow}`, [
-    [date, heure, type, action, detail, lien, coutUsd != null ? coutUsd.toFixed(4) : ""],
+  await updateValues(JOURNAL_SHEET_ID, `${ONGLET_JOURNAL}!A${prochaineRow}:H${prochaineRow}`, [
+    [date, heure, type, action, detail, lienSite, lienCode, coutUsd != null ? coutUsd.toFixed(4) : ""],
   ]);
 }
 

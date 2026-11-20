@@ -23,7 +23,7 @@ async function main() {
     type: "maintenance",
     action: "Analyse GSC hebdomadaire",
     detail: `${resultat.decay.length} decay, ${resultat.strikingDistance.length} striking-distance, ${resultat.cannibalisation.length} cannibalisation — détail dans l'onglet « Opportunités GSC »`,
-    lien: `https://docs.google.com/spreadsheets/d/${JOURNAL_SHEET_ID}/edit`,
+    lienSite: `https://docs.google.com/spreadsheets/d/${JOURNAL_SHEET_ID}/edit`,
   });
 
   console.log(`Journal mis à jour : https://docs.google.com/spreadsheets/d/${JOURNAL_SHEET_ID}/edit`);

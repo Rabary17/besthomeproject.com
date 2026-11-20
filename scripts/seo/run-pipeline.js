@@ -414,10 +414,16 @@ async function main() {
     try {
       for (const a of rapport.articles) {
         const relatif = path.relative(ROOT, a.fichier).replace(/\\/g, "/");
-        const lien = a.commit
+        const lienCode = a.commit
           ? `https://github.com/Rabary17/besthomeproject.com/blob/${a.commit}/${relatif}`
           : relatif;
-        await ajouterLigneJournal({ type: "contenu", action: `Article publié (${a.type})`, detail: a.titre, lien });
+        await ajouterLigneJournal({
+          type: "contenu",
+          action: `Article publié (${a.type})`,
+          detail: a.titre,
+          lienSite: `https://besthomeproject.com/${a.slug}/`,
+          lienCode,
+        });
       }
       if (rapport.articles.length === 0) {
         await ajouterLigneJournal({
