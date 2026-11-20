@@ -16,8 +16,14 @@
 #                                               besthomeproject.com)
 #   SHEETS_SERVICE_ACCOUNT_JSON               — contenu complet du fichier .secrets/sheets-service-account.json
 #                                               (même compte de service que techno-play)
+#   UNSPLASH_ACCESS_KEY, PEXELS_API_KEY, PIXABAY_API_KEY  — images libres de droit
+#                                               (mêmes clés que techno-play, réutilisables)
 #   VEILLE_SHEET_ID, JOURNAL_SHEET_ID (optionnels, ont une valeur par défaut dans le code —
 #                                       même sheet de veille et même journal que techno-play)
+#
+# Publication échelonnée : chaque article généré est commité/poussé séparément,
+# avec un délai aléatoire (5-15 min par défaut) entre deux — jamais tous d'un
+# coup à la même seconde (voir scripts/seo/run-pipeline.js, --delai-min/--delai-max).
 #
 # Déclenchement manuel possible depuis l'onglet Actions (workflow_dispatch) pour tester
 # sans attendre le cron, avec les mêmes paramètres --seo/--actu/--dry-run.

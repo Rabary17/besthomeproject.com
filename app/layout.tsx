@@ -10,7 +10,7 @@ import {
   COMPANY,
 } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { homepageSchema } from "@/lib/schema";
 import { SECTIONS, sectionUrl } from "@/lib/categories";
 import "./globals.css";
 
@@ -91,8 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={SITE_LANG} className={`${bricolage.variable} ${inter.variable}`}>
       <body>
-        <JsonLd data={organizationSchema()} />
-        <JsonLd data={websiteSchema()} />
+        <JsonLd data={homepageSchema()} />
         <header className="site-header">
           <div className="container">
             <a className="site-logo" href="/" aria-label={`${SITE_NAME}, accueil`}>

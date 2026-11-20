@@ -9,6 +9,8 @@
 //
 // --dry-run : génère les fichiers mais ne commit/push rien (par défaut : commit, pas de push)
 // --push    : pousse aussi sur origin (nécessite que la boucle planifiée soit validée manuellement d'abord)
+// --delai-min / --delai-max : minutes entre deux publications (défaut 5-15) — les articles
+//   d'un même run sont commités/poussés un par un, décalés dans le temps, jamais tous d'un coup.
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -21,6 +23,9 @@ const { choisirAuteur } = require("../generation/choisir-auteur");
 const { selectionnerSujetsSeo } = require("./select-keyword-topics");
 const { selectionnerActusDuJour } = require("./select-news-topics");
 const { ajouterLigneJournal } = require("./journal-sheet");
+const { findImage } = require("./image-client");
+const { voixPour } = require("../generation/voix-auteurs");
+const { choisirParmi, entier } = require("../generation/variation");
 
 const ROOT = path.join(__dirname, "..", "..");
 const POSTS_DIR = path.join(ROOT, "content", "posts");
@@ -38,14 +43,31 @@ function slugify(s) {
 // Structure réelle des articles de besthomeproject.com (voir content/posts/*.md
 // existants) : pas d'encadrés <div> comme sur techno-play, mais une accroche en
 // gras-italique, puis des sections ## , éventuellement un tableau, et une FAQ.
-// Les articles existants ont aussi des photos dans le corps (images locales
-// /images/articles/...) — volontairement OMISES ici : les générer proprement
-// (vraie photo pertinente, hébergée localement) demanderait un pipeline dédié
-// non construit pour l'instant. Sans champ `image` en frontmatter, le site
-// retombe automatiquement sur la couverture générique de la sous-catégorie
-// (voir scripts/generate-covers.js) — pas de rendu cassé, juste moins illustré
-// qu'un article rédigé à la main.
-const CONSIGNE_STRUCTURE = `Rédige un article complet au format Markdown, prêt à coller dans le corps d'un
+// Les articles existants ont aussi des photos DANS LE CORPS (images locales
+// /images/articles/...) — celles-ci restent volontairement OMISES : les générer
+// proprement (photo pertinente par section, hébergée localement) demanderait un
+// pipeline dédié non construit pour l'instant. En revanche chaque article reçoit
+// une image À LA UNE (frontmatter `image`/`imageAlt`, voir findImage() plus bas) —
+// lib/posts.ts accepte explicitement une URL absolue, pas seulement un chemin
+// local (cf. commentaire sur le champ `image` dans ce fichier).
+// Variation structurelle : sans ça, tous les articles d'un même lot suivent le
+// même gabarit au nombre de sections/questions près — ça ressemble vite à du
+// contenu produit en série, un signal que Google surveille (abus de contenu à
+// grande échelle). Chaque appel tire sa propre combinaison.
+function tirerVariation() {
+  return {
+    nbSections: entier(3, 5),
+    nbFaq: entier(3, 4),
+    angleOuverture: choisirParmi([
+      "une situation concrète que le lecteur vit en ce moment dans son projet",
+      "une question directe posée au lecteur",
+      "un constat sur ce qui change ou ce qu'on sous-estime souvent sur ce sujet",
+    ]),
+  };
+}
+
+function construireConsigneStructure(variation) {
+  return `Rédige un article complet au format Markdown, prêt à coller dans le corps d'un
 fichier (sans frontmatter). Ta réponse doit commencer PAR LE TITRE, seul sur la première
 ligne, sans dièse ni guillemets ni gras, suivi d'une ligne vide, puis le corps de l'article.
 Le titre est un intitulé naturel et concret (pas nécessairement une question), du type
@@ -53,18 +75,19 @@ Le titre est un intitulé naturel et concret (pas nécessairement une question),
 pour construire : ce qui est accessible en 2026" — jamais le mot-clé brut.
 Ne mets JAMAIS de bloc de code (\`\`\`) autour de ta réponse, et n'ajoute AUCUN commentaire,
 note ou explication avant ou après l'article — seulement le titre puis le corps, rien d'autre.
-Ne mets AUCUNE image (pas de balise ![...](...)) — le visuel est géré automatiquement par le site.
-Le corps suit EXACTEMENT ce fil :
+Ne mets AUCUNE image dans le corps (pas de balise ![...](...)) — l'image à la une est gérée à part.
+Le corps suit ce fil :
 1. Une accroche en gras-italique (***...***), 1 à 2 phrases qui résument le point clé de l'article.
-2. Une introduction (2-4 phrases, la situation concrète que le lecteur reconnaît).
-3. 3 à 5 sections "## Titre de section" qui répondent à la question de façon progressive et actionnable
-   (étapes, critères, pièges à éviter...). Un tableau Markdown est bienvenu si l'article compare
-   plusieurs options/postes/critères.
-4. "## Questions fréquentes" : 3 à 4 questions en ### , réponses 50-80 mots, concrètes.
+2. Une introduction (2-4 phrases) qui part de ${variation.angleOuverture}.
+3. ${variation.nbSections} sections "## Titre de section" qui répondent à la question de façon
+   progressive et actionnable (étapes, critères, pièges à éviter...). Un tableau Markdown est
+   bienvenu si l'article compare plusieurs options/postes/critères.
+4. "## Questions fréquentes" : ${variation.nbFaq} questions en ### , réponses 50-80 mots, concrètes.
 Règles : tutoiement, phrases courtes (20 mots en moyenne, 25 max), un mot technique =
 une explication au moment où il apparaît, aucune formule qui infantilise ("il suffit de",
 "évidemment"...), jamais de tiret cadratin (—). Contexte France (permis de construire,
 RE2020, garanties légales de la construction...).`;
+}
 
 const CONSIGNE_RESTER_DANS_LA_SOURCE = `
 Important : tu ne disposes que d'un résumé court de la source (pas l'article complet).
@@ -90,14 +113,18 @@ Relis cet article et corrige UNIQUEMENT :
   listes) — ne la change pas, corrige juste ce qui est mal écrit à l'intérieur
 Ne change RIEN au fond : n'ajoute, ne retire et ne modifie aucune affirmation, chiffre, date ou fait — UNIQUEMENT
 la forme. Corrige aussi le titre s'il contient une faute.
+Ne lisse PAS le style propre de l'auteur (rythme de phrase, tournures récurrentes) vers un style
+neutre générique — corrige seulement les vraies fautes, en gardant sa voix reconnaissable.
 Réponds UNIQUEMENT par un JSON strict, sans texte avant ni après :
   {"ok": true} si rien à corriger
   {"ok": false, "titre": "...", "corps": "..."} avec la version corrigée complète sinon`;
 
-async function genererArticle({ titre, theme, sources = [], brief = "" }) {
+async function genererArticle({ titre, theme, sources = [], brief = "", voix = "" }) {
+  const variation = tirerVariation();
   const resultat = await generer({
     phase: "premier-jet",
-    consigne: CONSIGNE_STRUCTURE + (sources.length > 0 ? CONSIGNE_RESTER_DANS_LA_SOURCE : ""),
+    consigne: construireConsigneStructure(variation) + (sources.length > 0 ? CONSIGNE_RESTER_DANS_LA_SOURCE : ""),
+    instructions: voix,
     brief: `Titre de l'article : "${titre}"\nSous-catégorie : ${theme}\n${brief}`,
     sources,
     max_tokens: 6000,
@@ -165,6 +192,49 @@ async function relireQualite({ titre, corps }) {
   return { ok: true };
 }
 
+// Requête image générique par sous-catégorie (repli quand le sujet n'a pas de
+// mot-clé exploitable, ou pour les actus dont le titre contient souvent une
+// marque/un nom propre qui égarerait la recherche photo).
+const REQUETE_IMAGE_PAR_THEME = {
+  "aides-budget": "financement maison budget",
+  "terrain-etudes": "terrain à bâtir",
+  "plans-dessinateur": "plan de maison architecte",
+  "devis-construction": "devis construction documents",
+  "choisir-entreprises": "chantier construction équipe",
+  "permis-demarches": "permis de construire document",
+  "contrats-assurances": "contrat signature stylo",
+  "fondations-gros-oeuvre": "fondation chantier béton",
+  "hors-d-eau-hors-d-air": "charpente toiture maison",
+  "plomberie-electricite": "installation électrique maison",
+  "peinture-sols-murs": "peinture mur intérieur",
+  "suivi-chantier": "chantier construction maison",
+  "reception-reserves": "maison neuve clés",
+  "garanties-mise-en-service": "maison neuve livraison",
+  "renovation-travaux": "rénovation maison travaux",
+  "bricolage-reparations": "bricolage outils",
+  "energie-economies": "isolation maison énergie",
+  "deco-ambiance": "décoration intérieure salon",
+  "amenagement-rangement": "aménagement intérieur rangement",
+  "maison-en-famille": "famille maison enfants",
+  "jardin-exterieur": "jardin maison extérieur",
+  "outillage-equipement": "outils bricolage",
+  "electromenager-cuisine": "cuisine électroménager",
+  "maison-connectee-securite": "maison connectée sécurité",
+  "jardin-plein-air": "jardin extérieur tondeuse",
+};
+
+// Toutes les URLs d'image déjà utilisées dans les articles existants — relu à chaque
+// appel (pas mis en cache) pour voir aussi les images choisies plus tôt dans CE run.
+function imagesDejaUtilisees() {
+  const urls = new Set();
+  if (!fs.existsSync(POSTS_DIR)) return urls;
+  for (const f of fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"))) {
+    const m = fs.readFileSync(path.join(POSTS_DIR, f), "utf8").match(/^image:\s*"([^"]+)"/m);
+    if (m) urls.add(m[1]);
+  }
+  return urls;
+}
+
 async function construireArticle(sujet) {
   const { theme } = sujet;
 
@@ -172,11 +242,16 @@ async function construireArticle(sujet) {
     ? [{ url: sujet.sourceUrl, date: sujet.date || "", texte: `${sujet.titre} — ${sujet.resume || ""}` }]
     : [];
 
+  // Auteur choisi AVANT la génération (sur le sujet, pas le titre généré) pour
+  // que son style soit injecté dans le prompt — voir voix-auteurs.js.
+  const choixAuteur = choisirAuteur({ titre: sujet.titre, description: sujet.resume || "", categorie: theme });
+
   const resultat = await genererArticle({
     titre: sujet.titre,
     theme,
     sources,
     brief: sujet.keyword ? `Mot-clé cible (SEO) : ${sujet.keyword}, volume estimé ${sujet.volume}/mois.` : "",
+    voix: voixPour(choixAuteur.auteur),
   });
 
   const { titre: titreGenere, corps } = separerTitreEtCorps(resultat.texte, sujet.titre);
@@ -200,8 +275,25 @@ async function construireArticle(sujet) {
     return { ok: false, slug, raison: "fichier déjà existant" };
   }
 
-  const choix = choisirAuteur({ titre, description: sujet.resume || "", categorie: theme });
+  const choix = choixAuteur;
   const today = new Date().toISOString().slice(0, 10);
+
+  // Image à la une obligatoire (au moins une par article) — requête par
+  // sous-catégorie plutôt que le titre brut, pour éviter une marque/un produit
+  // qui dérive la recherche (ex. un article sur une marque de peinture doit
+  // renvoyer une photo de "peindre un mur", pas chercher la marque elle-même).
+  // Anti-doublon : deux articles de la même sous-catégorie sans mot-clé (cas
+  // fréquent des actus) retomberaient sinon sur le même résultat #1 — bug
+  // observé sur techno-play.com, corrigé aussi ici par précaution.
+  let image = null;
+  try {
+    const requeteImage = sujet.keyword || REQUETE_IMAGE_PAR_THEME[theme] || titre;
+    const resultats = await findImage(requeteImage);
+    const dejaUtilisees = imagesDejaUtilisees();
+    image = resultats.find((r) => !dejaUtilisees.has(r.url)) || resultats[0] || null;
+  } catch (err) {
+    console.error(`Image non trouvée pour "${titre}" : ${err.message}`);
+  }
 
   const frontmatterLignes = [
     "---",
@@ -211,6 +303,10 @@ async function construireArticle(sujet) {
     `author: "${choix.auteur}"`,
     `category: "${theme}"`,
   ];
+  if (image) {
+    frontmatterLignes.push(`image: "${image.url}"`);
+    frontmatterLignes.push(`imageAlt: ${JSON.stringify(image.alt || titre)}`);
+  }
   if (sources.length > 0) {
     frontmatterLignes.push("sources:");
     for (const s of sources) {
@@ -224,7 +320,7 @@ async function construireArticle(sujet) {
   const contenu = frontmatterLignes.join("\n") + resultat.texte.trim() + "\n";
   fs.writeFileSync(fichier, contenu, "utf8");
 
-  return { ok: true, slug, fichier, theme, titre, auteur: choix.auteur, type: sujet.type };
+  return { ok: true, slug, fichier, theme, titre, auteur: choix.auteur, image: image?.url, type: sujet.type };
 }
 
 function verifierBuild() {
@@ -285,14 +381,28 @@ async function main() {
     if (!verif.ok) {
       console.error("Vérification échouée, rien n'est commité :\n" + verif.sortie);
     } else {
-      const fichiers = rapport.articles.map((a) => a.fichier);
-      execSync(`git add ${fichiers.map((f) => `"${f}"`).join(" ")}`, { cwd: ROOT });
-      const message = `feat(contenu): ${rapport.articles.length} article(s) autopilote (${rapport.articles.map((a) => a.type).join(", ")})\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`;
-      execSync(`git commit -m ${JSON.stringify(message)}`, { cwd: ROOT });
-      rapport.commit = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
-      if (push) {
-        execSync("git push", { cwd: ROOT });
-        rapport.pushed = true;
+      // Publication échelonnée : un commit (+ push) par article, jamais tous
+      // d'un coup — avec un délai aléatoire entre deux, pour que les articles
+      // d'un même run n'apparaissent pas tous à la même seconde/minute.
+      const delaiMin = val("--delai-min", 5); // minutes
+      const delaiMax = val("--delai-max", 15);
+      for (let i = 0; i < rapport.articles.length; i++) {
+        const a = rapport.articles[i];
+        execSync(`git add "${a.fichier}"`, { cwd: ROOT });
+        const message = `feat(contenu): article autopilote (${a.type}) — ${a.titre}\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`;
+        execSync(`git commit -m ${JSON.stringify(message)}`, { cwd: ROOT });
+        a.commit = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
+        if (push) {
+          execSync("git push", { cwd: ROOT });
+          a.pushed = true;
+        }
+        console.log(`Publié : [${a.type}] ${a.titre} (commit ${a.commit.slice(0, 7)})`);
+        const dernier = i === rapport.articles.length - 1;
+        if (!dernier && delaiMax > 0) {
+          const minutes = delaiMin + Math.random() * Math.max(0, delaiMax - delaiMin);
+          console.log(`Attente de ${minutes.toFixed(1)} min avant la prochaine publication...`);
+          await new Promise((r) => setTimeout(r, minutes * 60 * 1000));
+        }
       }
     }
   }
@@ -304,8 +414,8 @@ async function main() {
     try {
       for (const a of rapport.articles) {
         const relatif = path.relative(ROOT, a.fichier).replace(/\\/g, "/");
-        const lien = rapport.commit
-          ? `https://github.com/Rabary17/besthomeproject.com/blob/${rapport.commit}/${relatif}`
+        const lien = a.commit
+          ? `https://github.com/Rabary17/besthomeproject.com/blob/${a.commit}/${relatif}`
           : relatif;
         await ajouterLigneJournal({ type: "contenu", action: `Article publié (${a.type})`, detail: a.titre, lien });
       }
