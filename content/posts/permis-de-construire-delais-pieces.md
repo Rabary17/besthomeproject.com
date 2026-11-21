@@ -64,7 +64,7 @@ Tu peux techniquement lancer les travaux dès l'affichage, mais un recours peut 
 
 ## Trois ans pour lancer les travaux, pas davantage
 
-![Calendrier mural annoté avec une date entourée au feutre](/images/articles/permis-de-construire-delais-pieces-5.webp)
+![Calendrier mural annoté avec une date entourée au feutre](/images/articles/permis-de-construire-delais-pieces-5b.webp)
 
 Le permis de construire a une durée de validité de trois ans. Les travaux doivent commencer dans ce délai, sans quoi le permis devient caduc. Le point de départ se situe à la date de notification du permis. Une interruption de plus d'un an entraîne aussi la péremption du permis.
 

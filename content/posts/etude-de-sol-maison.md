@@ -71,7 +71,7 @@ Une étude, même au tarif haut de la fourchette, pèse peu face à une dalle à
 
 ## Ce que coûte vraiment l'impasse
 
-![Fondations en béton armé coulées dans une fouille avec ferraillage apparent](/images/articles/etude-de-sol-maison-5.webp)
+![Ouvrier sur un chantier posant le pied sur une dalle en béton avec ferraillage apparent](/images/articles/etude-de-sol-maison-5b.webp)
 
 Sans étude, le constructeur doit prendre des hypothèses. Il surdimensionne alors les fondations par précaution, ou il découvre le problème en pleine fouille. Dans les deux cas, le budget du gros œuvre change, et le calendrier change avec lui. Chaque changement de fondations ralentit le planning, et le retard pèse sur les intérêts payés pendant le chantier.
 
