@@ -3,6 +3,7 @@ title: "Réception de chantier : la checklist pour lever les réserves"
 seoTitle: "Réception de chantier maison : checklist et réserves"
 description: "Réception de chantier : préparer la visite, noter les réserves, relancer l'entreprise et connaître tes garanties, pièce par pièce."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "reception-reserves"
 image: "/images/articles/reception-reserves-couverture.webp"
 imageAlt: "Maison neuve vue de l'extérieur avec fenêtres posées et allée en gravier devant l'entrée"
@@ -32,7 +33,7 @@ Trois points à retenir avant de signer le procès-verbal.
 
 ![Dossier de documents techniques et notices posés sur une table](/images/articles/reception-reserves-1.webp)
 
-Une bonne réception commence une semaine avant. Demande à l'entreprise les plans d'exécution, les notices des équipements et les attestations d'assurance. Ces papiers servent ensuite à vérifier les matériaux posés, et à retrouver le bon modèle d'équipement en cas de panne.
+Une bonne réception commence une semaine avant. Demande à l'entreprise les [plans d'exécution](/plans-de-maison-guide-complet/), les notices des équipements et les attestations d'assurance. Ces papiers servent ensuite à vérifier les matériaux posés, et à retrouver le bon modèle d'équipement en cas de panne.
 
 Choisis une date où la maison est propre et vide, de préférence en journée. Un chantier encombré cache les défauts, et une visite précipitée en fait oublier beaucoup. Prévois deux heures, et invite un proche ou un professionnel si tu le peux. Le contrat doit d'ailleurs mentionner que tu peux te faire assister par un professionnel habilité.
 
@@ -44,7 +45,7 @@ Emporte une lampe, un mètre, un niveau à bulle et une liste imprimée. Le tél
 
 Commence par l'extérieur et les accès, puis avance vers l'intérieur. Vérifie l'étanchéité des portes et des fenêtres, l'état de la couverture visible depuis le sol et l'écoulement des eaux pluviales. Un défaut d'étanchéité ignoré à la réception se transforme souvent en infiltration au premier gros orage.
 
-À l'intérieur, procède pièce par pièce. Commence par les pièces de vie, puis les chambres, puis les pièces d'eau, car elles concentrent les réseaux. Ouvre chaque porte et chaque fenêtre, teste les robinets, actionne les interrupteurs et les prises. Observe les sols et les murs à la lumière rasante, qui fait ressortir les défauts de planéité.
+À l'intérieur, procède pièce par pièce. Commence par les pièces de vie, puis les chambres, puis les pièces d'eau, car elles concentrent les réseaux. Ouvre chaque porte et chaque fenêtre, teste les robinets, actionne les [interrupteurs et les prises](/electricite-plomberie-neuf/). Observe les sols et les murs à la lumière rasante, qui fait ressortir les défauts de planéité.
 
 | Zone | Points à contrôler |
 | --- | --- |
@@ -64,7 +65,7 @@ Une **réserve** est une note écrite qui signale un défaut à corriger. Elle d
 
 Ne laisse jamais un défaut en suspens sans le noter. Les **réserves** inscrites au procès-verbal sont celles que l'entreprise doit lever en priorité. Un défaut qui n'apparaît pas dans le procès-verbal pèse beaucoup moins dans une discussion. Un défaut découvert après la réception doit aussi être signalé par écrit, sans attendre.
 
-Fais signer le procès-verbal par toutes les parties présentes, et demande un exemplaire daté. Relis-le une fois rédigé, et corrige-le avant signature. Il fixe le point de départ des garanties, il mérite donc autant d'attention que le contrat.
+Fais signer le procès-verbal par toutes les parties présentes, et demande un exemplaire daté. Relis-le une fois rédigé, et corrige-le avant signature. Il fixe le point de départ des garanties, il mérite donc autant d'attention que le [contrat de construction](/contrat-construction-maison-individuelle/).
 
 ## Lever les réserves : délais, relances et recours
 
@@ -74,13 +75,13 @@ La loi ne fixe aucun nombre de jours pour lever les réserves. Le délai se conv
 
 Si l'entreprise tarde, envoie une **mise en demeure** par lettre recommandée avec accusé de réception. Elle fixe un nouveau délai et rappelle les réserves non levées. Sans exécution, tu peux demander au juge une astreinte, ou faire réaliser les reprises par une autre entreprise aux frais de la première. Un expert peut aussi être sollicité si le blocage persiste.
 
-Le solde de 5 % peut être consigné lorsque la réception comporte des réserves. Cette **retenue de garantie** doit être proportionnée au coût estimé des reprises. Elle ne peut pas porter sur la totalité du prix si les défauts sont limités.
+Le [solde de 5 %](/suivre-chantier-maison/) peut être consigné lorsque la réception comporte des réserves. Cette **retenue de garantie** doit être proportionnée au coût estimé des reprises. Elle ne peut pas porter sur la totalité du prix si les défauts sont limités.
 
 ## Garanties : ce qui court après la remise des clés
 
 ![Trousseau de clés posé sur une table en bois dans une maison neuve](/images/articles/reception-reserves-5.webp)
 
-La **garantie de parfait achèvement** couvre un an les désordres signalés, qu'ils soient réservés à la réception ou notifiés ensuite. Les réparations se font sans frais pour toi, dans un délai convenu avec l'entreprise.
+La **[garantie de parfait achèvement](/garanties-apres-livraison/)** couvre un an les désordres signalés, qu'ils soient réservés à la réception ou notifiés ensuite. Les réparations se font sans frais pour toi, dans un délai convenu avec l'entreprise.
 
 La **garantie biennale** couvre deux ans les éléments d'équipement dissociables, comme une porte de placard ou un radiateur. La **garantie décennale** protège dix ans contre les dommages qui touchent la solidité de l'ouvrage ou le rendent impropre à sa destination. Une maison n'a pas besoin d'un expert à chaque signe de fatigue, mais une fissure qui s'élargit mérite un avis rapide.
 
@@ -90,7 +91,7 @@ Tous ces délais partent de la réception. Note leur date de fin dans ton agenda
 
 ### Combien de temps pour lever les réserves après la réception ?
 
-La loi ne fixe pas de délai précis. Le délai se convient avec l'entreprise, puis se note dans le procès-verbal ou le contrat. À défaut d'accord, il doit être raisonnable. Une mise en demeure par lettre recommandée permet de relancer une entreprise qui ne bouge pas.
+La loi ne fixe pas de délai précis. Le délai se convient avec l'entreprise, puis se note dans le procès-verbal ou le contrat. À défaut d'accord, il doit être raisonnable. Une mise en demeure par lettre recommandée permet de relancer une [entreprise](/choisir-constructeur-maison/) qui ne bouge pas.
 
 ### Quelle différence entre réserves et défauts découverts après réception ?
 

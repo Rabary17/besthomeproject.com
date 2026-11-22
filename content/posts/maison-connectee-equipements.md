@@ -3,6 +3,7 @@ title: "Maison connectée : les équipements utiles dès la construction"
 seoTitle: "Maison connectée : équipements utiles dès la construction"
 description: "Caméras, serrures, thermostat, éclairage : quels équipements connectés prévoir dans une maison neuve, et lesquels attendre."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "maison-connectee-securite"
 image: "/images/articles/maison-connectee-equipements-couverture.webp"
 imageAlt: "Gaines électriques vides et câbles tirés dans un mur de maison en construction"
@@ -16,7 +17,7 @@ sourcesConsultees: "2026-10-15"
 
 ***Une maison connectée se prépare avant la fermeture des murs, quand gaines et câbles sont encore accessibles, pas après l'emménagement. Tous les objets connectés ne méritent pas la même place dans ton budget, ni la même attention pour tes données.***
 
-Une caméra, une serrure qui s'ouvre avec le téléphone, un thermostat qui apprend tes horaires : la maison connectée s'invite désormais partout. Beaucoup de propriétaires l'équipent après coup, en ajoutant des boîtiers qui ne se parlent pas. Le résultat ressemble vite à une collection d'applications. Mieux vaut poser les bases pendant le chantier : gaines, alimentations et réseau. Les appareils s'ajoutent ensuite.
+Une caméra, une serrure qui s'ouvre avec le téléphone, un thermostat qui apprend tes horaires : la maison connectée s'invite désormais partout. Beaucoup de propriétaires l'équipent après coup, en ajoutant des boîtiers qui ne se parlent pas. Le résultat ressemble vite à une collection d'applications. Mieux vaut poser les bases pendant le [chantier](/suivre-chantier-maison/) : gaines, alimentations et réseau. Les appareils s'ajoutent ensuite.
 
 - Prévois des gaines vides et des prises aux endroits de tes futurs équipements, avant la pose des cloisons.
 - Choisis des appareils compatibles avec un standard commun, comme Matter, pour éviter les applications en silos.
@@ -26,7 +27,7 @@ Une caméra, une serrure qui s'ouvre avec le téléphone, un thermostat qui appr
 
 ![Gaines électriques vides et câbles tirés dans un mur de maison en construction](/images/articles/maison-connectee-equipements-1.webp)
 
-Le **câblage** se décide pendant le chantier, quand les murs sont encore ouverts. Une gaine vide tirée jusqu'au tableau électrique coûte peu et permet de passer un câble réseau plus tard. Demande à l'électricien de prévoir une alimentation près de chaque point de caméra ou d'éclairage extérieur. Pense-y avant la première réunion de chantier, car les murs se referment vite.
+Le **câblage** se décide pendant le chantier, quand les murs sont encore ouverts. Une gaine vide tirée jusqu'au tableau électrique coûte peu et permet de passer un câble réseau plus tard. Demande à l'[électricien](/electricite-plomberie-neuf/) de prévoir une alimentation près de chaque point de caméra ou d'éclairage extérieur. Pense-y avant la première réunion de chantier, car les murs se referment vite.
 
 Le **réseau Wi-Fi** tient une place centrale dans la maison. Un routeur placé au centre des pièces de vie, complété par des points d'accès filaires, évite les zones sans couverture. Certains capteurs utilisent des protocoles dédiés, comme Zigbee ou Thread, qui passent par un hub.
 
@@ -46,7 +47,7 @@ Les images passent souvent par un serveur du fabricant. Choisis un appareil qui 
 
 ![Thermostat mural connecté installé dans un couloir clair](/images/articles/maison-connectee-equipements-3.webp)
 
-Un **thermostat connecté** pilote le chauffage pièce par pièce, selon les horaires et la présence. Il prend tout son sens avec un plancher chauffant ou des radiateurs à régulation électronique. Dans une maison bien isolée, il évite de chauffer des pièces vides pendant la journée. Il peut aussi couper le chauffage quand une fenêtre s'ouvre, si un capteur le signale.
+Un **thermostat connecté** pilote le chauffage pièce par pièce, selon les horaires et la présence. Il prend tout son sens avec un plancher chauffant ou des radiateurs à régulation électronique. Dans une [maison bien isolée](/isolation-re2020-maison/), il évite de chauffer des pièces vides pendant la journée. Il peut aussi couper le chauffage quand une fenêtre s'ouvre, si un capteur le signale.
 
 Les **ampoules connectées** coûtent plus cher qu'un interrupteur intelligent. Elles ne servent plus si quelqu'un coupe l'interrupteur mural. Un variateur ou un interrupteur connecté propose souvent un meilleur rapport entre prix et usage.
 
@@ -82,7 +83,7 @@ Garde la main sur tes comptes : mot de passe unique par service, double authenti
 
 ### Faut-il prévoir une maison connectée dès la construction ?
 
-Oui, si tu construis. Les gaines, les prises et le réseau coûtent beaucoup moins cher pendant le chantier qu'après l'emménagement. Les appareils, eux, peuvent attendre la fin des travaux, car leur technologie évolue vite.
+Oui, si tu construis. Les gaines, les prises et le réseau coûtent beaucoup moins cher pendant la [construction](/construire-sa-maison-guide-de-a-a-z/) qu'après l'emménagement. Les appareils, eux, peuvent attendre la fin des travaux, car leur technologie évolue vite.
 
 ### Quel protocole choisir pour une maison connectée ?
 

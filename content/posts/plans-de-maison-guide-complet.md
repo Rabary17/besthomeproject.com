@@ -3,6 +3,7 @@ title: "Plans de maison : le guide pour faire dessiner ton projet"
 seoTitle: "Plans de maison : le guide complet pour les faire dessiner"
 description: "Plans de maison : les pièces du dossier, qui peut les dessiner, comment les lire et les vérifier avant de déposer le permis."
 date: "2026-10-13"
+updated: "2026-11-22"
 category: "plans-dessinateur"
 image: "/images/articles/plans-de-maison-couverture.webp"
 imageAlt: "Plan d'architecte déroulé sur une table avec des outils de dessin"
@@ -26,7 +27,7 @@ Un bon jeu de plans se lit pièce par pièce, se compare entre professionnels et
 
 ![Dessin technique d'architecte réalisé à la main avec des outils de précision](/images/articles/plans-de-maison-ce-qui-compose.webp)
 
-Un dossier de plans ne se limite pas à un beau dessin. Pour un **permis de construire**, l'administration attend des pièces précises, numérotées. Le **plan de situation** localise le terrain dans la commune. Le **plan de masse**, coté, montre l'implantation de la maison, ses distances aux limites et ses accès.
+Un dossier de plans ne se limite pas à un beau dessin. Pour un **permis de construire**, l'administration attend des pièces précises, numérotées. Le **plan de situation** localise le [terrain](/etude-de-sol-maison/) dans la commune. Le **plan de masse**, coté, montre l'implantation de la maison, ses distances aux limites et ses accès.
 
 Le **plan en coupe** présente le profil du terrain et du bâtiment, avec les hauteurs réelles. Les plans des **façades** sont requis lorsque la façade est visible depuis l'extérieur. La **notice descriptive** décrit par écrit le projet, ses matériaux et son style. Deux photos, de l'environnement proche et du paysage lointain, complètent le dossier.
 
@@ -40,7 +41,7 @@ Le choix du professionnel dépend de la surface du projet. En dessous de 150 mè
 
 Le seuil se calcule en **surface de plancher**, et non en **surface habitable**. En cas de doute sur ce calcul, vérifie auprès de la mairie ou d'un **architecte** avant de dessiner quoi que ce soit. Une erreur sur ce point peut bloquer tout le dossier.
 
-Le tableau ci-dessous compare les quatre profils. Il ne dit pas qui est le meilleur, mais qui correspond à ton projet, à ton budget et à la complexité de ton terrain.
+Le tableau ci-dessous compare les quatre profils. Il ne dit pas qui est le meilleur, mais qui correspond à ton projet, à [ton budget](/comparer-devis-construction/) et à la complexité de ton terrain.
 
 | Profil | Recours possible | Ce qu'il apporte | Point de vigilance |
 | --- | --- | --- | --- |
@@ -67,7 +68,7 @@ Deux devis ne se comparent que s'ils portent sur le même programme. Écris noir
 
 Demande ensuite ce qui est inclus : le nombre de rendez-vous, les modifications pendant l'esquisse, le dépôt du dossier en mairie, les **plans d'exécution** et le suivi de chantier. Une modification après validation peut être facturée à part, et ce point change parfois tout le calcul. Garde enfin une trace écrite de chaque échange : un **plan** promis à l'oral n'engage personne, alors qu'un courriel daté fixe les engagements de chacun.
 
-Les **honoraires** se présentent en forfait ou en pourcentage du montant des travaux. Compare toujours la même formule, sinon tu compares des chiffres qui ne se répondent pas.
+Les **[honoraires](/contrat-construction-maison-individuelle/)** se présentent en forfait ou en pourcentage du montant des travaux. Compare toujours la même formule, sinon tu compares des chiffres qui ne se répondent pas.
 
 ## Vérifier le plan avant le dépôt du permis
 
@@ -75,7 +76,7 @@ Les **honoraires** se présentent en forfait ou en pourcentage du montant des tr
 
 Avant de signer, contrôle la cohérence entre les pièces. Le **plan de masse** et le **plan en coupe** doivent indiquer les mêmes hauteurs. La notice doit décrire les mêmes matériaux que ceux visibles sur les **façades**. Une incohérence peut retarder l'instruction ou entraîner une demande de pièces complémentaires.
 
-Vérifie ensuite les règles du **plan local d'urbanisme** : hauteur maximale, **emprise au sol**, **distances aux limites séparatives**. Le **plan** de masse doit les respecter, **cotes** à l'appui. Un contrôle rapide ici évite un refus ou un recours plus tard. Demande aussi une relecture par une autre personne, même non spécialiste : un regard neuf repère souvent une cote ou une porte oubliée.
+Vérifie ensuite les règles du **plan local d'urbanisme** : hauteur maximale, **emprise au sol**, **distances aux limites séparatives**. Le **plan** de masse doit les respecter, **cotes** à l'appui. Un contrôle rapide ici évite un refus ou un recours plus tard, avant le [dépôt du permis](/permis-de-construire-delais-pieces/). Demande aussi une relecture par une autre personne, même non spécialiste : un regard neuf repère souvent une cote ou une porte oubliée.
 
 Enfin, relis la **surface de plancher** calculée. Un écart de quelques mètres carrés peut déplacer le seuil de l'**architecte** ou le montant des **taxes d'urbanisme**. Demande au **dessinateur** le détail du calcul, pièce par pièce.
 
@@ -85,7 +86,7 @@ Enfin, relis la **surface de plancher** calculée. Un écart de quelques mètres
 
 Le **plan** du **permis** n'est pas celui que suivent les artisans. Il faut ensuite des **plans d'exécution**, qui détaillent chaque ouvrage : réseaux électriques, plomberie, menuiseries, détails de **fondation** et de **charpente**. Ces documents forment une même famille, mais ils n'ont pas le même rôle.
 
-Demande que les plans d'exécution soient validés avec le **constructeur** ou le **maître d'œuvre** avant le démarrage. Une prise oubliée se corrige en un coup de crayon sur papier. Une fois le mur monté, il faut une journée de travail pour la déplacer.
+Demande que les plans d'exécution soient validés avec le **[constructeur](/choisir-constructeur-maison/)** ou le **maître d'œuvre** avant le démarrage. Une prise oubliée se corrige en un coup de crayon sur papier. Une fois le mur monté, il faut une journée de travail pour la déplacer.
 
 Enfin, toute modification importante du projet après l'obtention du permis peut exiger un **permis modificatif**. Garde donc une trace datée de chaque changement validé, avec la signature de chacun. Fais enfin signer les plans d'exécution par le constructeur, avec la date de la dernière version : cette précaution évite les débats sur la version à suivre.
 

@@ -2,6 +2,7 @@
 title: "Plan de 5 milliards d'euros pour le logement : ce que l'annonce change, et ce qu'elle laisse en suspens"
 description: "Le Premier ministre français, Sébastien Lecornu, a présenté lundi les principales mesures du projet de loi sur le logement, qui arrive à l'Assemblée…"
 date: "2026-11-21"
+updated: "2026-11-22"
 author: "nekena-judicael"
 category: "aides-budget"
 image: "https://images.unsplash.com/photo-1626178793926-22b28830aa30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTE4NzJ8MHwxfHNlYXJjaHwxfHxmaW5hbmNlbWVudCUyMG1haXNvbiUyMGJ1ZGdldHxlbnwwfDB8fHwxNzk1MjcyMjU0fDA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -25,7 +26,7 @@ Le texte arrive à l'Assemblée nationale après son adoption au Sénat. Autreme
 
 Le projet de loi poursuit trois objectifs : accélérer la construction, soutenir la rénovation et renforcer l'offre locative. Chacun concerne un profil différent.
 
-- **Accélérer la construction** : cela intéresse surtout ceux qui préparent un permis de construire ou cherchent un terrain. Des délais plus courts réduiraient le temps d'attente avant le début du chantier, et donc les frais annexes.
+- **Accélérer la construction** : cela intéresse surtout ceux qui préparent un [permis de construire](/permis-de-construire-delais-pieces/) ou cherchent un terrain. Des délais plus courts réduiraient le temps d'attente avant le début du chantier, et donc les frais annexes.
 - **Soutenir la rénovation** : propriétaires occupants et bailleurs sont concernés. Selon la forme que prendra ce soutien, le reste à charge de tes travaux pourrait évoluer.
 - **Renforcer l'offre locative** : les locataires et les investisseurs sont visés. Une offre plus large peut influer sur la facilité à se loger.
 
@@ -43,14 +44,14 @@ Le plus utile est de rester prudent et de documenter ton projet. Voici une déma
 
 1. **Suis le calendrier parlementaire.** Le passage à l'Assemblée nationale peut encore faire évoluer le texte. Les mesures finales pourraient différer de celles annoncées.
 2. **Ne reporte pas un projet urgent par principe.** Attendre une aide non confirmée peut coûter plus cher qu'un chantier lancé à temps, surtout si les prix des matériaux ou les taux évoluent.
-3. **Garde tes devis et justificatifs.** Si un dispositif s'applique ensuite aux travaux, ces documents faciliteront ton dossier.
+3. **Garde tes [devis](/comparer-devis-construction/) et justificatifs.** Si un dispositif s'applique ensuite aux travaux, ces documents faciliteront ton dossier.
 4. **Consulte un conseiller.** Un conseiller France Rénov' ou un notaire peut te dire quelles aides existantes s'appliquent à ta situation.
 
 ## Les points que l'on ne sait pas encore
 
 Le résumé disponible ne précise ni les bénéficiaires, ni les conditions de ressources, ni la date d'entrée en vigueur. Il ne dit pas non plus comment les 5 milliards d'euros seront répartis entre les trois objectifs.
 
-Ces éléments conditionnent pourtant ton budget. Tant qu'ils ne sont pas publiés, considère ce plan comme une orientation politique, pas comme une aide acquise. Relis le texte final, puis les arrêtés et décrets d'application, avant de modifier ton plan de financement.
+Ces éléments conditionnent pourtant ton budget. Tant qu'ils ne sont pas publiés, considère ce plan comme une orientation politique, pas comme une [aide acquise](/aides-achat-construction/). Relis le texte final, puis les arrêtés et décrets d'application, avant de modifier ton plan de financement.
 
 ## Questions fréquentes
 
