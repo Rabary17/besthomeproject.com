@@ -3,6 +3,7 @@ title: "Électricité et plomberie neuves : ce qu'il faut prévoir avant les clo
 seoTitle: "Électricité et plomberie neuves : avant les cloisons"
 description: "Gaines, circuits, évacuations, Consuel : les décisions à prendre et les contrôles à faire avant de refermer les murs."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "plomberie-electricite"
 image: "/images/articles/electricite-plomberie-neuf-couverture.webp"
 imageAlt: "Gaines électriques et tuyaux de plomberie visibles dans un mur neuf"
@@ -14,7 +15,7 @@ sourcesConsultees: "2026-10-15"
 
 ***L'électricité et la plomberie neuves se jouent dans les murs, avant que les cloisons ne cachent tout. Un oubli à ce stade se répare à coups de saignées, de plâtre et de travaux en double.***
 
-Une fois les cloisons montées, plus aucun câble ne se voit. C'est pourtant à ce moment que la maison se joue en silence. Un point d'eau mal placé, une prise oubliée au-dessus du plan de travail ou une évacuation sans pente se paient cher. Ce guide liste les décisions à prendre, les documents à exiger et les contrôles à faire avant de refermer les murs.
+Une fois la maison [hors d'eau et hors d'air](/charpente-toiture-hors-d-eau/) et les cloisons montées, plus aucun câble ne se voit. C'est pourtant à ce moment que la maison se joue en silence. Un point d'eau mal placé, une prise oubliée au-dessus du plan de travail ou une évacuation sans pente se paient cher. Ce guide liste les décisions à prendre, les documents à exiger et les contrôles à faire avant de refermer les murs.
 
 Avant de fermer le moindre mur, trois réflexes protègent ton installation.
 
@@ -46,7 +47,7 @@ Le coût d'une attestation est modeste, environ 145 euros TTC pour un particulie
 
 ![Gaines électriques vides posées dans un mur en construction](/images/articles/electricite-plomberie-neuf-3.webp)
 
-Les **gaines** vides aujourd'hui évitent les saignées demain. Elles accueillent les câbles électriques, mais aussi la fibre, la téléphonie et la vidéo. Une gaine supplémentaire coûte quelques mètres de tube, alors qu'un câble ajouté plus tard peut exiger de casser un mur. Une gaine vide se repère facilement, alors qu'un câble oublié se cherche pendant des heures.
+Les **gaines** vides aujourd'hui évitent les saignées demain. Elles accueillent les câbles électriques, mais aussi la fibre, la téléphonie et les équipements d'une future [maison connectée](/maison-connectee-equipements/). Une gaine supplémentaire coûte quelques mètres de tube, alors qu'un câble ajouté plus tard peut exiger de casser un mur. Une gaine vide se repère facilement, alors qu'un câble oublié se cherche pendant des heures.
 
 Les **réservations** servent aux passages de tuyaux, aux boîtiers et aux traversées de dalle. Elles se placent avant le coulage du béton ou la pose des blocs, et elles figurent sur le plan d'exécution. Sans elles, le plombier perce la dalle au hasard, et le ferraillage risque d'être touché.
 
@@ -66,7 +67,7 @@ Pense à la ventilation des colonnes d'évacuation et à l'emplacement des sipho
 
 ![Test de pression réalisé sur un réseau d'eau en chantier](/images/articles/electricite-plomberie-neuf-5.webp)
 
-Avant la pose des plaques de plâtre, fais un tour complet du chantier avec l'installateur. Vérifie que chaque prise, interrupteur, boîtier et point d'eau correspond au plan. Note tout écart sur place, car un plan corrigé après coup se lit moins bien. Un plan à jour évite les erreurs de perçage des années plus tard.
+Avant la pose des plaques de plâtre, fais un tour complet du chantier avec l'installateur, au même rythme que le reste du [suivi de chantier](/suivre-chantier-maison/). Vérifie que chaque prise, interrupteur, boîtier et point d'eau correspond au plan. Note tout écart sur place, car un plan corrigé après coup se lit moins bien. Un plan à jour évite les erreurs de perçage des années plus tard.
 
 Demande un **test d'étanchéité** sur les réseaux d'eau avant de les recouvrir. Une mise sous pression révèle une fuite avant qu'elle ne mouille le plâtre et le carrelage. Le plombier doit consigner le résultat dans son compte rendu, daté et signé. Le compte rendu peut servir de preuve en cas de litige.
 
@@ -76,11 +77,11 @@ Photographie chaque gaine et chaque tuyau avant qu'ils disparaissent. Les images
 
 ![Dossier de chantier avec plans et attestations posé sur une table](/images/articles/electricite-plomberie-neuf-6.webp)
 
-Le dossier final réunit l'attestation Consuel, les plans tels que construits, les notices des équipements et le compte rendu des tests. Garde l'ensemble avec les documents du chantier, car tu en auras besoin lors d'une revente ou de travaux. Un dossier complet fait gagner du temps à chaque intervention ultérieure.
+Le dossier final réunit l'attestation Consuel, les plans tels que construits, les notices des équipements et le compte rendu des tests. Garde l'ensemble avec les documents du chantier et les [garanties de la maison](/garanties-apres-livraison/), car tu en auras besoin lors d'une revente ou de travaux. Un dossier complet fait gagner du temps à chaque intervention ultérieure.
 
 Le raccordement suit l'attestation, mais la mise en service n'a rien d'immédiat. EDF précise qu'un délai supplémentaire s'écoule entre le contrôle et l'intervention du distributeur. Anticipe-le dans le calendrier, surtout si la date d'emménagement est fixée. Préviens le distributeur dès que la date du chantier se fixe.
 
-Si une non-conformité apparaît, une nouvelle visite peut être nécessaire. Elle ajoute des frais et des délais, parfois plusieurs semaines. Une installation contrôlée en amont, avec des photos à l'appui, évite la plupart de ces allers-retours. Une visite supplémentaire pèse aussi sur le planning d'emménagement.
+Si une non-conformité apparaît, une nouvelle visite peut être nécessaire. Elle ajoute des frais et des délais, parfois plusieurs semaines. Une installation contrôlée en amont, avec des photos à l'appui, évite la plupart de ces allers-retours. Une visite supplémentaire pèse aussi sur le planning d'emménagement, juste avant les travaux de [peinture et de sols](/peinture-sols-finitions/).
 
 ## Questions fréquentes
 
@@ -94,7 +95,7 @@ Environ 145 euros TTC pour un particulier, selon EDF, pour une installation dome
 
 ### Faut-il prévoir des gaines pour la fibre dans une maison neuve ?
 
-C'est vivement conseillé. Une gaine vide coûte peu à l'installation et évite de casser des murs plus tard. Elle accueille la fibre, la téléphonie et les futurs usages connectés, sans câbles apparents.
+C'est vivement conseillé. Une gaine vide coûte peu à l'installation et évite de casser des murs plus tard. Elle accueille la fibre, la téléphonie et les futurs usages connectés, sans câbles apparents. Notre [guide pour construire sa maison de A à Z](/construire-sa-maison-guide-de-a-a-z/) replace cette étape dans le calendrier global du chantier.
 
 ### Pourquoi prévoir des circuits dédiés pour les gros appareils ?
 

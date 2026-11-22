@@ -1,8 +1,10 @@
 ---
 title: "Contrat de construction de maison individuelle : les clauses à lire avant de signer"
 seoTitle: "Contrat construction maison individuelle : clauses clés"
+author: "nekena-judicael"
 description: "Pénalités de retard, acomptes, garanties, rétractation : les clauses d'un CCMI à vérifier avant de signer, expliquées sans jargon."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "contrats-assurances"
 image: "/images/articles/contrat-construction-maison-individuelle-couverture.webp"
 imageAlt: "Contrat de construction posé sur un bureau avec un stylo et un trousseau de clés"
@@ -28,7 +30,7 @@ Le contrat se lit à froid, et lentement. Retiens trois points :
 
 Un **CCMI** doit comporter des mentions précises, et leur absence fragilise tout le reste. Le contrat désigne le terrain, indique la référence de l'assurance **dommages-ouvrage** et décrit les caractéristiques du bâtiment. Il fixe aussi le prix, les modalités de règlement et le délai d'exécution. Ces éléments forment la base de ce que tu peux exiger en cas de problème.
 
-Le contrat doit aussi mentionner les **pénalités de retard** prévues si la livraison dépasse la date convenue. Il précise les modalités de financement, la nature et le montant des prêts obtenus, ainsi que les conditions suspensives. Une condition suspensive, comme l'obtention d'un prêt, permet de remettre en cause l'engagement si elle ne se réalise pas.
+Le contrat doit aussi mentionner les **pénalités de retard** prévues si la livraison dépasse la date convenue. Il précise les modalités de financement, la nature et le montant des prêts obtenus, ainsi que les conditions suspensives. Une condition suspensive, comme l'obtention d'un prêt ou d'une [aide à la construction](/aides-achat-construction/), permet de remettre en cause l'engagement si elle ne se réalise pas.
 
 Si une mention manque, demande un ajout écrit avant la signature. Un oubli sur le terrain ou sur le délai peut se payer très cher, plusieurs mois plus tard, quand le chantier est lancé et que les marges de négociation se réduisent. Relis aussi la liste des annexes, car elles font partie du contrat.
 
@@ -40,7 +42,7 @@ Le contrat doit être signé avant le début des travaux. Il est ensuite envoyé
 
 Pour te rétracter, il faut écrire en recommandé avec accusé de réception, ou utiliser un moyen qui présente des garanties équivalentes. Garde une copie de ta lettre et la preuve d'envoi. Ce document peut éviter une discussion longue sur la date de la demande, surtout si le constructeur conteste le délai.
 
-Profite de ces dix jours pour relire le contrat avec un proche ou un conseiller, loin du rendez-vous commercial. Une signature prise sous la pression du moment se regrette parfois. Le délai existe justement pour éviter ce piège, alors ne le laisse pas filer. Il ne coûte rien et ne demande aucune justification.
+Profite de ces dix jours pour relire le contrat avec un proche ou un conseiller, loin du rendez-vous commercial, après avoir fait tes [vérifications sur le constructeur](/choisir-constructeur-maison/). Une signature prise sous la pression du moment se regrette parfois. Le délai existe justement pour éviter ce piège, alors ne le laisse pas filer. Il ne coûte rien et ne demande aucune justification.
 
 ## Les garanties à exiger, de la livraison à la décennale
 
@@ -56,7 +58,7 @@ Un CCMI prévoit plusieurs garanties, chacune avec son rôle. La **garantie de l
 | Biennale | Éléments d'équipement dissociables | Deux ans après réception |
 | Décennale | Atteinte à la solidité ou à l'usage du bâtiment | Dix ans après réception |
 
-Le délai de garantie se compte à partir de la réception des travaux, un moment formel que tu fixes avec le constructeur. La **garantie de parfait achèvement** est la plus proche du quotidien : elle couvre les désordres signalés pendant un an. Chaque défaut doit être notifié par écrit, idéalement par lettre recommandée, sans attendre la fin de l'année. Plus tôt tu signales un défaut, plus tôt l'entreprise peut intervenir.
+Le délai de garantie se compte à partir de la [réception des travaux](/reception-reserves/), un moment formel que tu fixes avec le constructeur. Ces délais rejoignent ceux détaillés dans notre guide sur les [garanties après la livraison](/garanties-apres-livraison/). La **garantie de parfait achèvement** est la plus proche du quotidien : elle couvre les désordres signalés pendant un an. Chaque défaut doit être notifié par écrit, idéalement par lettre recommandée, sans attendre la fin de l'année. Plus tôt tu signales un défaut, plus tôt l'entreprise peut intervenir.
 
 La **décennale** dure dix ans et suit le bâtiment plutôt que son propriétaire. Une revente ne la fait donc pas disparaître. Garde les attestations et le procès-verbal de réception précieusement, car ce sont les pièces que tu présenteras en cas de sinistre.
 
@@ -64,7 +66,7 @@ La **décennale** dure dix ans et suit le bâtiment plutôt que son propriétair
 
 ![Calculatrice et échéancier de paiement posés sur un tableau de chantier](/images/articles/contrat-construction-maison-individuelle-4.webp)
 
-Les règlements doivent suivre l'avancement réel des travaux. Chaque **appel de fonds** correspond à une étape franchie sur le chantier, comme les fondations ou la mise hors d'eau. Un paiement demandé sans étape achevée doit alerter, et tu dois le discuter avant de le régler.
+Les règlements doivent suivre l'avancement réel des travaux. Chaque **appel de fonds** correspond à une étape franchie sur le chantier, comme les [fondations](/fondations-gros-oeuvre-maison/) ou la [mise hors d'eau](/charpente-toiture-hors-d-eau/). Un paiement demandé sans étape achevée doit alerter, et tu dois le discuter avant de le régler.
 
 Si le constructeur demande un acompte à la signature, exige la **garantie de remboursement** avant de verser quoi que ce soit. Elle protège les sommes versées si le contrat est rompu avant l'ouverture du chantier. Sans elle, récupérer son argent peut se transformer en long combat, car l'argent est déjà sorti de ton compte.
 
@@ -94,7 +96,7 @@ Conserve l'attestation de dommages-ouvrage avec le contrat et les autres pièces
 
 ### Qu'est-ce qu'un contrat de construction de maison individuelle ?
 
-Le CCMI regroupe la conception et la construction auprès d'un seul constructeur. Il encadre le prix, le délai et les garanties, avec des mentions obligatoires. Il se distingue d'une démarche où l'on signe séparément avec un maître d'œuvre et chaque artisan.
+Le CCMI regroupe la conception et la construction auprès d'un seul constructeur. Il encadre le prix, le délai et les garanties, avec des mentions obligatoires. Il se distingue d'une démarche où l'on signe séparément avec un maître d'œuvre et chaque artisan, comme le détaille notre [guide pour construire sa maison de A à Z](/construire-sa-maison-guide-de-a-a-z/).
 
 ### Quel est le délai de rétractation d'un CCMI ?
 

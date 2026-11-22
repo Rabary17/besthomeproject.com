@@ -3,6 +3,7 @@ title: "Choisir son constructeur de maison : les sept vérifications à faire"
 seoTitle: "Choisir son constructeur de maison : sept vérifications"
 description: "Entreprise, décennale, références, devis, contrat, suivi : sept vérifications simples pour choisir un constructeur de maison sereinement."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "choisir-entreprises"
 image: "/images/articles/choisir-constructeur-maison-couverture.webp"
 imageAlt: "Client et conseiller examinant un dossier de construction sur une table"
@@ -36,7 +37,7 @@ Vérifie enfin le nom du dirigeant et l'adresse du siège. Une simple boîte pos
 
 ![Attestation d'assurance posée à côté d'un stylo sur un bureau](/images/articles/choisir-constructeur-maison-2.webp)
 
-L'**assurance décennale** protège ta maison pendant dix ans après la réception des travaux. Elle est obligatoire pour les travaux de gros œuvre, la réfection des sols ou la plomberie. Demande l'attestation avant de signer, et vérifie qu'elle couvre bien les activités prévues dans ton projet. Une attestation périmée ou trop restrictive ne protège rien.
+L'**assurance décennale** protège ta maison pendant dix ans après la réception des travaux, aux côtés des [autres garanties qui prennent le relais après la livraison](/garanties-apres-livraison/). Elle est obligatoire pour les travaux de gros œuvre, la réfection des sols ou la plomberie. Demande l'attestation avant de signer, et vérifie qu'elle couvre bien les activités prévues dans ton projet. Une attestation périmée ou trop restrictive ne protège rien.
 
 La **responsabilité civile professionnelle** joue un rôle différent. Elle couvre les dommages causés à des tiers pendant le chantier, jusqu'à la livraison. Un voisin dont le mur est endommagé pendant les travaux doit pouvoir être indemnisé sans longue bataille. Réclame aussi cette attestation, à jour à la date de signature.
 
@@ -48,7 +49,7 @@ En cas de doute, ne te contente pas du document imprimé. Contacte l'assureur, c
 
 Une brochure ne prouve rien. Demande trois réalisations récentes, de préférence proches de ton projet par le type de maison, la surface et la région. Une liste sans adresse ni coordonnées de clients doit éveiller ta méfiance, car elle empêche toute vérification. Demande aussi à voir le chantier de tes propres yeux. Les photos fournies par l'entreprise montrent surtout ce qu'elle veut montrer.
 
-Ensuite, visite au moins une maison terminée, et si possible un chantier en cours. Observe les joints de la façade, la propreté des abords et la netteté des finitions intérieures. Un chantier désordonné, avec des déchets qui traînent depuis des semaines, en dit souvent plus qu'un discours commercial.
+Ensuite, visite au moins une maison terminée, et si possible un chantier en cours, par exemple au stade des [fondations et du gros œuvre](/fondations-gros-oeuvre-maison/). Observe les joints de la façade, la propreté des abords et la netteté des finitions intérieures. Un chantier désordonné, avec des déchets qui traînent depuis des semaines, en dit souvent plus qu'un discours commercial.
 
 Appelle enfin les propriétaires. Demande le délai réel, le respect du budget, la manière dont les réserves ont été levées et l'ambiance sur le chantier. Un client satisfait répond volontiers, et ses réponses valent davantage que n'importe quel avis en ligne.
 
@@ -56,7 +57,7 @@ Appelle enfin les propriétaires. Demande le délai réel, le respect du budget,
 
 ![Plusieurs devis imprimés disposés côte à côte avec une calculatrice](/images/articles/choisir-constructeur-maison-4.webp)
 
-Trois devis n'ont de sens que s'ils décrivent le même projet. Rédige un **cahier des charges** avec les surfaces, les matériaux, le niveau d'isolation et les options souhaitées, puis envoie-le à chaque constructeur. Sans base commune, une offre paraît moins chère simplement parce qu'elle oublie des postes. Garde les trois devis côte à côte pendant la comparaison, poste par poste.
+Trois devis n'ont de sens que s'ils décrivent le même projet : notre méthode pour [comparer des devis de construction](/comparer-devis-construction/) détaille la marche à suivre. Rédige un **cahier des charges** avec les surfaces, les matériaux, le niveau d'isolation et les options souhaitées, puis envoie-le à chaque constructeur. Sans base commune, une offre paraît moins chère simplement parce qu'elle oublie des postes. Garde les trois devis côte à côte pendant la comparaison, poste par poste.
 
 Lis ensuite chaque devis ligne par ligne. Un bon document précise les marques, les quantités, les délais et les conditions de paiement. Il indique aussi ce qui n'est pas inclus, comme les **raccordements**, l'étude de sol ou le terrassement. Un prix très bas cache souvent une exclusion.
 
@@ -66,7 +67,7 @@ Demande une clause écrite sur les délais et leurs conséquences. Si le constru
 
 ![Contrat imprimé avec stylo et lunettes posés dessus](/images/articles/choisir-constructeur-maison-5.webp)
 
-Pour une construction neuve, le **CCMI**, ou contrat de construction de maison individuelle, encadre la relation et impose des mentions précises. Le contrat doit désigner le terrain, indiquer la référence de l'assurance dommages-ouvrage, préciser le prix et prévoir des pénalités de retard. Si l'une de ces mentions manque, pose la question avant de signer. Un contrat qui renvoie à des annexes demande une vérification plus poussée, et chaque annexe doit être jointe à la signature.
+Pour une construction neuve, le [**CCMI**, ou contrat de construction de maison individuelle](/contrat-construction-maison-individuelle/), encadre la relation et impose des mentions précises. Le contrat doit désigner le terrain, indiquer la référence de l'assurance dommages-ouvrage, préciser le prix et prévoir des pénalités de retard. Si l'une de ces mentions manque, pose la question avant de signer. Un contrat qui renvoie à des annexes demande une vérification plus poussée, et chaque annexe doit être jointe à la signature.
 
 Vérifie aussi la date d'ouverture de chantier et les conditions suspensives, comme l'obtention du prêt ou du permis. Ce sont elles qui peuvent libérer ton engagement si le financement ou l'autorisation n'aboutit pas. Ne les lis pas en diagonale.
 
@@ -76,7 +77,7 @@ Le **délai de rétractation** de dix jours court à partir du lendemain de la p
 
 ![Réunion de chantier avec casques et plans sur une table](/images/articles/choisir-constructeur-maison-6.webp)
 
-La qualité d'un constructeur se mesure aussi à sa façon de répondre. Demande qui sera ton interlocuteur pendant le chantier, qu'il s'agisse d'un conducteur de travaux ou d'un chargé d'affaires, et comment se déroulent les réunions. Une réponse claire dès le premier échange annonce souvent le suivi à venir.
+La qualité d'un constructeur se mesure aussi à sa façon de répondre. Demande qui sera ton interlocuteur pendant le [suivi de chantier](/suivre-chantier-maison/), qu'il s'agisse d'un conducteur de travaux ou d'un chargé d'affaires, et comment se déroulent les réunions. Une réponse claire dès le premier échange annonce souvent le suivi à venir.
 
 Teste la réactivité. Pose une question précise par écrit et observe le délai, le ton et la précision de la réponse. Un constructeur qui écrit clairement avant le contrat facilitera les échanges le jour où il faudra arbitrer une réserve ou un changement. Note les engagements importants, car un accord oral s'efface vite. Garde ces écrits dans ton dossier, avec le contrat.
 
@@ -94,7 +95,7 @@ Demande l'attestation d'assurance décennale, obligatoire pour le gros œuvre, e
 
 ### Le CCMI protège-t-il mieux qu'un contrat avec des artisans séparés ?
 
-Le CCMI impose des mentions obligatoires, un délai de rétractation de dix jours et une garantie de livraison à prix et délais convenus. Avec des artisans signés séparément, il faut vérifier chaque contrat et suivre seul la coordination des garanties.
+Le CCMI impose des mentions obligatoires, un délai de rétractation de dix jours et une garantie de livraison à prix et délais convenus. Avec des artisans signés séparément, il faut vérifier chaque contrat et suivre seul la coordination des garanties. Notre [guide pour construire sa maison de A à Z](/construire-sa-maison-guide-de-a-a-z/) compare les deux options.
 
 ### Combien de devis faut-il demander avant de choisir ?
 
@@ -102,4 +103,4 @@ Trois devis établis sur le même cahier des charges constituent un minimum rais
 
 ### Quels signes doivent alerter avant de signer ?
 
-Un acompte important demandé avant la signature, un devis flou, une attestation expirée ou un refus de donner des références sont des signaux d'alerte. Ils ne prouvent pas une fraude, mais ils justifient de s'arrêter et de vérifier.
+Un acompte important demandé avant la signature, un devis flou, une attestation expirée ou un refus de donner des références sont des signaux d'alerte. Ils ne prouvent pas une fraude, mais ils justifient de s'arrêter et de vérifier, un réflexe utile jusqu'à la [réception du chantier](/reception-reserves/).

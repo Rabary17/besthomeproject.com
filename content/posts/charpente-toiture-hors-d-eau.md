@@ -3,6 +3,7 @@ title: "Charpente et toiture : quand la maison tient la pluie"
 seoTitle: "Hors d'eau hors d'air : charpente et toiture expliquées"
 description: "Charpente, couverture, menuiseries : les contrôles à faire entre le hors d'eau et le hors d'air, avant que la pluie n'entre."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "hors-d-eau-hors-d-air"
 image: "/images/articles/charpente-toiture-hors-d-eau-couverture.webp"
 imageAlt: "Charpente bois posée sur les murs d'une maison en construction"
@@ -28,7 +29,7 @@ Un hors d'eau mal fini se paie en humidité, puis en moisissures et en reprises.
 
 Le **hors d'eau** arrive quand la toiture est posée et que la pluie ne pénètre plus dans la construction. Le **hors d'air** suit, une fois les menuiseries extérieures installées, portes et fenêtres comprises. La maison ferme alors au vent comme à la pluie. Le hors d'air arrive donc après le hors d'eau, jamais avant.
 
-La distinction compte pour le chantier comme pour le paiement. Le **contrat de construction de maison individuelle** (CCMI) encadre les appels de fonds par étape, avec des plafonds fixés pour chacune. Vérifie-les dans ton contrat : une étape validée trop tôt, sur une toiture inachevée, ne se rattrape pas facilement. Demande le planning détaillé de ces deux jalons dès le démarrage.
+La distinction compte pour le chantier comme pour le paiement. Le [contrat de construction de maison individuelle](/contrat-construction-maison-individuelle/) (CCMI) encadre les appels de fonds par étape, avec des plafonds fixés pour chacune. Vérifie-les dans ton contrat : une étape validée trop tôt, sur une toiture inachevée, ne se rattrape pas facilement. Demande le planning détaillé de ces deux jalons dès le démarrage.
 
 | Seuil | Ce qui est posé | Ce que tu peux vérifier |
 | --- | --- | --- |
@@ -41,7 +42,7 @@ Les travaux intérieurs ne démarrent vraiment qu'en hors d'air. Plâtrerie, él
 
 ![Fermes de charpente bois alignées sur un chantier](/images/articles/charpente-toiture-hors-d-eau-2.webp)
 
-La charpente reprend le poids de la toiture, de la neige et du vent, puis le transmet aux murs. Elle peut être traditionnelle, taillée sur place, ou industrielle, avec des **fermettes** préfabriquées en usine. Les deux solutions tiennent si elles sont bien dimensionnées, et c'est là que tout se joue. Chaque élément porte une partie de ce poids, et chaque assemblage doit suivre le calcul.
+La charpente reprend le poids de la toiture, de la neige et du vent, puis le transmet aux [murs et aux fondations](/fondations-gros-oeuvre-maison/). Elle peut être traditionnelle, taillée sur place, ou industrielle, avec des **fermettes** préfabriquées en usine. Les deux solutions tiennent si elles sont bien dimensionnées, et c'est là que tout se joue. Chaque élément porte une partie de ce poids, et chaque assemblage doit suivre le calcul.
 
 Le **bois** doit être traité contre les insectes xylophages et adapté à l'exposition du lieu. Demande l'attestation de traitement et la note de calcul, qui précise les sections et les assemblages. Un plan seul ne prouve pas la tenue de la structure.
 
@@ -75,7 +76,7 @@ Les **menuiseries extérieures** ferment les baies, et elles pèsent lourd dans 
 
 La pose compte autant que le produit. Un cadre bien calé, d'aplomb et calfeutré évite les infiltrations, les courants d'air et les ponts thermiques. Vérifie le **calfeutrement**, la mise en œuvre des appuis et l'étanchéité aux jonctions avec le mur. Une menuiserie posée d'aplomb ferme mieux et s'use moins vite.
 
-Fais contrôler les menuiseries après la pose, avant les enduits et la peinture. Ferme chaque ouvrant, passe la main sur les joints par temps de vent, et note les défauts dans le compte rendu. Une correction faite tôt coûte bien moins cher qu'un ouvrant à reprendre.
+Fais contrôler les menuiseries après la pose, avant les enduits et la peinture. Ferme chaque ouvrant, passe la main sur les joints par temps de vent, et note les défauts dans le compte rendu. Une correction faite tôt coûte bien moins cher qu'un ouvrant à reprendre, une fois les travaux d'[électricité et de plomberie](/electricite-plomberie-neuf/) lancés derrière les murs.
 
 ## Hors d'eau, hors d'air : payer et vérifier les garanties
 
@@ -83,7 +84,7 @@ Fais contrôler les menuiseries après la pose, avant les enduits et la peinture
 
 Le paiement suit l'avancement, et il ne doit jamais devancer le travail réel. Avant de valider une étape, compare l'appel de fonds aux travaux visibles sur place. Si la couverture n'est pas terminée, refuse la validation de l'étape. Un paiement anticipé ne se récupère pas facilement en cas de défaut.
 
-Plusieurs garanties protègent ce lot. La **garantie décennale** du charpentier et du couvreur couvre dix ans les dommages qui touchent la solidité de l'ouvrage. La garantie de parfait achèvement couvre les désordres signalés pendant un an. L'assurance **dommages-ouvrage**, souscrite par le maître d'ouvrage, permet de préfinancer les réparations sans attendre un procès. Elles couvrent des durées différentes, et il faut les connaître toutes les trois.
+Plusieurs [garanties protègent ce lot après la livraison](/garanties-apres-livraison/). La **garantie décennale** du charpentier et du couvreur couvre dix ans les dommages qui touchent la solidité de l'ouvrage. La garantie de parfait achèvement couvre les désordres signalés pendant un an. L'assurance **dommages-ouvrage**, souscrite par le maître d'ouvrage, permet de préfinancer les réparations sans attendre un procès. Elles couvrent des durées différentes, et il faut les connaître toutes les trois.
 
 Demande les attestations d'assurance de chaque entreprise avant qu'elle monte sur le toit. Une attestation périmée ne protège personne, et le bon moment pour le vérifier est celui où les ouvriers sont encore sur place. Garde-les avec le contrat, dans un dossier papier et numérique.
 
@@ -103,8 +104,8 @@ La garantie décennale couvre dix ans les dommages qui compromettent la solidit�
 
 ### Peut-on poser les cloisons avant le hors d'air ?
 
-Déconseillé. Plâtre, électricité et sols craignent l'humidité et les variations de température. Une fenêtre non posée expose aussi l'intérieur à la pluie. Attends la pose des menuiseries pour lancer les travaux de second œuvre.
+Déconseillé. Plâtre, électricité et sols craignent l'humidité et les variations de température. Une fenêtre non posée expose aussi l'intérieur à la pluie. Attends la pose des menuiseries pour lancer les travaux de second œuvre, comme détaillé dans notre [guide pour construire sa maison de A à Z](/construire-sa-maison-guide-de-a-a-z/).
 
 ### Comment vérifier l'assurance d'un couvreur ?
 
-Demande son attestation d'assurance décennale, en cours de validité, avant le début des travaux. Vérifie le nom de l'assureur, les dates et l'activité couverte. Une attestation qui ne mentionne pas la couverture ne protège pas ce lot.
+Demande son attestation d'assurance décennale, en cours de validité, avant le début des travaux. Vérifie le nom de l'assureur, les dates et l'activité couverte. Une attestation qui ne mentionne pas la couverture ne protège pas ce lot. Nos [vérifications à faire avant de choisir une entreprise](/choisir-constructeur-maison/) détaillent cette démarche.

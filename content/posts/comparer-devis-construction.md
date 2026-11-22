@@ -1,8 +1,10 @@
 ---
 title: "Comparer des devis de construction sans se faire piéger"
 seoTitle: "Comparer des devis de construction : la méthode sans piège"
+author: "nekena-judicael"
 description: "Cahier des charges commun, contrat CCMI, postes oubliés : la méthode pour comparer des devis de construction sans piège."
 date: "2026-10-15"
+updated: "2026-11-22"
 category: "devis-construction"
 image: "/images/articles/comparer-devis-construction-couverture.webp"
 imageAlt: "Pages de devis de construction étalées sur un bureau avec un stylo"
@@ -26,7 +28,7 @@ Un devis se compare sur une base commune, jamais sur son seul total. Trois réfl
 
 ![Feuilles de notes et plan de maison annoté posés sur une table](/images/articles/comparer-devis-construction-1.webp)
 
-Le **cahier des charges** décrit ce que tu veux construire, avec précision. Il indique la surface visée, l'implantation sur le terrain, le nombre de pièces, le niveau d'isolation souhaité et les types de menuiseries. Plus il est concret, plus les réponses se ressemblent. Il sert de référence commune pendant toute la comparaison.
+Le **cahier des charges** décrit ce que tu veux construire, avec précision, à l'étape des plans de notre [guide pour construire sa maison de A à Z](/construire-sa-maison-guide-de-a-a-z/). Il indique la surface visée, l'implantation sur le terrain, le nombre de pièces, le niveau d'isolation souhaité et les types de menuiseries. Plus il est concret, plus les réponses se ressemblent. Il sert de référence commune pendant toute la comparaison.
 
 Sans cette base, chaque entreprise chiffre son propre projet. L'une prévoit un chauffage au sol, l'autre une pompe à chaleur présentée en option. Les totaux ne veulent alors plus rien dire, et tu ne sais pas quel devis choisir. Le problème vient de la question posée, pas des réponses. Un cahier de quelques pages suffit souvent, à condition d'être précis.
 
@@ -36,7 +38,7 @@ Remets donc le même document à chaque entreprise, sans l'alourdir de détails 
 
 ![Contrat papier, stylo et lunettes posés sur un bureau](/images/articles/comparer-devis-construction-2.webp)
 
-Si tu passes par un **contrat de construction de maison individuelle**, ou **CCMI**, la loi encadre son contenu. Le contrat doit désigner le terrain, préciser le prix forfaitaire et définitif, et fixer les modalités de paiement selon l'avancement des travaux. Il indique aussi les délais d'exécution et les pénalités de retard.
+Si tu passes par un [**contrat de construction de maison individuelle**, ou **CCMI**](/contrat-construction-maison-individuelle/), la loi encadre son contenu. Le contrat doit désigner le terrain, préciser le prix forfaitaire et définitif, et fixer les modalités de paiement selon l'avancement des travaux. Il indique aussi les délais d'exécution et les pénalités de retard.
 
 Il mentionne les autorisations administratives, les conditions suspensives comme l'obtention des prêts, et les annexes, dont la notice descriptive et le plan. Sans plan, le contrat doit tout de même désigner le terrain, le prix et les délais. Il prévoit aussi une garantie de livraison à prix et délais convenus.
 
@@ -52,10 +54,10 @@ Le tableau ci-dessous résume les questions à poser sur les postes les plus sou
 
 | Poste | Question à poser |
 | --- | --- |
-| Fondations | Quelle profondeur, et l'étude de sol est-elle prise en compte ? |
+| Fondations | Quelle profondeur, et l'[étude de sol](/etude-de-sol-maison/) est-elle prise en compte ? |
 | Isolation | Quelle résistance thermique, et quelle épaisseur ? |
 | Menuiseries | Quel matériau, quel vitrage, quelle marque ? |
-| Électricité et plomberie | Combien de prises, de points d'eau et de tableaux ? |
+| Électricité et plomberie | Combien de prises, de points d'eau et de tableaux ? Voir [notre guide dédié](/electricite-plomberie-neuf/). |
 | Finitions | Quelles références précises pour les sols, les murs et les sanitaires ? |
 | Exclusions | Quels travaux ne sont pas compris dans le prix ? |
 
@@ -69,7 +71,7 @@ Un prix nettement inférieur aux autres mérite une vérification. Il arrive qu'
 
 Vérifie aussi les assurances de chaque entreprise. Le constructeur doit disposer d'une assurance de responsabilité professionnelle et de la garantie décennale. De ton côté, tu dois souscrire une assurance dommages-ouvrage avant l'ouverture du chantier, et elle conditionne souvent le déblocage du prêt. Un artisan sans assurance à jour expose ton chantier à des frais que tu n'avais pas prévus.
 
-Demande enfin des références de chantiers réels, livrés depuis plusieurs années. Une visite d'une maison déjà habitée en dit plus qu'une brochure, et elle permet de juger la qualité des finitions à l'usage. Un devis complet se lit plus longtemps, mais il réserve moins de surprises.
+Demande enfin des [références de chantiers réels](/choisir-constructeur-maison/), livrés depuis plusieurs années. Une visite d'une maison déjà habitée en dit plus qu'une brochure, et elle permet de juger la qualité des finitions à l'usage. Un devis complet se lit plus longtemps, mais il réserve moins de surprises.
 
 ## Négocier sans se laisser piéger
 
@@ -89,7 +91,7 @@ Au moins trois, établis sur un même cahier des charges. Trois réponses compar
 
 ### Un devis moins cher est-il toujours un piège ?
 
-Non, mais il demande une lecture attentive. Un prix bas peut venir d'une entreprise plus efficace ou d'un devis incomplet. Vérifie les exclusions, les options et les finitions, puis compare les totaux seulement une fois les postes alignés.
+Non, mais il demande une lecture attentive. Un prix bas peut venir d'une entreprise plus efficace ou d'un devis incomplet, par exemple sur les [fondations et le gros œuvre](/fondations-gros-oeuvre-maison/). Vérifie les exclusions, les options et les finitions, puis compare les totaux seulement une fois les postes alignés.
 
 ### Quel délai pour se rétracter après avoir signé un CCMI ?
 
@@ -97,4 +99,4 @@ Le délai est de dix jours. Il court à compter du lendemain de la première pr�
 
 ### Faut-il payer un acompte dès la signature ?
 
-Le contrat fixe les paiements selon l'avancement des travaux. Si un versement précède l'ouverture du chantier, une garantie de remboursement doit couvrir la somme. Vérifie chaque appel de fonds avant de payer, et ne règle jamais une étape non réalisée.
+Le contrat fixe les paiements selon l'avancement des travaux. Si un versement précède l'ouverture du chantier, une garantie de remboursement doit couvrir la somme. Vérifie chaque appel de fonds avant de payer, et ne règle jamais une étape non réalisée. Pense aussi à vérifier tes [aides au financement](/aides-achat-construction/) avant de boucler ce plan.
