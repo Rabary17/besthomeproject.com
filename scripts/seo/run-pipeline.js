@@ -66,7 +66,7 @@ function tirerVariation() {
   };
 }
 
-function construireConsigneStructure(variation) {
+function construireConsigneStructure(variation, volume) {
   return `Rédige un article complet au format Markdown, prêt à coller dans le corps d'un
 fichier (sans frontmatter). Ta réponse doit commencer PAR LE TITRE, seul sur la première
 ligne, sans dièse ni guillemets ni gras, suivi d'une ligne vide, puis le corps de l'article.
@@ -81,12 +81,29 @@ Le corps suit ce fil :
 2. Une introduction (2-4 phrases) qui part de ${variation.angleOuverture}.
 3. ${variation.nbSections} sections "## Titre de section" qui répondent à la question de façon
    progressive et actionnable (étapes, critères, pièges à éviter...). Un tableau Markdown est
-   bienvenu si l'article compare plusieurs options/postes/critères.
+   bienvenu si l'article compare plusieurs options/postes/critères. Si une section est formulée
+   comme une question ("Comment...", "Combien coûte...", "Quelle est la différence..."), la toute
+   première phrase qui suit doit répondre directement en 1-2 phrases courtes, avant tout
+   développement : jamais une mise en contexte avant la réponse.
 4. "## Questions fréquentes" : ${variation.nbFaq} questions en ### , réponses 50-80 mots, concrètes.
 Règles : tutoiement, phrases courtes (20 mots en moyenne, 25 max), un mot technique =
 une explication au moment où il apparaît, aucune formule qui infantilise ("il suffit de",
 "évidemment"...), jamais de tiret cadratin (—). Contexte France (permis de construire,
-RE2020, garanties légales de la construction...).`;
+RE2020, garanties légales de la construction...).
+Gras sémantique : dans chaque section ##, mets en **gras** (Markdown \`**...**\`) 2 à 4 passages
+de 1 à 4 mots liés au mot-clé ou au vocabulaire technique du sujet (pas seulement des chiffres).
+Jamais une phrase entière en gras, jamais le même terme mis en gras à plusieurs endroits de
+l'article.
+Si l'article compare des chiffres, des prix (construction, devis, aides...) ou des
+caractéristiques, présente-les dans un vrai tableau Markdown ou une liste : une donnée de
+comparaison ne doit jamais être lisible uniquement sur l'image à la une.
+Si tu recommandes un type de prestataire, un matériau ou un produit précis, c'est important sur
+ce site : les lecteurs s'en servent pour choisir un vrai professionnel ou un vrai produit, donc
+explique toujours en une phrase pourquoi ce choix plutôt qu'un autre. N'écris jamais une
+recommandation sans cette justification.${volume && volume > 500 ? `
+Volume de recherche estimé pour ce sujet : ${volume}/mois, un volume notable : développe
+l'article plus complètement (sections plus détaillées, davantage de cas concrets) plutôt qu'un
+traitement minimal, sans pour autant gonfler artificiellement un sujet simple.` : ""}`;
 }
 
 const CONSIGNE_RESTER_DANS_LA_SOURCE = `
@@ -111,6 +128,12 @@ Relis cet article et corrige UNIQUEMENT :
   "évidemment", jamais de tiret cadratin (—)
 - le respect de la structure Markdown déjà en place (accroche en gras-italique, titres ##, tableaux,
   listes) — ne la change pas, corrige juste ce qui est mal écrit à l'intérieur
+- le gras sémantique : vérifie qu'il y a bien 2 à 4 passages en **gras** par section ##, courts
+  (1 à 4 mots) et liés au sujet, jamais une phrase entière en gras, jamais le même terme en gras à
+  plusieurs endroits de l'article — ajoute ou retire des **gras** si besoin, sans changer le texte
+- que la réponse à une section-question ("Comment...", "Combien coûte...", "Quelle est la
+  différence..."...) arrive bien dès la première phrase, sans longue mise en contexte avant :
+  si c'est le cas, réordonne pour que la réponse arrive en premier, sans changer les informations
 Ne change RIEN au fond : n'ajoute, ne retire et ne modifie aucune affirmation, chiffre, date ou fait — UNIQUEMENT
 la forme. Corrige aussi le titre s'il contient une faute.
 Ne lisse PAS le style propre de l'auteur (rythme de phrase, tournures récurrentes) vers un style
@@ -119,11 +142,11 @@ Réponds UNIQUEMENT par un JSON strict, sans texte avant ni après :
   {"ok": true} si rien à corriger
   {"ok": false, "titre": "...", "corps": "..."} avec la version corrigée complète sinon`;
 
-async function genererArticle({ titre, theme, sources = [], brief = "", voix = "" }) {
+async function genererArticle({ titre, theme, sources = [], brief = "", voix = "", volume }) {
   const variation = tirerVariation();
   const resultat = await generer({
     phase: "premier-jet",
-    consigne: construireConsigneStructure(variation) + (sources.length > 0 ? CONSIGNE_RESTER_DANS_LA_SOURCE : ""),
+    consigne: construireConsigneStructure(variation, volume) + (sources.length > 0 ? CONSIGNE_RESTER_DANS_LA_SOURCE : ""),
     instructions: voix,
     brief: `Titre de l'article : "${titre}"\nSous-catégorie : ${theme}\n${brief}`,
     sources,
@@ -252,6 +275,7 @@ async function construireArticle(sujet) {
     sources,
     brief: sujet.keyword ? `Mot-clé cible (SEO) : ${sujet.keyword}, volume estimé ${sujet.volume}/mois.` : "",
     voix: voixPour(choixAuteur.auteur),
+    volume: sujet.volume,
   });
 
   const { titre: titreGenere, corps } = separerTitreEtCorps(resultat.texte, sujet.titre);
