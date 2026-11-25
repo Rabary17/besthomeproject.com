@@ -12,6 +12,7 @@ import {
 import { resolveAuthor, authorUrl } from "@/lib/authors";
 import { formatDate } from "@/lib/format";
 import JsonLd from "@/components/JsonLd";
+import SourcesOfficielles from "@/components/SourcesOfficielles";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AuthorBox from "@/components/AuthorBox";
 import ArticleCard from "@/components/ArticleCard";
@@ -179,6 +180,8 @@ export default async function SlugPage({
             à sanitiser ici comme on le ferait pour du contenu externe/WP. */}
         <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
       </article>
+
+      <SourcesOfficielles sources={post.sourcesOfficielles} />
 
       {post.sources && post.sources.length > 0 ? (
         <aside className="post-sources" aria-label="Sources">

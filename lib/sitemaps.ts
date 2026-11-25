@@ -39,7 +39,7 @@ export function postEntries(): SitemapEntry[] {
 }
 
 export function pageEntries(): SitemapEntry[] {
-  return ["/", "/parcours/", "/kits/", "/a-propos/", "/faq/", "/contact/"].map((path) => ({
+  return ["/", "/parcours/", "/kits/", "/a-propos/", "/methodologie/", "/faq/", "/contact/"].map((path) => ({
     url: `${SITE_URL}${path}`,
   }));
 }

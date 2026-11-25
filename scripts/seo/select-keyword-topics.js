@@ -56,6 +56,10 @@ function dejaCouvert(motCle, textesExistants) {
 // l'API colle à tort le même volume que le terme principal.
 const VOLUME_MAX = 20000;
 
+function estQuestion(motCle) {
+  return /^(comment|combien|quel|quelle|quels|quelles|peut|peut-on|faut|faut-il|est-ce|pourquoi|quand|où|ou)\b/i.test(motCle.trim());
+}
+
 function estLongueTraine(motCle) {
   return motCle.trim().split(/\s+/).length >= 3;
 }
@@ -78,7 +82,18 @@ async function selectionnerSujetsSeo({ n = 3, volumeMin = 100, volumeMax = VOLUM
     }
   }
   // Un meilleur mot-clé par sous-catégorie d'abord (diversité), puis complète par volume décroissant.
-  sujets.sort((a, b) => b.volume - a.volume);
+  // Longue traîne d'abord : questions en premier, puis faible concurrence, puis volume.
+  const rangConcurrence = (c) => {
+    if (typeof c === "number") return c < 0.34 ? 0 : c < 0.67 ? 1 : 2;
+    const v = String(c || "").toUpperCase();
+    return v === "LOW" ? 0 : v === "MEDIUM" ? 1 : v === "HIGH" ? 2 : 3;
+  };
+  sujets.sort(
+    (a, b) =>
+      Number(estQuestion(b.keyword)) - Number(estQuestion(a.keyword)) ||
+      rangConcurrence(a.competition) - rangConcurrence(b.competition) ||
+      b.volume - a.volume
+  );
   const parTheme = new Map();
   const selection = [];
   for (const s of sujets) {

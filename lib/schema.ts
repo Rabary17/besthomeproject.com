@@ -114,7 +114,7 @@ function organizationNode() {
     ...(SOCIAL_LINKS.length > 0 ? { sameAs: SOCIAL_LINKS.map((s) => s.url) } : {}),
     // Page qui explique qui écrit et comment (ligne éditoriale, méthode) —
     // signal attendu des éditeurs de presse par Google.
-    publishingPrinciples: `${SITE_URL}/a-propos/`,
+    publishingPrinciples: `${SITE_URL}/methodologie/`,
     parentOrganization: { "@id": COMPANY_ID },
   };
 }
@@ -259,7 +259,14 @@ export function blogPostingSchema(post: Post) {
     author: personRef(author),
     publisher: organizationRef(),
     inLanguage: "fr-FR",
+    // Sources citées (officielles, puis presse) : signal de confiance YMYL.
+    ...(citations(post).length > 0 ? { citation: citations(post) } : {}),
   };
+}
+
+function citations(post: Post): string[] {
+  const urls = [...(post.sourcesOfficielles ?? []), ...(post.sources ?? [])].map((s) => s.url);
+  return [...new Set(urls)];
 }
 
 export function breadcrumbSchema(items: { name: string; url: string }[]) {

@@ -35,6 +35,10 @@ export type PostFrontmatter = {
   // une date postérieure à la coupure du modèle (voir scripts/generation/).
   sources?: { titre: string; url: string }[];
   sourcesConsultees?: string;
+  // Sources officielles (Service-Public, ANIL, Légifrance...) : bloc distinct des
+  // sources de presse, affiché sous l'article et repris en `citation` JSON-LD.
+  // Laissé vide tant qu'aucun lien n'a été vérifié : ne jamais en inventer.
+  sourcesOfficielles?: { nom: string; url: string }[];
   // Date de mise à jour (optionnelle, "AAAA-MM-JJ") — reprise en
   // dateModified dans le JSON-LD et affichée sous le titre.
   updated?: string;

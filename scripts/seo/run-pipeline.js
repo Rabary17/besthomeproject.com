@@ -70,15 +70,15 @@ function construireConsigneStructure(variation, volume) {
   return `Rédige un article complet au format Markdown, prêt à coller dans le corps d'un
 fichier (sans frontmatter). Ta réponse doit commencer PAR LE TITRE, seul sur la première
 ligne, sans dièse ni guillemets ni gras, suivi d'une ligne vide, puis le corps de l'article.
-Le titre est un intitulé naturel et concret (pas nécessairement une question), du type
-"Comparer des devis de construction sans se faire piéger" ou "Aides et prêt à taux zéro
-pour construire : ce qui est accessible en 2026" — jamais le mot-clé brut.
+Le titre formule la question précise que l'internaute tape (longue traîne : 6 à 12 mots,
+par exemple "Combien coûte une étude de sol avant de construire une maison ?"), jamais le
+mot-clé brut ni un intitulé vague.
 Ne mets JAMAIS de bloc de code (\`\`\`) autour de ta réponse, et n'ajoute AUCUN commentaire,
 note ou explication avant ou après l'article — seulement le titre puis le corps, rien d'autre.
 Ne mets AUCUNE image dans le corps (pas de balise ![...](...)) — l'image à la une est gérée à part.
 Le corps suit ce fil :
 1. Une accroche en gras-italique (***...***), 1 à 2 phrases qui résument le point clé de l'article.
-2. Une introduction (2-4 phrases) qui part de ${variation.angleOuverture}.
+2. Une introduction (2-4 phrases) qui part de ${variation.angleOuverture}. Sa première phrase reprend la question du titre telle quelle, en **gras**, puis y répond en une phrase.
 3. ${variation.nbSections} sections "## Titre de section" qui répondent à la question de façon
    progressive et actionnable (étapes, critères, pièges à éviter...). Un tableau Markdown est
    bienvenu si l'article compare plusieurs options/postes/critères. Si une section est formulée
@@ -94,6 +94,7 @@ Gras sémantique : dans chaque section ##, mets en **gras** (Markdown \`**...**\
 de 1 à 4 mots liés au mot-clé ou au vocabulaire technique du sujet (pas seulement des chiffres).
 Jamais une phrase entière en gras, jamais le même terme mis en gras à plusieurs endroits de
 l'article.
+Au total, l'article contient au moins 2 passages en **gras** (accroche exclue) : un article sans gras est refusé.
 Si l'article compare des chiffres, des prix (construction, devis, aides...) ou des
 caractéristiques, présente-les dans un vrai tableau Markdown ou une liste : une donnée de
 comparaison ne doit jamais être lisible uniquement sur l'image à la une.
@@ -184,6 +185,16 @@ function separerTitreEtCorps(texte, titreDeSecours) {
     return { titre: premiere, corps: lignes.slice(1).join("\n").trim() };
   }
   return { titre: titreDeSecours, corps: t };
+}
+
+// Contrôle déterministe du format éditorial, appliqué à chaque article avant écriture :
+// au moins 2 passages en gras (hors accroche), titre de 6 mots au moins (longue traîne).
+function controleFormat({ titre, corps }) {
+  const manques = [];
+  const gras = corps.match(/(?<!\*)\*\*[^*\n]+\*\*(?!\*)/g) || [];
+  if (gras.length < 2) manques.push(`${gras.length} passage(s) en gras, 2 minimum`);
+  if (titre.trim().split(/\s+/).length < 6) manques.push("titre trop court pour la longue traîne (6 mots minimum)");
+  return manques;
 }
 
 async function relireQualite({ titre, corps }) {
@@ -292,6 +303,12 @@ async function construireArticle(sujet) {
   const titre = relecture.ok ? titreGenere : relecture.titre;
   resultat.texte = relecture.ok ? resultat.texte : relecture.corps;
   if (!relecture.ok) console.log(`Relecture qualité : corrections appliquées pour "${titreGenere}"`);
+
+  // Contrôle de format (après relecture, qui peut retirer des gras) : gras et longue traîne.
+  const manques = controleFormat({ titre, corps: resultat.texte });
+  if (manques.length) {
+    return { ok: false, slug: slugify(titre), raison: `format : ${manques.join(" ; ")}` };
+  }
 
   const slug = slugify(titre);
   const fichier = path.join(POSTS_DIR, `${slug}.md`);
