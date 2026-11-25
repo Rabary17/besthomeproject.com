@@ -1,21 +1,30 @@
 name: Publication programmée
 
+# Chaque nuit, un commit vide est poussé sur main : Vercel reconstruit le site
+# et les articles dont la date arrive ce jour-là deviennent visibles.
+# Pas de secret requis (le push utilise le jeton GITHUB_TOKEN du dépôt).
+
 on:
   schedule:
-    # 21:05 UTC, soit 00:05 à Antananarivo : les articles dont la date arrive ce jour-là sont publiés.
+    # 21:05 UTC, soit 00:05 à Antananarivo.
     - cron: "5 21 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   relancer-deploiement:
     runs-on: ubuntu-latest
     steps:
-      - name: Déclencher le déploiement Vercel
-        env:
-          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Commit vide sur main (déclenche le build Vercel)
         run: |
-          if [ -z "$VERCEL_DEPLOY_HOOK_URL" ]; then
-            echo "Secret VERCEL_DEPLOY_HOOK_URL manquant dans les secrets du dépôt GitHub."
-            exit 1
-          fi
-          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK_URL"
+          git config user.name "publication-programmee[bot]"
+          git config user.email "publication-programmee@besthomeproject.com"
+          git commit --allow-empty -m "chore: publication programmée du jour (rebuild)"
+          git push origin HEAD:main
