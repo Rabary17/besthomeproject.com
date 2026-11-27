@@ -95,7 +95,15 @@ jobs:
           VEILLE_SHEET_ID: ${{ secrets.VEILLE_SHEET_ID }}
           JOURNAL_SHEET_ID: ${{ secrets.JOURNAL_SHEET_ID }}
         run: |
-          SEO="${{ github.event.inputs.seo || '1' }}"
+          # Article de fond : un jour sur deux (parité du jour UTC). Entrée manuelle prioritaire.
+          if [ -n "${{ github.event.inputs.seo }}" ]; then
+            SEO="${{ github.event.inputs.seo }}"
+          elif [ $(( $(date -u +%s) / 86400 % 2 )) -eq 0 ]; then
+            SEO=1
+          else
+            SEO=0
+          fi
+          echo "Article de fond aujourd'hui : $SEO"
           ACTU="${{ github.event.inputs.actu || '1' }}"
           DRY="${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}"
           node scripts/seo/run-pipeline.js --seo "$SEO" --actu "$ACTU" --push $DRY

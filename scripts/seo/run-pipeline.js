@@ -144,11 +144,28 @@ Réponds UNIQUEMENT par un JSON strict, sans texte avant ni après :
   {"ok": true} si rien à corriger
   {"ok": false, "titre": "...", "corps": "..."} avec la version corrigée complète sinon`;
 
+// Article de fond sans source externe (SEO) : intemporel, sans fait daté ou chiffré.
+// Le garde-fou reste bloquant ; cette consigne évite qu'il ait quelque chose à marquer.
+const CONSIGNE_EVERGREEN = `
+Article de fond intemporel : tu n'as AUCUNE source externe.
+N'écris AUCUN chiffre, montant, prix, pourcentage, durée réglementaire, date, année, numéro d'article
+de loi, nom de norme, seuil, statistique ou citation. Parle des méthodes, des étapes, des critères de
+choix, des erreurs fréquentes, des comparaisons qualitatives (selon le besoin, plus ou moins adapté)
+et de questions pratiques. Ne prétends jamais qu'une règle ou un montant est en vigueur.
+Si un point dépendrait d'un chiffre, d'une date ou d'une règle précise, supprime ce point : ne le
+remplace pas par un autre chiffre et n'écris jamais de marqueur [À VÉRIFIER] ni de balise [S1]...
+Structure obligatoire : un titre principal (question précise, longue traîne), une introduction qui
+répond directement en 2 à 3 phrases, puis des sections en titre ## (méthode, étapes, critères,
+erreurs, comparaison), avec des sous-titres en ### si utile, et une section ## « Questions fréquentes »
+avec 3 à 4 questions en ###.
+Mets en gras (**...**) les termes importants : au moins 2 passages en gras par section ##, jamais une
+phrase entière.`;
+
 async function genererArticle({ titre, theme, sources = [], brief = "", voix = "", volume }) {
   const variation = tirerVariation();
   const resultat = await generer({
     phase: "premier-jet",
-    consigne: construireConsigneStructure(variation, volume) + (sources.length > 0 ? CONSIGNE_RESTER_DANS_LA_SOURCE : ""),
+    consigne: construireConsigneStructure(variation, volume) + (sources.length > 0 ? CONSIGNE_RESTER_DANS_LA_SOURCE : CONSIGNE_EVERGREEN),
     instructions: voix,
     brief: `Titre de l'article : "${titre}"\nSous-catégorie : ${theme}\n${brief}`,
     sources,
