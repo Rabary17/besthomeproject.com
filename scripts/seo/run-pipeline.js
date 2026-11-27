@@ -24,6 +24,7 @@ const { selectionnerSujetsSeo } = require("./select-keyword-topics");
 const { selectionnerActusDuJour } = require("./select-news-topics");
 const { ajouterLigneJournal } = require("./journal-sheet");
 const { findImage } = require("./image-client");
+const unicite = require("../images/unicite");
 const { voixPour } = require("../generation/voix-auteurs");
 const { choisirParmi, entier } = require("../generation/variation");
 
@@ -328,10 +329,12 @@ async function construireArticle(sujet) {
   // observé sur techno-play.com, corrigé aussi ici par précaution.
   let image = null;
   try {
-    const requeteImage = sujet.keyword || REQUETE_IMAGE_PAR_THEME[theme] || titre;
-    const resultats = await findImage(requeteImage);
-    const dejaUtilisees = imagesDejaUtilisees();
-    image = resultats.find((r) => !dejaUtilisees.has(r.url)) || resultats[0] || null;
+    // Règle stricte : une photo n'est jamais réutilisée sur le site (pas de repli).
+    image = await unicite.choisirImageUnique(
+      unicite.requetesImage({ keyword: sujet.keyword, theme, titre, synonymes: [REQUETE_IMAGE_PAR_THEME[theme]].filter(Boolean) }),
+      findImage,
+      unicite.idsUtilisees(POSTS_DIR)
+    );
   } catch (err) {
     console.error(`Image non trouvée pour "${titre}" : ${err.message}`);
   }

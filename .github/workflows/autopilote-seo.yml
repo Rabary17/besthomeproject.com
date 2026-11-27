@@ -100,6 +100,20 @@ jobs:
           DRY="${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}"
           node scripts/seo/run-pipeline.js --seo "$SEO" --actu "$ACTU" --push $DRY
 
+      - name: Images uniques (corriger les doublons, puis vérifier)
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          node scripts/images/corriger-doublons.js
+          if ! git diff --quiet -- content/posts; then
+            git add content/posts
+            git commit -q -m "fix(images): une photo unique par article"
+            git push -q origin HEAD:main
+          fi
+          node scripts/images/verifier-images.js
+
       - name: Publier le rapport comme artefact
         if: always()
         uses: actions/upload-artifact@v4

@@ -4,8 +4,8 @@ description: "Patxa'ma offre trois services dans le domaine du réemploi des mat
 date: "2026-11-23"
 author: "felana-rabarivelo"
 category: "renovation-travaux"
-image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTE4NzJ8MHwxfHNlYXJjaHwxfHxyJUMzJUE5bm92YXRpb24lMjBtYWlzb24lMjB0cmF2YXV4fGVufDB8MHx8fDE3OTU0NTgwMDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "man climbing on ladder inside room"
+image: "https://images.unsplash.com/photo-1540525702892-c73126e68804?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTE4NzJ8MHwxfHNlYXJjaHwxfHxyZWVtcGxvaSUyMGJhdGltZW50JTIwdHJvdXZlcnxlbnwwfDB8fHwxNzk1NzU5MDA1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "renew sign on garden"
 sources:
   - titre: "Pyrénées-Atlantiques Réemploi dans le bâtiment : « Au début on nous prenait pour des ovnis »"
     url: "https://www.ledauphine.com/environnement/2026/11/18/reemploi-dans-le-batiment-au-debut-on-nous-prenait-pour-des-ovnis"

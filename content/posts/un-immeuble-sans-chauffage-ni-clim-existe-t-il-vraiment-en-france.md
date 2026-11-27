@@ -4,8 +4,8 @@ description: "La société immobilière française Nexity a présenté mardi le 
 date: "2026-11-25"
 author: "nekena-judicael"
 category: "energie-economies"
-image: "https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTE4NzJ8MHwxfHNlYXJjaHwxfHxpc29sYXRpb24lMjBtYWlzb24lMjAlQzMlQTluZXJnaWV8ZW58MHwwfHx8MTc5NTYyNzIwOXww&ixlib=rb-4.1.0&q=80&w=1080"
-imageAlt: "A person in a blue shirt installing electrical wiring in pink fiberglass wall insulation"
+image: "https://images.unsplash.com/photo-1757742690834-aa581b9f53b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTE4NzJ8MHwxfHNlYXJjaHwxfHxpbW1ldWJsZSUyMHNhbnMlMjBjaGF1ZmZhZ2V8ZW58MHwwfHx8MTc5NTc1OTAwNnww&ixlib=rb-4.1.0&q=80&w=1080"
+imageAlt: "Empty room with wooden floor and large window"
 sources:
   - titre: "À Lyon, premier immeuble de France sans chauffage ni clim, autonome en température"
     url: "https://fr.euronews.com/2026/11/18/a-lyon-premier-immeuble-de-france-sans-chauffage-ni-clim-autonome-en-temperature"
